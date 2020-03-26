@@ -29,16 +29,17 @@
           <div class="row">
             <div class="col">
               <div class="accordion" id="accordionExample">
+              <!--****************************************CARD MEMORIA********************************************-->
                 <div class="card">
                   <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
-                      <button id="memoria" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <button id="memoria" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                         Item Memoria
                       </button>
                     </h2>
                   </div>
 
-                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div class="card-body">
 
                       <div class="row">
@@ -91,6 +92,10 @@
 
                   </div>
                 </div>
+            <!--****************************************FIN CARD MEMORIA********************************************-->
+
+             <!--****************************************CARD REMANENTE********************************************-->
+
                 <div class="card">
                   <div class="card-header" id="headingTwo">
                     <h2 class="mb-0">
@@ -151,6 +156,9 @@
                     </div>
                   </div>
                 </div>
+<!--****************************************FIN CARD REMANENTE********************************************-->
+
+<!--****************************************CARD CUOTA********************************************-->
                 <div class="card">
                   <div class="card-header" id="headingTree">
                     <h2 class="mb-0">
@@ -212,6 +220,74 @@
                     </div>
                   </div>
                 </div>
+                            
+            <!--****************************************FIN CARD CUOTA********************************************-->
+
+            
+      <!--****************************************CARD ASIGNACION********************************************-->
+             <div class="card">
+               <div class="card-header" id="headingford">
+                 <h2 class="mb-0">
+                   <button id="asigancion_consejero" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseford" aria-expanded="false" aria-controls="collapseford">
+                     Item Fijar Asiganación de Consejeros
+                   </button>
+                 </h2>
+               </div>
+               <div id="collapseford" class="collapse" aria-labelledby="headingford" data-parent="#accordionExample">
+                 <div class="card-body">
+                   
+                   <div class="row">
+                     <div class="col">
+                       <div class="embed-responsive embed-responsive-16by9">
+                       <iframe src="https://www.youtube.com/embed/YZi5vam33ow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                       </div>
+                     </div>
+                   </div>
+
+                   <div class="row">
+                       <div class="col">
+                       <div class="card text-center">
+                         <div class="card-header">
+                         Asiganación de Consejeros
+                         </div>
+                         <div class="card-body">
+                         <h5 class="card-title">Encuesta de Asiganación de Consejeros</h5>
+                           <p class="card-text">Preciona el botón para responder la encuesta.</p>   
+                           <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalAsiganacion">
+                             <span class="fa fa-plus-circle"></span> Encuesta Asiganación de Consejeros
+                           </span>
+                         </div>
+                       </div>                         
+                       </div>
+                   </div>
+
+                   <div class="row">
+                     <div class="col">
+                       <ul class="list-group">
+                         <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
+                           Respuestas
+                           <span class="badge badge-success badge-pill"></span>
+                         </li>
+                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                           Total
+                           <span class="badge badge-success badge-pill"><div id="total_asiganacion"></div></span>
+                         </li>
+                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                           Positivas
+                           <span class="badge badge-success badge-pill"><div id="total_si_asiganacion"></div></span>
+                         </li>
+                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                           Negativas
+                           <span class="badge badge-success badge-pill"><div id="total_no_asiganacion"></div></span>
+                         </li>
+                       </ul>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>           
+                  <!--****************************************FIN CARD ASIGNACION********************************************-->
+
               </div>
             </div>
           </div>
@@ -336,6 +412,47 @@
     </div>
   </div>
   <!--************************************************* FIN MODAL ENCUESTA CUOTA SOCIAL ***********************************************-->
+      
+     <!--************************************************* MODAL ENCUESTA ASIGNACION ***********************************************-->
+     <div class="modal fade" id="modalAsignacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><div id="encuestaAsignacion"> </div></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form id="frmEncuestaAsignacion">
+
+            <div class="form-group row">                
+              <label class="col-sm-2 col-form-label">SI</label>
+              <div class="col-sm-6">
+                <input type="checkbox" class="form-control form-control-sm group_asignacion" value="si" name="si_asignacion" id="si_asignacion">
+              </div>            
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">NO</label>
+                <div class="col-sm-6">
+                  <input type="checkbox" class="form-control form-control-sm group_asignacion" value="no" name="no_asignacion" id="no_asignacion">
+              </div>
+            </div>
+        
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-raised btn-primary" id="btnResponderAsignacion">Responder</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--************************************************* FIN MODAL ENCUESTA ASIGNACION ***********************************************-->
+     
+           
+           
             </div>
         </div>
     </div>
@@ -372,6 +489,14 @@
         $('#total_cuota').load('total_respuestas_cuota.php');
         $('#total_si_cuota').load('total_respuesta_si_cuota.php');
         $('#total_no_cuota').load('total_respuesta_no_cuota.php');
+
+        /***********asiganacion********/
+        setInterval("loadTotalAsiganacion()",100);
+        setInterval("loadSiAsiganacion()",100); 
+        setInterval("loadNoAsiganacion()",100); 
+        $('#total_asiganacion').load('total_respuestas_asiganacion.php');
+        $('#total_si_asiganacion').load('total_respuesta_si_asiganacion.php');
+        $('#total_no_asiganacion').load('total_respuesta_no_asiganacion.php');
     });
 </script>
 
@@ -531,7 +656,6 @@ $(document).ready(function(){
             $("#total_no_memoria").html( info );
         });
     }
-
 </script>
 <!--*******************************FIN JS MODAL ENCUESTA MEMORIA**************************************-->
 
@@ -739,6 +863,108 @@ $(document).ready(function(){
             $("#total_no_cuota").html( info );
         });
     }
-
 </script>
 <!--*******************************FIN JS MODAL ENCUESTA CUOTA**************************************-->
+
+<!--*******************************JS MODAL ENCUESTA ASIGNACION**************************************-->
+<script type="text/javascript">
+$(document).ready(function(){
+    //carga en elemento encuesta el script en php
+    $('#encuestaAsignacion').load('pregunta.php');
+    //$('#encuesta2').load('pregunta.php');
+      //escucha el elemto 'si'
+      $('#si_asignacion').on( 'change', function() {
+        //si el elemento 'si' esta checkeado (truwe)
+        if( $(this).is(':checked') ) {
+        // Hacer que se escondan los checkbox
+            $('#no_asignacion').hide();
+        } else {
+            // Hacer aparecer los checkbox
+            $('#no_asignacion').show();
+            $('#si_asignacion').show();
+            //limpia los elementos group1
+            $('.group_asignacion').trigger('change');
+        }
+        });
+
+      $('#no_asignacion').on( 'change', function() {
+        if( $(this).is(':checked') ) {
+        // Hacer que se escondan los checkbox
+            $('#si_asignacion').hide();
+        } else {
+            // Hacer aparecer los checkbox
+            $('#si_asignacion').show();
+            $('#no_asignacion').show();
+            //limpia los elementos group1
+        $('.group_asignacion').trigger('change');
+        }
+        });
+
+      
+    $('#btnResponderAsignacion').click(function(){
+        //al precionar boton responder 
+      var nombre_encuesta = $('#asignacion_consejero').text();
+
+      var nombre_encuesta = $.trim(nombre_encuesta);
+        //declaro variable arreglo de respuesta (respuesta)
+      var respuesta = [];
+        //declaro variable y almaceno texto de encuesta (pregunta)
+      var pregunta = $('#encuestaAsignacion').text();
+      //limpio el string sacando los espacios en blanco
+      var pregunta = $.trim(pregunta);
+      //busca en los elementos group1
+      $('.group_asignacion').each(function(){
+        //si hay uno checkeado
+        if ($(this).is(":checked")) {
+            //guarda su valor en variable respuesta
+            respuesta.push($(this).val());
+        }
+      });
+      respuesta = respuesta.toString();
+      if (respuesta == "") {
+        alertify.error("Debe responder la encuesta");
+      }else{
+        $.ajax({
+            type:"POST",
+            data:{respuesta:respuesta, pregunta:pregunta, nombre_encuesta:nombre_encuesta},
+            url:"php/insertarEncuesta.php",
+            success:function(r){
+            if(r==1){
+               $('#frmEncuestaAsignacion')[0].reset();
+               alertify.success("Respuesta Enviada");       
+                }else{
+                    alertify.error("Respuesta No Enviada");
+                }           
+            }
+        });
+        $('.group_asignacion').trigger('change');
+        $('#modalAsignacion').remove();
+      }  
+    });
+
+  });
+        var loadTotalAsignacion=function(){
+        $.ajax({type: "POST",
+            url: "total_respuestas_asignacion.php"
+        }).done(function( info ){
+            $("#total_asignacion").html( info );
+        });
+    }
+
+        var loadSiAsignacion=function(){
+        $.ajax({type: "POST",
+            url: "total_respuesta_si_asignacion.php"
+        }).done(function( info ){
+            $("#total_si_asignacion").html( info );
+        });
+    }
+
+        var loadNoAsignacion=function(){
+        $.ajax({type: "POST",
+            url: "total_respuesta_no_asignacion.php"
+        }).done(function( info ){
+            $("#total_no_asignacion").html( info );
+        });
+    }
+</script>
+<!--*******************************FIN JS MODAL ENCUESTA ASIGNACION**************************************-->
