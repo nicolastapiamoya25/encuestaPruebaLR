@@ -49,6 +49,23 @@
                         </div>
                       </div>
 
+                       <div class="row">
+                          <div class="col">
+                          <div class="card text-center">
+                            <div class="card-header">
+                            Memoria
+                            </div>
+                            <div class="card-body">
+                            <h5 class="card-title">Encuesta de presentación memoria anual</h5>
+                              <p class="card-text">Preciona el botón para responder la encuesta.</p>   
+                              <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalMemoria">
+                                <span class="fa fa-plus-circle"></span> Encuesta Memoria
+                              </span>
+                            </div>
+                          </div>                         
+                          </div>
+                       </div>
+
                       <div class="row">
                         <div class="col">
                           <ul class="list-group">
@@ -69,13 +86,6 @@
                               <span class="badge badge-success badge-pill"><div id="total_no_memoria"></div></span>
                             </li>
                           </ul>
-                        </div>
-                        <div class="col">
-                          <div class="row justify-content-center">
-                            <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalMemoria">
-                              <span class="fa fa-plus-circle"></span> Encuesta Memoria
-                            </span>
-                          </div>
                         </div>
                       </div>
 
@@ -101,6 +111,23 @@
                       </div>
                       <div class="row">
                         <div class="col">
+                          <div class="card text-center">
+                            <div class="card-header">
+                            Encuesta
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title">Encuesta de distribucion de remanente</h5>
+                              <p class="card-text">Preciona el botón para responder la encuesta.</p>                                
+                                <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalRemanente">
+                                  <span class="fa fa-plus-circle"></span> Encuesta Remanente
+                                </span>                               
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
                           <ul class="list-group">
                             <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
                               Respuestas
@@ -120,26 +147,19 @@
                             </li>
                           </ul>
                         </div>
-                        <div class="col">
-                          <div class="row justify-content-center">
-                            <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalRemanente">
-                              <span class="fa fa-plus-circle"></span> Encuesta Remanente
-                            </span>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="card">
-                  <div class="card-header" id="headingTwo">
+                  <div class="card-header" id="headingTree">
                     <h2 class="mb-0">
-                      <button id="cuota_social" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <button id="cuota_social" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTree" aria-expanded="false" aria-controls="collapseTree">
                         Item Fijar Cuota Social
                       </button>
                     </h2>
                   </div>
-                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div id="collapseTree" class="collapse" aria-labelledby="headingTree" data-parent="#accordionExample">
                     <div class="card-body">
                       
                       <div class="row">
@@ -150,7 +170,24 @@
                         </div>
                       </div>
 
-                      <!--<div class="row">
+                      <div class="row">
+                          <div class="col">
+                          <div class="card text-center">
+                            <div class="card-header">
+                            Fijar Cuota Social
+                            </div>
+                            <div class="card-body">
+                            <h5 class="card-title">Encuesta de fijar cuota social</h5>
+                              <p class="card-text">Preciona el botón para responder la encuesta.</p>   
+                              <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalCuotaSocial">
+                                <span class="fa fa-plus-circle"></span> Encuesta Cuota Social
+                              </span>
+                            </div>
+                          </div>                         
+                          </div>
+                       </div>
+
+                      <div class="row">
                         <div class="col">
                           <ul class="list-group">
                             <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
@@ -159,30 +196,19 @@
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               Total
-                              <span class="badge badge-success badge-pill"><div id="total"></div></span>
+                              <span class="badge badge-success badge-pill"><div id="total_cuota"></div></span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               Positivas
-                              <span class="badge badge-success badge-pill"><div id="total_si"></div></span>
+                              <span class="badge badge-success badge-pill"><div id="total_si_cuota"></div></span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               Negativas
-                              <span class="badge badge-success badge-pill"><div id="total_no"></div></span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                              Nulo
-                              <span class="badge badge-success badge-pill"><div id="total_nulo"></div></span>
+                              <span class="badge badge-success badge-pill"><div id="total_no_cuota"></div></span>
                             </li>
                           </ul>
                         </div>
-                        <div class="col">
-                          <div class="row justify-content-center">
-                            <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#addmodal">
-                              <span class="fa fa-plus-circle"></span> Encuesta Cuota Social
-                            </span>
-                          </div>
-                        </div>
-                      </div>-->
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -272,6 +298,44 @@
     </div>
   </div>
   <!--************************************************* FIN MODAL ENCUESTA REMANENTE ***********************************************-->
+
+     <!--************************************************* MODAL ENCUESTA CUOTA SOCIAL ***********************************************-->
+     <div class="modal fade" id="modalCuotaSocial" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><div id="encuestaCuota"> </div></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form id="frmEncuestaCuota">
+
+            <div class="form-group row">                
+              <label class="col-sm-2 col-form-label">SI</label>
+              <div class="col-sm-6">
+                <input type="checkbox" class="form-control form-control-sm group_cuota" value="si" name="si_cuota" id="si_cuota">
+              </div>            
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">NO</label>
+                <div class="col-sm-6">
+                  <input type="checkbox" class="form-control form-control-sm group_cuota" value="no" name="no_cuota" id="no_cuota">
+              </div>
+            </div>
+        
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-raised btn-primary" id="btnResponderCuota">Responder</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--************************************************* FIN MODAL ENCUESTA CUOTA SOCIAL ***********************************************-->
             </div>
         </div>
     </div>
@@ -300,6 +364,14 @@
         $('#total_remanente').load('total_respuestas_remanente.php');
         $('#total_si_remanente').load('total_respuesta_si_remanente.php');
         $('#total_no_remanente').load('total_respuesta_no_remanente.php');
+
+        /***********cuota social********/
+        setInterval("loadTotalCuota()",100);
+        setInterval("loadSiCuota()",100); 
+        setInterval("loadNoCuota()",100); 
+        $('#total_cuota').load('total_respuestas_cuota.php');
+        $('#total_si_cuota').load('total_respuesta_si_cuota.php');
+        $('#total_no_cuota').load('total_respuesta_no_cuota.php');
     });
 </script>
 
@@ -317,7 +389,6 @@
     return vacios;
   }
 </script>
-
 
 <!--*******************************JS CHAT**************************************-->
 <!-- <script type="text/javascript">
@@ -567,3 +638,107 @@ $(document).ready(function(){
 
 </script>
 <!--*******************************FIN JS MODAL ENCUESTA REMANENTE**************************************-->
+
+<!--*******************************JS MODAL ENCUESTA CUOTA**************************************-->
+<script type="text/javascript">
+$(document).ready(function(){
+    //carga en elemento encuesta el script en php
+    $('#encuestaCuota').load('pregunta.php');
+    //$('#encuesta2').load('pregunta.php');
+      //escucha el elemto 'si'
+      $('#si_cuota').on( 'change', function() {
+        //si el elemento 'si' esta checkeado (truwe)
+        if( $(this).is(':checked') ) {
+        // Hacer que se escondan los checkbox
+            $('#no_cuota').hide();
+        } else {
+            // Hacer aparecer los checkbox
+            $('#no_cuota').show();
+            $('#si_cuota').show();
+            //limpia los elementos group1
+            $('.group_cuota').trigger('change');
+        }
+        });
+
+      $('#no_cuota').on( 'change', function() {
+        if( $(this).is(':checked') ) {
+        // Hacer que se escondan los checkbox
+            $('#si_cuota').hide();
+        } else {
+            // Hacer aparecer los checkbox
+            $('#si_cuota').show();
+            $('#no_cuota').show();
+            //limpia los elementos group1
+        $('.group_cuota').trigger('change');
+        }
+        });
+
+      
+    $('#btnResponderCuota').click(function(){
+        //al precionar boton responder 
+      var nombre_encuesta = $('#cuota_social').text();
+
+      var nombre_encuesta = $.trim(nombre_encuesta);
+        //declaro variable arreglo de respuesta (respuesta)
+      var respuesta = [];
+        //declaro variable y almaceno texto de encuesta (pregunta)
+      var pregunta = $('#encuestaCuota').text();
+      //limpio el string sacando los espacios en blanco
+      var pregunta = $.trim(pregunta);
+      //busca en los elementos group1
+      $('.group_cuota').each(function(){
+        //si hay uno checkeado
+        if ($(this).is(":checked")) {
+            //guarda su valor en variable respuesta
+            respuesta.push($(this).val());
+        }
+      });
+      respuesta = respuesta.toString();
+      if (respuesta == "") {
+        alertify.error("Debe responder la encuesta");
+      }else{
+        $.ajax({
+            type:"POST",
+            data:{respuesta:respuesta, pregunta:pregunta, nombre_encuesta:nombre_encuesta},
+            url:"php/insertarEncuesta.php",
+            success:function(r){
+            if(r==1){
+               $('#frmEncuestaCuota')[0].reset();
+               alertify.success("Respuesta Enviada");       
+                }else{
+                    alertify.error("Respuesta No Enviada");
+                }           
+            }
+        });
+        $('.group_cuota').trigger('change');
+        $('#modalCuotaSocial').remove();
+      }  
+    });
+
+  });
+        var loadTotalCuota=function(){
+        $.ajax({type: "POST",
+            url: "total_respuestas_cuota.php"
+        }).done(function( info ){
+            $("#total_cuota").html( info );
+        });
+    }
+
+        var loadSiCuota=function(){
+        $.ajax({type: "POST",
+            url: "total_respuesta_si_cuota.php"
+        }).done(function( info ){
+            $("#total_si_cuota").html( info );
+        });
+    }
+
+        var loadNoCuota=function(){
+        $.ajax({type: "POST",
+            url: "total_respuesta_no_cuota.php"
+        }).done(function( info ){
+            $("#total_no_cuota").html( info );
+        });
+    }
+
+</script>
+<!--*******************************FIN JS MODAL ENCUESTA CUOTA**************************************-->
