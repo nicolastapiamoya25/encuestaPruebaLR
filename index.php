@@ -58,15 +58,15 @@
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               Total
-                              <span class="badge badge-success badge-pill"><div id="total"></div></span>
+                              <span class="badge badge-success badge-pill"><div id="total_memoria"></div></span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               Positivas
-                              <span class="badge badge-success badge-pill"><div id="total_si"></div></span>
+                              <span class="badge badge-success badge-pill"><div id="total_si_memoria"></div></span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               Negativas
-                              <span class="badge badge-success badge-pill"><div id="total_no"></div></span>
+                              <span class="badge badge-success badge-pill"><div id="total_no_memoria"></div></span>
                             </li>
                           </ul>
                         </div>
@@ -108,21 +108,21 @@
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               Total
-                              <span class="badge badge-success badge-pill"><div id="total"></div></span>
+                              <span class="badge badge-success badge-pill"><div id="total_remanente"></div></span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               Positivas
-                              <span class="badge badge-success badge-pill"><div id="total_si"></div></span>
+                              <span class="badge badge-success badge-pill"><div id="total_si_remanente"></div></span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                               Negativas
-                              <span class="badge badge-success badge-pill"><div id="total_no"></div></span>
+                              <span class="badge badge-success badge-pill"><div id="total_no_remanente"></div></span>
                             </li>
                           </ul>
                         </div>
                         <div class="col">
                           <div class="row justify-content-center">
-                            <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#addmodal">
+                            <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalRemanente">
                               <span class="fa fa-plus-circle"></span> Encuesta Remanente
                             </span>
                           </div>
@@ -236,7 +236,7 @@
   <!--************************************************* FIN MODAL ENCUESTA MEMORIA ***********************************************-->
 
       <!--************************************************* MODAL ENCUESTA REMANENTE ***********************************************-->
-      <div class="modal fade" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="modalRemanente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -283,13 +283,23 @@
     $(document).ready(function(){
         $.ajaxSetup({"cache":false});
         //setInterval("loadOldMessages()",100);
-        setInterval("loadTotal()",100);
-        setInterval("loadSi()",100); 
-        setInterval("loadNo()",100); 
+        
+        /***********memoria********/
+        setInterval("loadTotalMemoria()",100);
+        setInterval("loadSiMemoria()",100); 
+        setInterval("loadNoMemoria()",100); 
         $('#encuestaMemoria').load('pregunta.php');
-        $('#total').load('total_respuestas.php');
-        $('#total_si').load('total_respuesta_si.php');
-        $('#total_no').load('total_respuesta_no.php');
+        $('#total_memoria').load('total_respuestas_memoria.php');
+        $('#total_si_memoria').load('total_respuesta_si_memoria.php');
+        $('#total_no_memoria').load('total_respuesta_no_memoria.php');
+        
+        /***********remanente********/
+        setInterval("loadTotalRemanente()",100);
+        setInterval("loadSiRemanente()",100); 
+        setInterval("loadNoRemanente()",100); 
+        $('#total_remanente').load('total_respuestas_remanente.php');
+        $('#total_si_remanente').load('total_respuesta_si_remanente.php');
+        $('#total_no_remanente').load('total_respuesta_no_remanente.php');
     });
 </script>
 
@@ -427,27 +437,27 @@ $(document).ready(function(){
     });
 
   });
-        var loadTotal=function(){
+        var loadTotalMemoria=function(){
         $.ajax({type: "POST",
-            url: "total_respuestas.php"
+            url: "total_respuestas_memoria.php"
         }).done(function( info ){
-            $("#total").html( info );
+            $("#total_memoria").html( info );
         });
     }
 
-        var loadSi=function(){
+        var loadSiMemoria=function(){
         $.ajax({type: "POST",
-            url: "total_respuesta_si.php"
+            url: "total_respuesta_si_memoria.php"
         }).done(function( info ){
-            $("#total_si").html( info );
+            $("#total_si_memoria").html( info );
         });
     }
 
-        var loadNo=function(){
+        var loadNoMemoria=function(){
         $.ajax({type: "POST",
-            url: "total_respuesta_no.php"
+            url: "total_respuesta_no_memoria.php"
         }).done(function( info ){
-            $("#total_no").html( info );
+            $("#total_no_memoria").html( info );
         });
     }
 
@@ -526,32 +536,32 @@ $(document).ready(function(){
             }
         });
         $('.group_remanente').trigger('change');
-        $('#addmodal').remove();
+        $('#modalRemanente').remove();
       }  
     });
 
   });
-        var loadTotal=function(){
+        var loadTotalRemanente=function(){
         $.ajax({type: "POST",
-            url: "total_respuestas.php"
+            url: "total_respuestas_remanente.php"
         }).done(function( info ){
-            $("#total").html( info );
+            $("#total_remanente").html( info );
         });
     }
 
-        var loadSi=function(){
+        var loadSiRemanente=function(){
         $.ajax({type: "POST",
-            url: "total_respuesta_si.php"
+            url: "total_respuesta_si_remanente.php"
         }).done(function( info ){
-            $("#total_si").html( info );
+            $("#total_si_remanente").html( info );
         });
     }
 
-        var loadNo=function(){
+        var loadNoRemanente=function(){
         $.ajax({type: "POST",
-            url: "total_respuesta_no.php"
+            url: "total_respuesta_no_remanente.php"
         }).done(function( info ){
-            $("#total_no").html( info );
+            $("#total_no_remanente").html( info );
         });
     }
 
