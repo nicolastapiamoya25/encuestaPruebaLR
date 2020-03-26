@@ -2,7 +2,7 @@
     require_once "php/conexion.php";
     $conexion=conexion();
 
-    $sql="CALL sp_total_encuesta_si";
+    $sql="CALL sp_total_encuesta_si_memoria";
     $result=mysqli_query($conexion,$sql);
  ?>
 

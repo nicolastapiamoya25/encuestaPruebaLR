@@ -44,27 +44,11 @@
                       <div class="row">
                         <div class="col">
                           <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KeAXSCFzMBk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/YZi5vam33ow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </div>
                         </div>
                       </div>
-                        <!-- CHAT                         
-                        <div class="col">
-                          <div id="chatstore"></div>
-                          <form id="frmAgregaMensaje">           
-                            <div class="form-group">
-                              <label>Nombre</label>
-                              <input class="form-control" type="text" name="nombre" placeholder="Ingrese su nombre">
-                            </div>
-                            <div class="form-group">
-                              <label>Mensaje</label>
-                              <textarea class="form-control" name="mensaje" pleaceholder="Ingresa tu mensaje" rows="3"></textarea>
-                            </div>
-                             <button type="button" class="btn btn-raised btn-primary" id="enviar" >Enviar</button>
-                          </form>
-                        </div>
-                      </div>
-                      FIN CHAT -->
+
                       <div class="row">
                         <div class="col">
                           <ul class="list-group">
@@ -84,16 +68,12 @@
                               Negativas
                               <span class="badge badge-success badge-pill"><div id="total_no"></div></span>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                              Nulo
-                              <span class="badge badge-success badge-pill"><div id="total_nulo"></div></span>
-                            </li>
                           </ul>
                         </div>
                         <div class="col">
                           <div class="row justify-content-center">
-                            <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#addmodal">
-                              <span class="fa fa-plus-circle"></span> Encuesta
+                            <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalMemoria">
+                              <span class="fa fa-plus-circle"></span> Encuesta Memoria
                             </span>
                           </div>
                         </div>
@@ -119,23 +99,57 @@
                           </div>
                         </div>
                       </div>
-                        <!-- CHAT                         
+                      <div class="row">
                         <div class="col">
-                          <div id="chatstore"></div>
-                          <form id="frmAgregaMensaje">           
-                            <div class="form-group">
-                              <label>Nombre</label>
-                              <input class="form-control" type="text" name="nombre" placeholder="Ingrese su nombre">
-                            </div>
-                            <div class="form-group">
-                              <label>Mensaje</label>
-                              <textarea class="form-control" name="mensaje" pleaceholder="Ingresa tu mensaje" rows="3"></textarea>
-                            </div>
-                             <button type="button" class="btn btn-raised btn-primary" id="enviar" >Enviar</button>
-                          </form>
+                          <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
+                              Respuestas
+                              <span class="badge badge-success badge-pill"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              Total
+                              <span class="badge badge-success badge-pill"><div id="total"></div></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              Positivas
+                              <span class="badge badge-success badge-pill"><div id="total_si"></div></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                              Negativas
+                              <span class="badge badge-success badge-pill"><div id="total_no"></div></span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col">
+                          <div class="row justify-content-center">
+                            <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#addmodal">
+                              <span class="fa fa-plus-circle"></span> Encuesta Remanente
+                            </span>
+                          </div>
                         </div>
                       </div>
-                      FIN CHAT -->
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                      <button id="cuota_social" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Item Fijar Cuota Social
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                      
+                      <div class="row">
+                        <div class="col">
+                          <div class="embed-responsive embed-responsive-16by9">
+                          <iframe src="https://www.youtube.com/embed/YZi5vam33ow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div>
+                        </div>
+                      </div>
+
                       <!--<div class="row">
                         <div class="col">
                           <ul class="list-group">
@@ -164,7 +178,7 @@
                         <div class="col">
                           <div class="row justify-content-center">
                             <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#addmodal">
-                              <span class="fa fa-plus-circle"></span> Encuesta
+                              <span class="fa fa-plus-circle"></span> Encuesta Cuota Social
                             </span>
                           </div>
                         </div>
@@ -183,49 +197,81 @@
             <div class="card-body">
 
 
-    <!--************************************************* agregar datosmodal ***********************************************-->
-  <div class="modal fade" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!--************************************************* MODAL ENCUESTA MEMORIA ***********************************************-->
+  <div class="modal fade" id="modalMemoria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><div id="encuesta"> </div></h5>
+          <h5 class="modal-title" id="exampleModalLabel"><div id="encuestaMemoria"> </div></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-            <form id="frmEncuesta">
+            <form id="frmEncuestaMemoria">
 
             <div class="form-group row">                
               <label class="col-sm-2 col-form-label">SI</label>
               <div class="col-sm-6">
-                <input type="checkbox" class="form-control form-control-sm group1" value="si" name="si" id="si">
+                <input type="checkbox" class="form-control form-control-sm group_memoria" value="si" name="si_memoria" id="si_memoria">
               </div>            
             </div>
 
             <div class="form-group row">
               <label class="col-sm-2 col-form-label">NO</label>
                 <div class="col-sm-6">
-                  <input type="checkbox" class="form-control form-control-sm group1" value="no" name="no" id="no">
+                  <input type="checkbox" class="form-control form-control-sm group_memoria" value="no" name="no_memoria" id="no_memoria">
               </div>
             </div>
-
-            <div class="form-group row">
-              <label class="col-sm-2 col-form-label">NULO</label>
-              <div class="col-sm-6">        
-                    <input type="checkbox" class="form-control form-control-sm group1" value="nulo" name="nulo" id="nulo">
-              </div>
-            </div>          
+        
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-raised btn-primary" id="btnResponder">Responder</button>
+          <button type="button" class="btn btn-raised btn-primary" id="btnResponderMemoria">Responder</button>
         </div>
       </div>
     </div>
   </div>
-  <!--************************************************* agregar datosmodal ***********************************************-->
+  <!--************************************************* FIN MODAL ENCUESTA MEMORIA ***********************************************-->
+
+      <!--************************************************* MODAL ENCUESTA REMANENTE ***********************************************-->
+      <div class="modal fade" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><div id="encuestaRemanente"> </div></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form id="frmEncuestaRemanente">
+
+            <div class="form-group row">                
+              <label class="col-sm-2 col-form-label">SI</label>
+              <div class="col-sm-6">
+                <input type="checkbox" class="form-control form-control-sm group_remanente" value="si" name="si_remanente" id="si_remanente">
+              </div>            
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">NO</label>
+                <div class="col-sm-6">
+                  <input type="checkbox" class="form-control form-control-sm group_remanente" value="no" name="no_remanente" id="no_remanente">
+              </div>
+            </div>
+        
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-raised btn-primary" id="btnResponderRemanente">Responder</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--************************************************* FIN MODAL ENCUESTA REMANENTE ***********************************************-->
             </div>
         </div>
     </div>
@@ -236,16 +282,14 @@
 <script>
     $(document).ready(function(){
         $.ajaxSetup({"cache":false});
-        setInterval("loadOldMessages()",100);
+        //setInterval("loadOldMessages()",100);
         setInterval("loadTotal()",100);
         setInterval("loadSi()",100); 
         setInterval("loadNo()",100); 
-        setInterval("loadNulo()",100); 
-        $('#encuesta').load('pregunta.php');
+        $('#encuestaMemoria').load('pregunta.php');
         $('#total').load('total_respuestas.php');
         $('#total_si').load('total_respuesta_si.php');
         $('#total_no').load('total_respuesta_no.php');
-        $('#total_nulo').load('total_respuesta_nulo.php');
     });
 </script>
 
@@ -264,7 +308,9 @@
   }
 </script>
 
-<script type="text/javascript">
+
+<!--*******************************JS CHAT**************************************-->
+<!-- <script type="text/javascript">
     $(document).ready(function(){
         $('#chatstore').load('chat.php');
 
@@ -301,63 +347,45 @@
             $("#chatstore").html( info );
         });
     }
-</script>
+</script> -->
+<!--*******************************FIN JS CHAT**************************************-->
 
+<!--*******************************JS MODAL ENCUESTA MEMORIA**************************************-->
 <script type="text/javascript">
 $(document).ready(function(){
     //carga en elemento encuesta el script en php
-    $('#encuesta').load('pregunta.php');
+    $('#encuestaMemoria').load('pregunta.php');
     //$('#encuesta2').load('pregunta.php');
       //escucha el elemto 'si'
-      $('#si').on( 'change', function() {
+      $('#si_memoria').on( 'change', function() {
         //si el elemento 'si' esta checkeado (truwe)
         if( $(this).is(':checked') ) {
         // Hacer que se escondan los checkbox
-            $('#no').hide();
-            $('#nulo').hide();
+            $('#no_memoria').hide();
         } else {
             // Hacer aparecer los checkbox
-            $('#no').show();
-            $('#nulo').show();
-            $('#si').show();
+            $('#no_memoria').show();
+            $('#si_memoria').show();
             //limpia los elementos group1
-            $('.group1').trigger('change');
+            $('.group_memoria').trigger('change');
         }
         });
 
-      $('#no').on( 'change', function() {
+      $('#no_memoria').on( 'change', function() {
         if( $(this).is(':checked') ) {
         // Hacer que se escondan los checkbox
-            $('#si').hide();
-            $('#nulo').hide();
+            $('#si_memoria').hide();
         } else {
             // Hacer aparecer los checkbox
-            $('#si').show();
-            $('#nulo').show();
-            $('#no').show();
+            $('#si_memoria').show();
+            $('#no_memoria').show();
             //limpia los elementos group1
-        $('.group1').trigger('change');
+        $('.group_memoria').trigger('change');
         }
         });
 
-      $('#nulo').on( 'change', function() {
-        if( $(this).is(':checked') ) {
-        // Hacer que se escondan los checkbox
-            $('#si').hide();
-            $('#no').hide();
-        } else {
-            // Hacer aparecer los checkbox
-            $('#si').show();
-            $('#no').show();
-            $('#nulo').show();
-            //limpia los elementos group1
-            $('.group1').trigger('change');
-        }
-        });
-
-      //ejemplo encuesta modal
       
-    $('#btnResponder').click(function(){
+    $('#btnResponderMemoria').click(function(){
         //al precionar boton responder 
       var nombre_encuesta = $('#memoria').text();
 
@@ -365,11 +393,11 @@ $(document).ready(function(){
         //declaro variable arreglo de respuesta (respuesta)
       var respuesta = [];
         //declaro variable y almaceno texto de encuesta (pregunta)
-      var pregunta = $('#encuesta').text();
+      var pregunta = $('#encuestaMemoria').text();
       //limpio el string sacando los espacios en blanco
       var pregunta = $.trim(pregunta);
       //busca en los elementos group1
-      $('.group1').each(function(){
+      $('.group_memoria').each(function(){
         //si hay uno checkeado
         if ($(this).is(":checked")) {
             //guarda su valor en variable respuesta
@@ -386,70 +414,19 @@ $(document).ready(function(){
             url:"php/insertarEncuesta.php",
             success:function(r){
             if(r==1){
-               $('#frmEncuesta')[0].reset();
+               $('#frmEncuestaMemoria')[0].reset();
                alertify.success("Respuesta Enviada");       
                 }else{
                     alertify.error("Respuesta No Enviada");
                 }           
             }
         });
-        $('.group1').trigger('change');
-        $('#addmodal').remove();
+        $('.group_memoria').trigger('change');
+        $('#modalMemoria').remove();
       }  
     });
 
   });
-          //ejemplo encuesta2 collader
-      
-    //$('#btnResponder2').click(function(){
-        //al precionar boton responder 
-        //declaro variable arreglo de respuesta (respuesta)
-      //var respuesta = [];
-        //declaro variable y almaceno texto de encuesta (pregunta)
-      //var pregunta = $('#encuesta2').text();
-      //limpio el string sacando los espacios en blanco
-      //var pregunta = $.trim(pregunta);
-      //busca en los elementos group1
-      //$('.group1').each(function(){
-        //si hay uno checkeado
-        //if ($(this).is(":checked")) {
-            //guarda su valor en variable respuesta
-           // respuesta.push($(this).val());
-       // }
-      //});
-      /*respuesta = respuesta.toString();
-      if (respuesta == "") {
-        alertify.error("Debe responder la encuesta");
-      }else{
-        $.ajax({
-            type:"POST",
-            data:{respuesta:respuesta, pregunta:pregunta},
-            url:"php/insertarEncuesta.php",
-            success:function(r){
-            if(r==1){
-               $('#frmEncuesta')[0].reset();
-               $('#total').load('total_respuestas.php');
-               $('#total_si').load('total_respuesta_si.php');
-               $('#total_no').load('total_respuesta_no.php');
-               $('#total_nulo').load('total_respuesta_nulo.php');
-               $.ajaxSetup({"cache":false});
-              setInterval("loadTotal()",500);
-              setInterval("loadSi()",500); 
-              setInterval("loadNo()",500); 
-              setInterval("loadNulo()",500);   
-               alertify.success("Respuesta Enviada");       
-                }else{
-                    alertify.error("Respuesta No Enviada");
-                }           
-            }
-        });
-        $('.group1').trigger('change');
-        $('#addmodal').remove();
-      }  
-    });
-*/
-
-
         var loadTotal=function(){
         $.ajax({type: "POST",
             url: "total_respuestas.php"
@@ -474,32 +451,57 @@ $(document).ready(function(){
         });
     }
 
-        var loadNulo=function(){
-        $.ajax({type: "POST",
-            url: "total_respuesta_nulo.php"
-        }).done(function( info ){
-            $("#total_nulo").html( info );
-        });
-    }
-
 </script>
+<!--*******************************FIN JS MODAL ENCUESTA MEMORIA**************************************-->
 
-
+<!--*******************************JS MODAL ENCUESTA REMANENTE**************************************-->
 <script type="text/javascript">
-  /*$('#btnResponder').click(function(){
+$(document).ready(function(){
+    //carga en elemento encuesta el script en php
+    $('#encuestaRemanente').load('pregunta.php');
+    //$('#encuesta2').load('pregunta.php');
+      //escucha el elemto 'si'
+      $('#si_remanente').on( 'change', function() {
+        //si el elemento 'si' esta checkeado (truwe)
+        if( $(this).is(':checked') ) {
+        // Hacer que se escondan los checkbox
+            $('#no_remanente').hide();
+        } else {
+            // Hacer aparecer los checkbox
+            $('#no_remanente').show();
+            $('#si_remanente').show();
+            //limpia los elementos group1
+            $('.group_remanente').trigger('change');
+        }
+        });
+
+      $('#no_remanente').on( 'change', function() {
+        if( $(this).is(':checked') ) {
+        // Hacer que se escondan los checkbox
+            $('#si_remanente').hide();
+        } else {
+            // Hacer aparecer los checkbox
+            $('#si_remanente').show();
+            $('#no_remanente').show();
+            //limpia los elementos group1
+        $('.group_remanente').trigger('change');
+        }
+        });
+
+      
+    $('#btnResponderRemanente').click(function(){
         //al precionar boton responder 
+      var nombre_encuesta = $('#remanente').text();
+
+      var nombre_encuesta = $.trim(nombre_encuesta);
         //declaro variable arreglo de respuesta (respuesta)
       var respuesta = [];
         //declaro variable y almaceno texto de encuesta (pregunta)
-      var nombre_encuesta = $('#memoria').text();
-
-      var nombre_encuesta = $.trim(nombre_encuesta);
-
-      var pregunta = $('#encuesta').text();
+      var pregunta = $('#encuestaRemanente').text();
       //limpio el string sacando los espacios en blanco
       var pregunta = $.trim(pregunta);
       //busca en los elementos group1
-      $('.group1').each(function(){
+      $('.group_remanente').each(function(){
         //si hay uno checkeado
         if ($(this).is(":checked")) {
             //guarda su valor en variable respuesta
@@ -516,20 +518,42 @@ $(document).ready(function(){
             url:"php/insertarEncuesta.php",
             success:function(r){
             if(r==1){
-               $('#frmEncuesta')[0].reset();
+               $('#frmEncuestaRemanente')[0].reset();
                alertify.success("Respuesta Enviada");       
                 }else{
                     alertify.error("Respuesta No Enviada");
                 }           
             }
         });
-        $('.group1').trigger('change');
+        $('.group_remanente').trigger('change');
         $('#addmodal').remove();
       }  
-    });*/
+    });
 
+  });
+        var loadTotal=function(){
+        $.ajax({type: "POST",
+            url: "total_respuestas.php"
+        }).done(function( info ){
+            $("#total").html( info );
+        });
+    }
 
+        var loadSi=function(){
+        $.ajax({type: "POST",
+            url: "total_respuesta_si.php"
+        }).done(function( info ){
+            $("#total_si").html( info );
+        });
+    }
+
+        var loadNo=function(){
+        $.ajax({type: "POST",
+            url: "total_respuesta_no.php"
+        }).done(function( info ){
+            $("#total_no").html( info );
+        });
+    }
 
 </script>
-
-
+<!--*******************************FIN JS MODAL ENCUESTA REMANENTE**************************************-->
