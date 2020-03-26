@@ -29,7 +29,7 @@
           <div class="row">
             <div class="col">
               <div class="accordion" id="accordionExample">
-              <!--****************************************CARD MEMORIA********************************************-->
+<!--****************************************CARD MEMORIA********************************************-->
                 <div class="card">
                   <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
@@ -39,7 +39,7 @@
                     </h2>
                   </div>
 
-                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div class="card-body">
 
                       <div class="row">
@@ -92,9 +92,9 @@
 
                   </div>
                 </div>
-            <!--****************************************FIN CARD MEMORIA********************************************-->
+<!--****************************************FIN CARD MEMORIA********************************************-->
 
-             <!--****************************************CARD REMANENTE********************************************-->
+<!--****************************************CARD REMANENTE********************************************-->
 
                 <div class="card">
                   <div class="card-header" id="headingTwo">
@@ -221,15 +221,15 @@
                   </div>
                 </div>
                             
-            <!--****************************************FIN CARD CUOTA********************************************-->
+<!--****************************************FIN CARD CUOTA********************************************-->
 
             
-      <!--****************************************CARD ASIGNACION********************************************-->
+<!--****************************************CARD ASIGNACION********************************************-->
              <div class="card">
                <div class="card-header" id="headingford">
                  <h2 class="mb-0">
-                   <button id="asigancion_consejero" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseford" aria-expanded="false" aria-controls="collapseford">
-                     Item Fijar Asiganación de Consejeros
+                   <button id="asignacion_consejero" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseford" aria-expanded="false" aria-controls="collapseford">
+                     Item Fijar Asignación de Consejeros
                    </button>
                  </h2>
                </div>
@@ -248,13 +248,13 @@
                        <div class="col">
                        <div class="card text-center">
                          <div class="card-header">
-                         Asiganación de Consejeros
+                         Asignación de Consejeros
                          </div>
                          <div class="card-body">
-                         <h5 class="card-title">Encuesta de Asiganación de Consejeros</h5>
+                         <h5 class="card-title">Encuesta de Asignación de Consejeros</h5>
                            <p class="card-text">Preciona el botón para responder la encuesta.</p>   
-                           <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalAsiganacion">
-                             <span class="fa fa-plus-circle"></span> Encuesta Asiganación de Consejeros
+                           <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalAsignacion">
+                             <span class="fa fa-plus-circle"></span> Encuesta Asignación de Consejeros
                            </span>
                          </div>
                        </div>                         
@@ -270,15 +270,15 @@
                          </li>
                          <li class="list-group-item d-flex justify-content-between align-items-center">
                            Total
-                           <span class="badge badge-success badge-pill"><div id="total_asiganacion"></div></span>
+                           <span class="badge badge-success badge-pill"><div id="total_asignacion"></div></span>
                          </li>
                          <li class="list-group-item d-flex justify-content-between align-items-center">
                            Positivas
-                           <span class="badge badge-success badge-pill"><div id="total_si_asiganacion"></div></span>
+                           <span class="badge badge-success badge-pill"><div id="total_si_asignacion"></div></span>
                          </li>
                          <li class="list-group-item d-flex justify-content-between align-items-center">
                            Negativas
-                           <span class="badge badge-success badge-pill"><div id="total_no_asiganacion"></div></span>
+                           <span class="badge badge-success badge-pill"><div id="total_no_asignacion"></div></span>
                          </li>
                        </ul>
                      </div>
@@ -491,12 +491,12 @@
         $('#total_no_cuota').load('total_respuesta_no_cuota.php');
 
         /***********asiganacion********/
-        setInterval("loadTotalAsiganacion()",100);
-        setInterval("loadSiAsiganacion()",100); 
-        setInterval("loadNoAsiganacion()",100); 
-        $('#total_asiganacion').load('total_respuestas_asiganacion.php');
-        $('#total_si_asiganacion').load('total_respuesta_si_asiganacion.php');
-        $('#total_no_asiganacion').load('total_respuesta_no_asiganacion.php');
+        setInterval("loadTotalAsignacion()",100);
+        setInterval("loadSiAsignacion()",100); 
+        setInterval("loadNoAsignacion()",100); 
+        $('#total_asignacion').load('total_respuestas_asignacion.php');
+        $('#total_si_asignacion').load('total_respuesta_si_asignacion.php');
+        $('#total_no_asignacion').load('total_respuesta_no_asignacion.php');
     });
 </script>
 
