@@ -1,6 +1,3 @@
-<?php
-
-?>
 <?php require_once "dependencias.php"; ?>
 <!doctype html>
 <html lang="en">
@@ -22,7 +19,7 @@
           </div>   
           <div class="row justify-content-md-center">
             <div class="col-md-auto">
-		          <h1>Memoria Anual 2020</h1>
+		          <h1>Junta General de Socios 2020</h1>
             </div>
           </div>
 
@@ -39,7 +36,7 @@
                     </h2>
                   </div>
 
-                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div class="card-body">
 
                       <div class="row">
@@ -288,6 +285,7 @@
              </div>           
                   <!--****************************************FIN CARD ASIGNACION********************************************-->
 
+               
               </div>
             </div>
           </div>
@@ -519,15 +517,12 @@
 <!-- <script type="text/javascript">
     $(document).ready(function(){
         $('#chatstore').load('chat.php');
-
     $('#enviar').click(function(){
       if(validarFormVacio('frmAgregaMensaje') > 0){
         alertify.alert("Debes llenar todos los campos por favor!");
         return false;
       }
-
       datos=$('#frmAgregaMensaje').serialize();
-
       $.ajax({
         type:"POST",
         data:datos,

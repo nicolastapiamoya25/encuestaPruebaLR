@@ -1,7 +1,7 @@
 <?php 
 
 	function conexion(){
-		return mysqli_connect('localhost','root','','appchat');
+		return mysqli_connect('localhost','root','','mydb');
 	}
 
 	function formatearFecha($fecha){
