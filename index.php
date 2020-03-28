@@ -24,32 +24,33 @@
 		          <h1>Junta General de Socios 2020</h1>
             </div>
             <div class="col-md-auto">
-		          <h3>Bienvenido <?php echo $_SESSION['username']; ?></h3>
+		          <h3>Bienvenido <?php echo $_SESSION['username']; ?><div id="id_usuario_dato"><?php echo $_SESSION['idUser']; ?></div></h3>
             </div>
           </div>
 
           <div class="row">
             <div class="col">
               <div class="accordion" id="accordionExample">
-<!--****************************************CARD MEMORIA********************************************-->
+                      <!--****************************************CARD MEMORIA********************************************-->
                 <div class="card">
                   <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
-                      <button id="memoria" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        
-<?php 
-    require_once "php/conexion.php";
-    $conexion=conexion();
+                      <button id="memoria" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"> 
+                      <?php 
+                          require_once "php/conexion.php";
+                          $conexion=conexion();
 
-    $sql="select id_encuesta, nombre_encuesta from encuesta where id_encuesta=3";
-    $result=mysqli_query($conexion,$sql);
+                          $sql="select id_encuesta, nombre_encuesta from encuesta where id_encuesta=3";
+                          $result=mysqli_query($conexion,$sql);
 
-    while ($ver=mysqli_fetch_row($result)):
-?>
-                    <div id=datos-pregunta>
-                      <?php echo $ver[1]; ?>
-                    </div>
-<?php endwhile; mysqli_close($conexion);?>
+                          while ($ver=mysqli_fetch_row($result)):
+                      ?>
+                                          <div id=datos-pregunta>
+                                          <div id="id_encuesta_dato_memoria"><?php echo $ver[0]; ?></div><?php echo $ver[1]; ?>
+                                          </div>
+                      <?php endwhile; 
+                      mysqli_close($conexion);
+                      ?>
                       </button>
                     </h2>
                   </div>
@@ -107,15 +108,29 @@
 
                   </div>
                 </div>
-<!--****************************************FIN CARD MEMORIA********************************************-->
+                      <!--****************************************FIN CARD MEMORIA********************************************-->
 
-<!--****************************************CARD REMANENTE********************************************-->
+                      <!--****************************************CARD REMANENTE********************************************-->
 
                 <div class="card">
                   <div class="card-header" id="headingTwo">
                     <h2 class="mb-0">
                       <button id="remanente" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Item Distribucion de Remanente
+                      <?php 
+                          require_once "php/conexion.php";
+                          $conexion=conexion();
+
+                          $sql="select id_encuesta, nombre_encuesta from encuesta where id_encuesta=2";
+                          $result=mysqli_query($conexion,$sql);
+
+                          while ($ver=mysqli_fetch_row($result)):
+                      ?>
+                                          <div id=datos-pregunta>
+                                          <div id="id_encuesta_dato_remanente"><?php echo $ver[0]; ?></div><?php echo $ver[1]; ?>
+                                          </div>
+                      <?php endwhile; 
+                      mysqli_close($conexion);
+                      ?>
                       </button>
                     </h2>
                   </div>
@@ -171,14 +186,28 @@
                     </div>
                   </div>
                 </div>
-<!--****************************************FIN CARD REMANENTE********************************************-->
+                        <!--****************************************FIN CARD REMANENTE********************************************-->
 
-<!--****************************************CARD CUOTA********************************************-->
+                        <!--****************************************CARD CUOTA********************************************-->
                 <div class="card">
                   <div class="card-header" id="headingTree">
                     <h2 class="mb-0">
                       <button id="cuota_social" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTree" aria-expanded="false" aria-controls="collapseTree">
-                        Item Fijar Cuota Social
+                      <?php 
+                          require_once "php/conexion.php";
+                          $conexion=conexion();
+
+                          $sql="select id_encuesta, nombre_encuesta from encuesta where id_encuesta=1";
+                          $result=mysqli_query($conexion,$sql);
+
+                          while ($ver=mysqli_fetch_row($result)):
+                      ?>
+                                          <div id=datos-pregunta>
+                                          <div id="id_encuesta_dato_cuota"><?php echo $ver[0]; ?></div><?php echo $ver[1]; ?>
+                                          </div>
+                      <?php endwhile; 
+                      mysqli_close($conexion);
+                      ?>
                       </button>
                     </h2>
                   </div>
@@ -236,15 +265,29 @@
                   </div>
                 </div>
                             
-<!--****************************************FIN CARD CUOTA********************************************-->
+                    <!--****************************************FIN CARD CUOTA********************************************-->
 
-            
-<!--****************************************CARD ASIGNACION********************************************-->
+                                
+                    <!--****************************************CARD ASIGNACION********************************************-->
              <div class="card">
                <div class="card-header" id="headingford">
                  <h2 class="mb-0">
                    <button id="asignacion_consejero" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseford" aria-expanded="false" aria-controls="collapseford">
-                     Item Fijar Asignación de Consejeros
+                   <?php 
+                          require_once "php/conexion.php";
+                          $conexion=conexion();
+
+                          $sql="select id_encuesta, nombre_encuesta from encuesta where id_encuesta=4";
+                          $result=mysqli_query($conexion,$sql);
+
+                          while ($ver=mysqli_fetch_row($result)):
+                      ?>
+                                          <div id=datos-pregunta>
+                                          <div id="id_encuesta_dato_asignacion"><?php echo $ver[0]; ?></div><?php echo $ver[1]; ?>
+                                          </div>
+                      <?php endwhile; 
+                      mysqli_close($conexion);
+                      ?>
                    </button>
                  </h2>
                </div>
@@ -305,10 +348,33 @@
 
                
               </div>
+              
+              <div class="row">
+                     <div class="col">
+                       <ul class="list-group">
+                         <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
+                           Respuestas
+                           <span class="badge badge-success badge-pill"></span>
+                         </li>
+                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                           Total
+                           <span class="badge badge-success badge-pill"><div id="total_user"></div></span>
+                         </li>
+                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                           Positivas
+                           <span class="badge badge-success badge-pill"><div id="total_si_user"></div></span>
+                         </li>
+                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                           Negativas
+                           <span class="badge badge-success badge-pill"><div id="total_no_user"></div></span>
+                         </li>
+                       </ul>
+                     </div>
+                   </div>
             </div>
           </div>
   </div>
-  <!--************************************************* fin container ***********************************************-->
+              <!--************************************************* fin container ***********************************************-->
  <div class="row">
     <div class="col-lg-12">
         <div class="card">
@@ -320,7 +386,22 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><div id="encuestaMemoria"> </div></h5>
+          <h5 class="modal-title" id="exampleModalLabel">
+          <?php 
+            $conexion=conexion();
+
+            $sql="select id_pregunta, pregunta from pregunta where encuesta_id_encuesta=3";
+            $result=mysqli_query($conexion,$sql);
+
+            while ($ver=mysqli_fetch_row($result)):
+            ?>
+                                <div id=datos-pregunta>
+                                <div id="id_pregunta_dato_memoria"><?php echo $ver[0]; ?></div><?php echo $ver[1]; ?>
+                                </div>
+            <?php endwhile; 
+            mysqli_close($conexion);
+            ?>
+          </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -358,7 +439,22 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><div id="encuestaRemanente"> </div></h5>
+          <h5 class="modal-title" id="exampleModalLabel"> 
+            <?php 
+            $conexion=conexion();
+
+            $sql="select id_pregunta, pregunta from pregunta where encuesta_id_encuesta=2";
+            $result=mysqli_query($conexion,$sql);
+
+            while ($ver=mysqli_fetch_row($result)):
+            ?>
+                            <div id=datos-pregunta>
+                            <div id="id_pregunta_dato_remanente"><?php echo $ver[0]; ?></div><?php echo $ver[1]; ?>
+                            </div>
+            <?php endwhile; 
+            mysqli_close($conexion);
+            ?>
+            </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -396,7 +492,22 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><div id="encuestaCuota"> </div></h5>
+          <h5 class="modal-title" id="exampleModalLabel">
+          <?php 
+            $conexion=conexion();
+
+            $sql="select id_pregunta, pregunta from pregunta where encuesta_id_encuesta=1";
+            $result=mysqli_query($conexion,$sql);
+
+            while ($ver=mysqli_fetch_row($result)):
+            ?>
+                            <div id=datos-pregunta>
+                            <div id="id_pregunta_dato_cuota"><?php echo $ver[0]; ?></div><?php echo $ver[1]; ?>
+                            </div>
+            <?php endwhile; 
+            mysqli_close($conexion);
+            ?>
+            </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -434,7 +545,22 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><div id="encuestaAsignacion"> </div></h5>
+          <h5 class="modal-title" id="exampleModalLabel">
+          <?php 
+            $conexion=conexion();
+
+            $sql="select id_pregunta, pregunta from pregunta where encuesta_id_encuesta=4";
+            $result=mysqli_query($conexion,$sql);
+
+            while ($ver=mysqli_fetch_row($result)):
+            ?>
+                            <div id=datos-pregunta>
+                            <div id="id_pregunta_dato_asignacion"><?php echo $ver[0]; ?></div><?php echo $ver[1]; ?>
+                            </div>
+            <?php endwhile; 
+            mysqli_close($conexion);
+            ?>
+          </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -480,15 +606,21 @@
     $(document).ready(function(){
         $.ajaxSetup({"cache":false});
         //setInterval("loadOldMessages()",100);
+        $('#id_usuario_dato').hide();
         
         /***********memoria********/
         setInterval("loadTotalMemoria()",100);
         setInterval("loadSiMemoria()",100); 
-        setInterval("loadNoMemoria()",100); 
-        $('#encuestaMemoria').load('pregunta.php');
+        setInterval("loadNoMemoria()",100);
+        setInterval("loadTotalUser()",100);  
+        //$('#encuestaMemoria').load('pregunta.php');
         $('#total_memoria').load('total_respuestas_memoria.php');
         $('#total_si_memoria').load('total_respuesta_si_memoria.php');
         $('#total_no_memoria').load('total_respuesta_no_memoria.php');
+        $('#id_encuesta_dato_memoria').hide();
+        $('#id_pregunta_dato_memoria').hide();
+        $('#total_user').load('total_respuestas_user.php');
+        
         
         /***********remanente********/
         setInterval("loadTotalRemanente()",100);
@@ -497,6 +629,9 @@
         $('#total_remanente').load('total_respuestas_remanente.php');
         $('#total_si_remanente').load('total_respuesta_si_remanente.php');
         $('#total_no_remanente').load('total_respuesta_no_remanente.php');
+        $('#id_encuesta_dato_remanente').hide();
+        $('#id_pregunta_dato_remanente').hide();
+        
 
         /***********cuota social********/
         setInterval("loadTotalCuota()",100);
@@ -505,14 +640,18 @@
         $('#total_cuota').load('total_respuestas_cuota.php');
         $('#total_si_cuota').load('total_respuesta_si_cuota.php');
         $('#total_no_cuota').load('total_respuesta_no_cuota.php');
+        $('#id_encuesta_dato_cuota').hide();
+        $('#id_pregunta_dato_cuota').hide();
 
-        /***********asiganacion********/
+        /***********asignacion********/
         setInterval("loadTotalAsignacion()",100);
         setInterval("loadSiAsignacion()",100); 
         setInterval("loadNoAsignacion()",100); 
         $('#total_asignacion').load('total_respuestas_asignacion.php');
         $('#total_si_asignacion').load('total_respuesta_si_asignacion.php');
         $('#total_no_asignacion').load('total_respuesta_no_asignacion.php');
+        $('#id_encuesta_dato_asignacion').hide();
+        $('#id_pregunta_dato_asignacion').hide();
     });
 </script>
 
@@ -573,7 +712,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
     //carga en elemento encuesta el script en php
-    $('#encuestaMemoria').load('pregunta.php');
+    //$('#encuestaMemoria').load('pregunta.php');
     //$('#encuesta2').load('pregunta.php');
       //escucha el elemto 'si'
       $('#si_memoria').on( 'change', function() {
@@ -606,15 +745,25 @@ $(document).ready(function(){
       
     $('#btnResponderMemoria').click(function(){
         //al precionar boton responder 
-      var nombre_encuesta = $('#memoria').text();
+      var id_encuesta = $('#id_encuesta_dato_memoria').text();
 
-      var nombre_encuesta = $.trim(nombre_encuesta);
+      var id_encuesta = $.trim(id_encuesta);
+
+      var id_encuesta = parseInt(id_encuesta);
         //declaro variable arreglo de respuesta (respuesta)
       var respuesta = [];
         //declaro variable y almaceno texto de encuesta (pregunta)
-      var pregunta = $('#encuestaMemoria').text();
+      var id_pregunta = $('#id_pregunta_dato_memoria').text();
       //limpio el string sacando los espacios en blanco
-      var pregunta = $.trim(pregunta);
+      var id_pregunta = $.trim(id_pregunta);
+
+      var id_pregunta = parseInt(id_pregunta);
+
+      var id_usuario = $('#id_usuario_dato').text();
+      
+      var id_usuario = $.trim(id_usuario);
+
+      var id_usuario = parseInt(id_usuario);
       //busca en los elementos group1
       $('.group_memoria').each(function(){
         //si hay uno checkeado
@@ -629,7 +778,7 @@ $(document).ready(function(){
       }else{
         $.ajax({
             type:"POST",
-            data:{respuesta:respuesta, pregunta:pregunta, nombre_encuesta:nombre_encuesta},
+            data:{respuesta:respuesta, id_pregunta:id_pregunta, id_encuesta:id_encuesta, id_usuario:id_usuario},
             url:"php/insertarEncuesta.php",
             success:function(r){
             if(r==1){
@@ -669,6 +818,15 @@ $(document).ready(function(){
             $("#total_no_memoria").html( info );
         });
     }
+
+    // total user
+        var loadTotalUser=function(){
+        $.ajax({type: "POST",
+            url: "total_respuestas_user.php"
+        }).done(function( info ){
+            $("#total_user").html( info );
+        });
+    }
 </script>
 <!--*******************************FIN JS MODAL ENCUESTA MEMORIA**************************************-->
 
@@ -676,7 +834,7 @@ $(document).ready(function(){
 <script type="text/javascript">
 $(document).ready(function(){
     //carga en elemento encuesta el script en php
-    $('#encuestaRemanente').load('pregunta.php');
+    //$('#encuestaRemanente').load('pregunta.php');
     //$('#encuesta2').load('pregunta.php');
       //escucha el elemto 'si'
       $('#si_remanente').on( 'change', function() {
@@ -709,15 +867,25 @@ $(document).ready(function(){
       
     $('#btnResponderRemanente').click(function(){
         //al precionar boton responder 
-      var nombre_encuesta = $('#remanente').text();
+        var id_encuesta = $('#id_encuesta_dato_remanente').text();
 
-      var nombre_encuesta = $.trim(nombre_encuesta);
-        //declaro variable arreglo de respuesta (respuesta)
-      var respuesta = [];
-        //declaro variable y almaceno texto de encuesta (pregunta)
-      var pregunta = $('#encuestaRemanente').text();
-      //limpio el string sacando los espacios en blanco
-      var pregunta = $.trim(pregunta);
+        var id_encuesta = $.trim(id_encuesta);
+
+        var id_encuesta = parseInt(id_encuesta);
+          //declaro variable arreglo de respuesta (respuesta)
+        var respuesta = [];
+          //declaro variable y almaceno texto de encuesta (pregunta)
+        var id_pregunta = $('#id_pregunta_dato_remanente').text();
+        //limpio el string sacando los espacios en blanco
+        var id_pregunta = $.trim(id_pregunta);
+
+        var id_pregunta = parseInt(id_pregunta);
+
+        var id_usuario = $('#id_usuario_dato').text();
+
+        var id_usuario = $.trim(id_usuario);
+
+        var id_usuario = parseInt(id_usuario);
       //busca en los elementos group1
       $('.group_remanente').each(function(){
         //si hay uno checkeado
@@ -732,7 +900,7 @@ $(document).ready(function(){
       }else{
         $.ajax({
             type:"POST",
-            data:{respuesta:respuesta, pregunta:pregunta, nombre_encuesta:nombre_encuesta},
+            data:{respuesta:respuesta, id_pregunta:id_pregunta, id_encuesta:id_encuesta, id_usuario:id_usuario},
             url:"php/insertarEncuesta.php",
             success:function(r){
             if(r==1){
@@ -780,7 +948,7 @@ $(document).ready(function(){
 <script type="text/javascript">
 $(document).ready(function(){
     //carga en elemento encuesta el script en php
-    $('#encuestaCuota').load('pregunta.php');
+    //$('#encuestaCuota').load('pregunta.php');
     //$('#encuesta2').load('pregunta.php');
       //escucha el elemto 'si'
       $('#si_cuota').on( 'change', function() {
@@ -813,15 +981,25 @@ $(document).ready(function(){
       
     $('#btnResponderCuota').click(function(){
         //al precionar boton responder 
-      var nombre_encuesta = $('#cuota_social').text();
+        var id_encuesta = $('#id_encuesta_dato_cuota').text();
 
-      var nombre_encuesta = $.trim(nombre_encuesta);
-        //declaro variable arreglo de respuesta (respuesta)
-      var respuesta = [];
-        //declaro variable y almaceno texto de encuesta (pregunta)
-      var pregunta = $('#encuestaCuota').text();
-      //limpio el string sacando los espacios en blanco
-      var pregunta = $.trim(pregunta);
+        var id_encuesta = $.trim(id_encuesta);
+
+        var id_encuesta = parseInt(id_encuesta);
+          //declaro variable arreglo de respuesta (respuesta)
+        var respuesta = [];
+          //declaro variable y almaceno texto de encuesta (pregunta)
+        var id_pregunta = $('#id_pregunta_dato_cuota').text();
+        //limpio el string sacando los espacios en blanco
+        var id_pregunta = $.trim(id_pregunta);
+
+        var id_pregunta = parseInt(id_pregunta);
+
+        var id_usuario = $('#id_usuario_dato').text();
+
+        var id_usuario = $.trim(id_usuario);
+
+        var id_usuario = parseInt(id_usuario);
       //busca en los elementos group1
       $('.group_cuota').each(function(){
         //si hay uno checkeado
@@ -836,7 +1014,7 @@ $(document).ready(function(){
       }else{
         $.ajax({
             type:"POST",
-            data:{respuesta:respuesta, pregunta:pregunta, nombre_encuesta:nombre_encuesta},
+            data:{respuesta:respuesta, id_pregunta:id_pregunta, id_encuesta:id_encuesta, id_usuario:id_usuario},
             url:"php/insertarEncuesta.php",
             success:function(r){
             if(r==1){
@@ -883,7 +1061,7 @@ $(document).ready(function(){
 <script type="text/javascript">
 $(document).ready(function(){
     //carga en elemento encuesta el script en php
-    $('#encuestaAsignacion').load('pregunta.php');
+    //$('#encuestaAsignacion').load('pregunta.php');
     //$('#encuesta2').load('pregunta.php');
       //escucha el elemto 'si'
       $('#si_asignacion').on( 'change', function() {
@@ -916,15 +1094,25 @@ $(document).ready(function(){
       
     $('#btnResponderAsignacion').click(function(){
         //al precionar boton responder 
-      var nombre_encuesta = $('#asignacion_consejero').text();
+        var id_encuesta = $('#id_encuesta_dato_asignacion').text();
 
-      var nombre_encuesta = $.trim(nombre_encuesta);
-        //declaro variable arreglo de respuesta (respuesta)
-      var respuesta = [];
-        //declaro variable y almaceno texto de encuesta (pregunta)
-      var pregunta = $('#encuestaAsignacion').text();
-      //limpio el string sacando los espacios en blanco
-      var pregunta = $.trim(pregunta);
+        var id_encuesta = $.trim(id_encuesta);
+
+        var id_encuesta = parseInt(id_encuesta);
+          //declaro variable arreglo de respuesta (respuesta)
+        var respuesta = [];
+          //declaro variable y almaceno texto de encuesta (pregunta)
+        var id_pregunta = $('#id_pregunta_dato_asignacion').text();
+        //limpio el string sacando los espacios en blanco
+        var id_pregunta = $.trim(id_pregunta);
+
+        var id_pregunta = parseInt(id_pregunta);
+
+        var id_usuario = $('#id_usuario_dato').text();
+
+        var id_usuario = $.trim(id_usuario);
+
+        var id_usuario = parseInt(id_usuario);
       //busca en los elementos group1
       $('.group_asignacion').each(function(){
         //si hay uno checkeado
@@ -939,7 +1127,7 @@ $(document).ready(function(){
       }else{
         $.ajax({
             type:"POST",
-            data:{respuesta:respuesta, pregunta:pregunta, nombre_encuesta:nombre_encuesta},
+            data:{respuesta:respuesta, id_pregunta:id_pregunta, id_encuesta:id_encuesta, id_usuario:id_usuario},
             url:"php/insertarEncuesta.php",
             success:function(r){
             if(r==1){
@@ -980,4 +1168,5 @@ $(document).ready(function(){
         });
     }
 </script>
+
 <!--*******************************FIN JS MODAL ENCUESTA ASIGNACION**************************************-->
