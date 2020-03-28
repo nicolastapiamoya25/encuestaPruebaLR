@@ -1,4 +1,6 @@
-<?php require_once "dependencias.php"; ?>
+<?php require_once "dependencias.php"; 
+      session_start();    
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,12 +16,15 @@
         <div class="container">
          <div class="row">    
             <div class="col">
-		          <img src="lr.jpg" class="img-fluid">
+		          <img src="lr.jpg" class="img-fluid" alt="Responsive image">
             </div> 
           </div>   
           <div class="row justify-content-md-center">
             <div class="col-md-auto">
 		          <h1>Junta General de Socios 2020</h1>
+            </div>
+            <div class="col-md-auto">
+		          <h3>Bienvenido <?php echo $_SESSION['username']; ?></h3>
             </div>
           </div>
 
@@ -31,7 +36,20 @@
                   <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
                       <button id="memoria" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        Item Memoria
+                        
+<?php 
+    require_once "php/conexion.php";
+    $conexion=conexion();
+
+    $sql="select id_encuesta, nombre_encuesta from encuesta where id_encuesta=3";
+    $result=mysqli_query($conexion,$sql);
+
+    while ($ver=mysqli_fetch_row($result)):
+?>
+                    <div id=datos-pregunta>
+                      <?php echo $ver[1]; ?>
+                    </div>
+<?php endwhile; mysqli_close($conexion);?>
                       </button>
                     </h2>
                   </div>
