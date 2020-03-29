@@ -16,15 +16,15 @@
         <div class="container">
          <div class="row">    
             <div class="col">
+            <div class="col-md-auto">
+		          <h3>Bienvenido <?php echo $_SESSION['username']; ?><div id="id_usuario_dato"><?php echo $_SESSION['idUser']; ?></div></h3>
+            </div>
 		          <img src="lr.jpg" class="img-fluid" alt="Responsive image">
             </div> 
           </div>   
           <div class="row justify-content-md-center">
             <div class="col-md-auto">
 		          <h1>Junta General de Socios 2020</h1>
-            </div>
-            <div class="col-md-auto">
-		          <h3>Bienvenido <?php echo $_SESSION['username']; ?><div id="id_usuario_dato"><?php echo $_SESSION['idUser']; ?></div></h3>
             </div>
           </div>
 
@@ -82,30 +82,6 @@
                           </div>                         
                           </div>
                        </div>
-
-                      <div class="row">
-                        <div class="col">
-                          <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
-                              Total Respuestas Socios
-                              <span class="badge badge-success badge-pill"></span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                              Total
-                              <span class="badge badge-success badge-pill"><div id="total_memoria"></div></span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                              Positivas
-                              <span class="badge badge-success badge-pill"><div id="total_si_memoria"></div></span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                              Negativas
-                              <span class="badge badge-success badge-pill"><div id="total_no_memoria"></div></span>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-
                   </div>
                 </div>
                       <!--****************************************FIN CARD MEMORIA********************************************-->
@@ -159,28 +135,6 @@
                             </div>
 
                           </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                          <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
-                              Respuestas
-                              <span class="badge badge-success badge-pill"></span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                              Total
-                              <span class="badge badge-success badge-pill"><div id="total_remanente"></div></span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                              Positivas
-                              <span class="badge badge-success badge-pill"><div id="total_si_remanente"></div></span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                              Negativas
-                              <span class="badge badge-success badge-pill"><div id="total_no_remanente"></div></span>
-                            </li>
-                          </ul>
                         </div>
                       </div>
                     </div>
@@ -238,29 +192,6 @@
                           </div>                         
                           </div>
                        </div>
-
-                      <div class="row">
-                        <div class="col">
-                          <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
-                              Respuestas
-                              <span class="badge badge-success badge-pill"></span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                              Total
-                              <span class="badge badge-success badge-pill"><div id="total_cuota"></div></span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                              Positivas
-                              <span class="badge badge-success badge-pill"><div id="total_si_cuota"></div></span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                              Negativas
-                              <span class="badge badge-success badge-pill"><div id="total_no_cuota"></div></span>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -318,29 +249,6 @@
                        </div>                         
                        </div>
                    </div>
-
-                   <div class="row">
-                     <div class="col">
-                       <ul class="list-group">
-                         <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
-                           Respuestas
-                           <span class="badge badge-success badge-pill"></span>
-                         </li>
-                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                           Total
-                           <span class="badge badge-success badge-pill"><div id="total_asignacion"></div></span>
-                         </li>
-                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                           Positivas
-                           <span class="badge badge-success badge-pill"><div id="total_si_asignacion"></div></span>
-                         </li>
-                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                           Negativas
-                           <span class="badge badge-success badge-pill"><div id="total_no_asignacion"></div></span>
-                         </li>
-                       </ul>
-                     </div>
-                   </div>
                  </div>
                </div>
              </div>           
@@ -362,11 +270,11 @@
                          </li>
                          <li class="list-group-item d-flex justify-content-between align-items-center">
                            Positivas
-                           <span class="badge badge-success badge-pill"><div id="total_si_user"></div></span>
+                           <span class="badge badge-success badge-pill"><div id="total_user_si"></div></span>
                          </li>
                          <li class="list-group-item d-flex justify-content-between align-items-center">
                            Negativas
-                           <span class="badge badge-success badge-pill"><div id="total_no_user"></div></span>
+                           <span class="badge badge-success badge-pill"><div id="total_user_no"></div></span>
                          </li>
                        </ul>
                      </div>
@@ -607,49 +515,26 @@
         $.ajaxSetup({"cache":false});
         //setInterval("loadOldMessages()",100);
         $('#id_usuario_dato').hide();
+        $('#total_user').load('total_respuestas_user.php');
+        $('#total_user_si').load('total_respuestas_user_si.php');
+        $('#total_user_no').load('total_respuestas_user_no.php');
         
         /***********memoria********/
-        setInterval("loadTotalMemoria()",100);
-        setInterval("loadSiMemoria()",100); 
-        setInterval("loadNoMemoria()",100);
         setInterval("loadTotalUser()",100);  
-        //$('#encuestaMemoria').load('pregunta.php');
-        $('#total_memoria').load('total_respuestas_memoria.php');
-        $('#total_si_memoria').load('total_respuesta_si_memoria.php');
-        $('#total_no_memoria').load('total_respuesta_no_memoria.php');
         $('#id_encuesta_dato_memoria').hide();
         $('#id_pregunta_dato_memoria').hide();
-        $('#total_user').load('total_respuestas_user.php');
         
-        
+      
         /***********remanente********/
-        setInterval("loadTotalRemanente()",100);
-        setInterval("loadSiRemanente()",100); 
-        setInterval("loadNoRemanente()",100); 
-        $('#total_remanente').load('total_respuestas_remanente.php');
-        $('#total_si_remanente').load('total_respuesta_si_remanente.php');
-        $('#total_no_remanente').load('total_respuesta_no_remanente.php');
         $('#id_encuesta_dato_remanente').hide();
         $('#id_pregunta_dato_remanente').hide();
         
 
         /***********cuota social********/
-        setInterval("loadTotalCuota()",100);
-        setInterval("loadSiCuota()",100); 
-        setInterval("loadNoCuota()",100); 
-        $('#total_cuota').load('total_respuestas_cuota.php');
-        $('#total_si_cuota').load('total_respuesta_si_cuota.php');
-        $('#total_no_cuota').load('total_respuesta_no_cuota.php');
         $('#id_encuesta_dato_cuota').hide();
         $('#id_pregunta_dato_cuota').hide();
 
         /***********asignacion********/
-        setInterval("loadTotalAsignacion()",100);
-        setInterval("loadSiAsignacion()",100); 
-        setInterval("loadNoAsignacion()",100); 
-        $('#total_asignacion').load('total_respuestas_asignacion.php');
-        $('#total_si_asignacion').load('total_respuesta_si_asignacion.php');
-        $('#total_no_asignacion').load('total_respuesta_no_asignacion.php');
         $('#id_encuesta_dato_asignacion').hide();
         $('#id_pregunta_dato_asignacion').hide();
     });
@@ -795,29 +680,6 @@ $(document).ready(function(){
     });
 
   });
-        var loadTotalMemoria=function(){
-        $.ajax({type: "POST",
-            url: "total_respuestas_memoria.php"
-        }).done(function( info ){
-            $("#total_memoria").html( info );
-        });
-    }
-
-        var loadSiMemoria=function(){
-        $.ajax({type: "POST",
-            url: "total_respuesta_si_memoria.php"
-        }).done(function( info ){
-            $("#total_si_memoria").html( info );
-        });
-    }
-
-        var loadNoMemoria=function(){
-        $.ajax({type: "POST",
-            url: "total_respuesta_no_memoria.php"
-        }).done(function( info ){
-            $("#total_no_memoria").html( info );
-        });
-    }
 
     // total user
         var loadTotalUser=function(){
@@ -825,6 +687,24 @@ $(document).ready(function(){
             url: "total_respuestas_user.php"
         }).done(function( info ){
             $("#total_user").html( info );
+        });
+    }
+
+    // total user si
+    var loadTotalUser=function(){
+        $.ajax({type: "POST",
+            url: "total_respuestas_user_si.php"
+        }).done(function( info ){
+            $("#total_user_si").html( info );
+        });
+    }
+    
+    // total user no
+    var loadTotalUser=function(){
+        $.ajax({type: "POST",
+            url: "total_respuestas_user_no.php"
+        }).done(function( info ){
+            $("#total_user_no").html( info );
         });
     }
 </script>
@@ -917,27 +797,13 @@ $(document).ready(function(){
     });
 
   });
-        var loadTotalRemanente=function(){
-        $.ajax({type: "POST",
-            url: "total_respuestas_remanente.php"
-        }).done(function( info ){
-            $("#total_remanente").html( info );
-        });
-    }
 
-        var loadSiRemanente=function(){
+    // total user
+    var loadTotalUser=function(){
         $.ajax({type: "POST",
-            url: "total_respuesta_si_remanente.php"
+            url: "total_respuestas_user.php"
         }).done(function( info ){
-            $("#total_si_remanente").html( info );
-        });
-    }
-
-        var loadNoRemanente=function(){
-        $.ajax({type: "POST",
-            url: "total_respuesta_no_remanente.php"
-        }).done(function( info ){
-            $("#total_no_remanente").html( info );
+            $("#total_user").html( info );
         });
     }
 
@@ -1031,27 +897,13 @@ $(document).ready(function(){
     });
 
   });
-        var loadTotalCuota=function(){
+        
+    // total user
+    var loadTotalUser=function(){
         $.ajax({type: "POST",
-            url: "total_respuestas_cuota.php"
+            url: "total_respuestas_user.php"
         }).done(function( info ){
-            $("#total_cuota").html( info );
-        });
-    }
-
-        var loadSiCuota=function(){
-        $.ajax({type: "POST",
-            url: "total_respuesta_si_cuota.php"
-        }).done(function( info ){
-            $("#total_si_cuota").html( info );
-        });
-    }
-
-        var loadNoCuota=function(){
-        $.ajax({type: "POST",
-            url: "total_respuesta_no_cuota.php"
-        }).done(function( info ){
-            $("#total_no_cuota").html( info );
+            $("#total_user").html( info );
         });
     }
 </script>
@@ -1071,8 +923,8 @@ $(document).ready(function(){
             $('#no_asignacion').hide();
         } else {
             // Hacer aparecer los checkbox
-            $('#no_asignacion').show();
             $('#si_asignacion').show();
+            $('#no_asignacion').show();
             //limpia los elementos group1
             $('.group_asignacion').trigger('change');
         }
@@ -1144,27 +996,13 @@ $(document).ready(function(){
     });
 
   });
-        var loadTotalAsignacion=function(){
+        
+    // total user
+    var loadTotalUser=function(){
         $.ajax({type: "POST",
-            url: "total_respuestas_asignacion.php"
+            url: "total_respuestas_user.php"
         }).done(function( info ){
-            $("#total_asignacion").html( info );
-        });
-    }
-
-        var loadSiAsignacion=function(){
-        $.ajax({type: "POST",
-            url: "total_respuesta_si_asignacion.php"
-        }).done(function( info ){
-            $("#total_si_asignacion").html( info );
-        });
-    }
-
-        var loadNoAsignacion=function(){
-        $.ajax({type: "POST",
-            url: "total_respuesta_no_asignacion.php"
-        }).done(function( info ){
-            $("#total_no_asignacion").html( info );
+            $("#total_user").html( info );
         });
     }
 </script>
