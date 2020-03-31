@@ -1,7 +1,5 @@
 <?php
 
-
-
         if (!empty($_SERVER['HTTP_CLIENT_IP']))
             return echo $_SERVER['HTTP_CLIENT_IP'];
            

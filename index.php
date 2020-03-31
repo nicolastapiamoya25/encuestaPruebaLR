@@ -41,7 +41,7 @@
                           require_once "php/conexion.php";
                           $conexion=conexion();
 
-                          $sql="select id_encuesta, nombre_encuesta from encuesta where id_encuesta=3";
+                          $sql="select id_encuesta, nombre_encuesta from encuesta where id_encuesta=6";
                           $result=mysqli_query($conexion,$sql);
 
                           while ($ver=mysqli_fetch_row($result)):
@@ -57,6 +57,21 @@
                   </div>
 
                   <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                 <div id="sp_memoria"> <?php 
+                          if (isset($_SESSION["idUser"])) {
+                          require_once "php/conexion.php";
+                          $conexion=conexion();
+                          $usuario=strval($_SESSION["idUser"]);
+                          $sql="call sp_validar('6','$usuario')";
+                          $result=mysqli_query($conexion,$sql);
+
+                          while ($ver=mysqli_fetch_row($result)):
+                      ?>
+                                          <div id="id_valida_memoria"><?php echo $ver[0]; ?></div>
+                      <?php endwhile; 
+                      mysqli_close($conexion);
+                    }
+                      ?></div>
                     <div class="card-body">
 
                       <div class="row">
@@ -112,6 +127,21 @@
                     </h2>
                   </div>
                   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div id="sp_remanente"> <?php 
+                          if (isset($_SESSION["idUser"])) {
+                          require_once "php/conexion.php";
+                          $conexion=conexion();
+                          $usuario=strval($_SESSION["idUser"]);
+                          $sql="call sp_validar('2','$usuario')";
+                          $result=mysqli_query($conexion,$sql);
+
+                          while ($ver=mysqli_fetch_row($result)):
+                      ?>
+                                          <div id="id_valida_remanente"><?php echo $ver[0]; ?></div>
+                      <?php endwhile; 
+                      mysqli_close($conexion);
+                    }
+                      ?></div>
                     <div class="card-body">
                       
                       <div class="row">
@@ -167,6 +197,21 @@
                     </h2>
                   </div>
                   <div id="collapseTree" class="collapse" aria-labelledby="headingTree" data-parent="#accordionExample">
+                  <div id="sp_cuota"> <?php 
+                          if (isset($_SESSION["idUser"])) {
+                          require_once "php/conexion.php";
+                          $conexion=conexion();
+                          $usuario=strval($_SESSION["idUser"]);
+                          $sql="call sp_validar('1','$usuario')";
+                          $result=mysqli_query($conexion,$sql);
+
+                          while ($ver=mysqli_fetch_row($result)):
+                      ?>
+                                          <div id="id_valida_cuota"><?php echo $ver[0]; ?></div>
+                      <?php endwhile; 
+                      mysqli_close($conexion);
+                    }
+                      ?></div>
                     <div class="card-body">
                       
                       <div class="row">
@@ -224,8 +269,22 @@
                  </h2>
                </div>
                <div id="collapseford" class="collapse" aria-labelledby="headingford" data-parent="#accordionExample">
+               <div id="sp_asignacion"> <?php 
+                          if (isset($_SESSION["idUser"])) {
+                          require_once "php/conexion.php";
+                          $conexion=conexion();
+                          $usuario=strval($_SESSION["idUser"]);
+                          $sql="call sp_validar('4','$usuario')";
+                          $result=mysqli_query($conexion,$sql);
+
+                          while ($ver=mysqli_fetch_row($result)):
+                      ?>
+                                          <div id="id_valida_asignacion"><?php echo $ver[0]; ?></div>
+                      <?php endwhile; 
+                      mysqli_close($conexion);
+                    }
+                      ?></div>
                  <div class="card-body">
-                   
                    <div class="row">
                      <div class="col">
                        <div class="embed-responsive embed-responsive-16by9">
@@ -369,7 +428,7 @@
           <?php 
             $conexion=conexion();
 
-            $sql="select id_pregunta, pregunta from pregunta where encuesta_id_encuesta=3";
+            $sql="select id_pregunta, pregunta from pregunta where encuesta_id_encuesta=6";
             $result=mysqli_query($conexion,$sql);
 
             while ($ver=mysqli_fetch_row($result)):
@@ -534,7 +593,7 @@
             while ($ver=mysqli_fetch_row($result)):
             ?>
                             <div id=datos-pregunta>
-                            <div id="id_pregunta_dato_asignacion"><?php echo $ver[0]; ?></div><?php echo $ver[1]; ?>
+                              <div id="id_pregunta_dato_asignacion"><?php echo $ver[0]; ?></div><?php echo $ver[1]; ?>
                             </div>
             <?php endwhile; 
             mysqli_close($conexion);
@@ -640,6 +699,7 @@
         //setInterval("loadOldMessages()",100);
         $('#id_usuario_dato').hide();
         
+        
 
         $('#total_user').load('total_respuestas_user.php');
         $('#total_user_si').load('total_respuestas_user_si.php');
@@ -651,20 +711,71 @@
         setInterval("loadTotalUserNo()",100);  
         $('#id_encuesta_dato_memoria').hide();
         $('#id_pregunta_dato_memoria').hide();
-        
+        $('#id_valida_memoria').hide();
+        $('#sp_memoria').hide();
+    
+        $('#memoria').click(function(){
+        var id_valida_memoria = $('#id_valida_memoria').text();
+        var id_valida_memoria = $.trim(id_valida_memoria);
+        var id_valida_memoria = parseInt(id_valida_memoria);
+        console.log(id_valida_memoria);
+        if(id_valida_memoria==1){
+          alertify.error("Usted ya respondió esta encuesta");
+          $('#collapseOne').hide();
+        }
+        });
       
         /***********remanente********/
         $('#id_encuesta_dato_remanente').hide();
         $('#id_pregunta_dato_remanente').hide();
+        $('#id_valida_remanente').hide();
+        $('#sp_remanente').hide();
+    
+        $('#remanente').click(function(){
+        var id_valida_remanente = $('#id_valida_remanente').text();
+        var id_valida_remanente = $.trim(id_valida_remanente);
+        var id_valida_remanente = parseInt(id_valida_remanente);
+        console.log(id_valida_remanente);
+        if(id_valida_remanente==1){
+          alertify.error("Usted ya respondió esta encuesta");
+          $('#collapseTwo').hide();
+        }
+        });
         
-
         /***********cuota social********/
         $('#id_encuesta_dato_cuota').hide();
         $('#id_pregunta_dato_cuota').hide();
+        $('#id_valida_cuota').hide();
+        $('#sp_cuota').hide();
+
+        $('#cuota_social').click(function(){
+        var id_valida_cuota = $('#id_valida_cuota').text();
+        var id_valida_cuota = $.trim(id_valida_cuota);
+        var id_valida_cuota = parseInt(id_valida_cuota);
+        console.log(id_valida_cuota);
+        if(id_valida_cuota==1){
+          alertify.error("Usted ya respondió esta encuesta");
+          $('#collapseTree').hide();
+        }
+        });
+      
 
         /***********asignacion********/
         $('#id_encuesta_dato_asignacion').hide();
         $('#id_pregunta_dato_asignacion').hide();
+        $('#id_valida_asignacion').hide();
+        $('#sp_asignacion').hide();
+    
+        $('#asignacion_consejero').click(function(){
+        var id_valida_asignacion = $('#id_valida_asignacion').text();
+        var id_valida_asignacion = $.trim(id_valida_asignacion);
+        var id_valida_asignacion = parseInt(id_valida_asignacion);
+        console.log(id_valida_asignacion);
+        if(id_valida_asignacion==1){
+          alertify.error("Usted ya respondió esta encuesta");
+          $('#collapseford').hide();
+        }
+        });
 
         /***********aditoria externa********/
         $('#id_encuesta_dato_auditoria').hide();
