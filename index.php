@@ -61,7 +61,7 @@
                       <div class="row">
                         <div class="col">
                           <div class="embed-responsive embed-responsive-16by9">
-                            <iframe src="https://www.youtube.com/embed/YZi5vam33ow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          <iframe src="https://www.youtube.com/embed/kCqCVrmV0Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </div>
                         </div>
                       </div>
@@ -116,7 +116,7 @@
                       <div class="row">
                         <div class="col">
                           <div class="embed-responsive embed-responsive-16by9">
-                          <iframe src="https://www.youtube.com/embed/YZi5vam33ow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          <iframe src="https://www.youtube.com/embed/bcwg_IhX3Ws" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </div>
                         </div>
                       </div>
@@ -171,7 +171,7 @@
                       <div class="row">
                         <div class="col">
                           <div class="embed-responsive embed-responsive-16by9">
-                          <iframe src="https://www.youtube.com/embed/YZi5vam33ow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          <iframe src="https://www.youtube.com/embed/HZa7ctnK7oc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </div>
                         </div>
                       </div>
@@ -228,7 +228,7 @@
                    <div class="row">
                      <div class="col">
                        <div class="embed-responsive embed-responsive-16by9">
-                       <iframe src="https://www.youtube.com/embed/YZi5vam33ow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                       <iframe src="https://www.youtube.com/embed/izX8e0ha0gs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                        </div>
                      </div>
                    </div>
@@ -253,8 +253,78 @@
                </div>
              </div>           
                   <!--****************************************FIN CARD ASIGNACION********************************************-->
+ <!--****************************************CARD AUDITORIA EXTERNA********************************************-->
+ <div class="card">
+               <div class="card-header" id="headingford">
+                 <h2 class="mb-0">
+                   <button id="auditoria_externa" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                   <?php 
+                          require_once "php/conexion.php";
+                          $conexion=conexion();
 
+                          $sql="select id_encuesta, nombre_encuesta from encuesta where id_encuesta=5";
+                          $result=mysqli_query($conexion,$sql);
+
+                          while ($ver=mysqli_fetch_row($result)):
+                      ?>
+                                          <div id=datos-pregunta>
+                                          <div id="id_encuesta_dato_auditoria"><?php echo $ver[0]; ?></div><?php echo $ver[1]; ?>
+                                          </div>
+                      <?php endwhile; 
+                      mysqli_close($conexion);
+                      ?>
+                   </button>
+                 </h2>
+               </div>
+               <div id="collapsefive" class="collapse" aria-labelledby="headingford" data-parent="#accordionExample">
+                 <div class="card-body">
+                   
+                   <div class="row">
+                     <div class="col">
+                       <div class="embed-responsive embed-responsive-16by9">
+                       <iframe src="https://www.youtube.com/embed/YZi5vam33ow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                       </div>
+                     </div>
+                   </div>
+
+                   <div class="row">
+                       <div class="col">
+                       <div class="card text-center">
+                         <div class="card-header">
+                         Auditoria Externa
+                         </div>
+                         <div class="card-body">
+                         <h5 class="card-title">Encuesta de Auditoria Externa</h5>
+                           <p class="card-text">Preciona el botón para responder la encuesta.</p>   
+                           <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalAsignacion">
+                             <span class="fa fa-plus-circle"></span> Encuesta Auditoria Externa
+                           </span>
+                         </div>
+                       </div>                         
+                       </div>
+                   </div>
+                 </div>
+               </div>
+             </div>           
+                  <!--****************************************FIN CARD Auditoria Externa********************************************-->
                
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <div class="card text-center">
+                          <div class="card-header">
+                          Finaliza la Encuesta
+                          </div>
+                          <div class="card-body">
+                          <h5 class="card-title">Finaliza la Encuesta</h5>
+                            <p class="card-text">Preciona el botón para finalizar la encuesta.</p>   
+                            <span class="btn btn-raised btn-warning btn-lg" id="btnFinalizarEncuesta">
+                              <span class="fa fa-plus-circle"></span> Finalizar Encuesta
+                            </span>
+                          </div>
+                        </div>     
+                  </div>
               </div>
               
               <div class="row">
@@ -500,7 +570,60 @@
     </div>
   </div>
   <!--************************************************* FIN MODAL ENCUESTA ASIGNACION ***********************************************-->
-     
+  
+
+  <!--************************************************* MODAL ENCUESTA AUDITORIA EXTERNA ***********************************************-->
+  <div class="modal fade" id="modalAuditoria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+          <?php 
+            $conexion=conexion();
+
+            $sql="select id_pregunta, pregunta from pregunta where encuesta_id_encuesta=3";
+            $result=mysqli_query($conexion,$sql);
+
+            while ($ver=mysqli_fetch_row($result)):
+            ?>
+                                <div id=datos-pregunta>
+                                <div id="id_pregunta_dato_auditoria"><?php echo $ver[0]; ?></div><?php echo $ver[1]; ?>
+                                </div>
+            <?php endwhile; 
+            mysqli_close($conexion);
+            ?>
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form id="frmEncuestaAuditoria">
+
+            <div class="form-group row">                
+              <label class="col-sm-2 col-form-label">SI</label>
+              <div class="col-sm-6">
+                <input type="checkbox" class="form-control form-control-sm group_auditoria" value="si" name="si_auditoria" id="si_auditoria">
+              </div>            
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">NO</label>
+                <div class="col-sm-6">
+                  <input type="checkbox" class="form-control form-control-sm group_auditoria" value="no" name="no_auditoria" id="no_auditoria">
+              </div>
+            </div>
+        
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-raised btn-primary" id="btnResponderAuditoria">Responder</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--************************************************* FIN MODAL ENCUESTA AUDITORIA EXTERNA ***********************************************-->
            
            
             </div>
@@ -515,12 +638,16 @@
         $.ajaxSetup({"cache":false});
         //setInterval("loadOldMessages()",100);
         $('#id_usuario_dato').hide();
+        
+
         $('#total_user').load('total_respuestas_user.php');
         $('#total_user_si').load('total_respuestas_user_si.php');
         $('#total_user_no').load('total_respuestas_user_no.php');
         
         /***********memoria********/
-        setInterval("loadTotalUser()",100);  
+        setInterval("loadTotalUser()",100);
+        setInterval("loadTotalUserSi()",100);
+        setInterval("loadTotalUserNo()",100);  
         $('#id_encuesta_dato_memoria').hide();
         $('#id_pregunta_dato_memoria').hide();
         
@@ -537,6 +664,10 @@
         /***********asignacion********/
         $('#id_encuesta_dato_asignacion').hide();
         $('#id_pregunta_dato_asignacion').hide();
+
+        /***********aditoria externa********/
+        $('#id_encuesta_dato_auditoria').hide();
+        $('#id_pregunta_dato_auditoria').hide();
     });
 </script>
 
@@ -668,7 +799,7 @@ $(document).ready(function(){
             success:function(r){
             if(r==1){
                $('#frmEncuestaMemoria')[0].reset();
-               alertify.success("Respuesta Enviada");       
+               alertify.success("Respuesta Enviada");              
                 }else{
                     alertify.error("Respuesta No Enviada");
                 }           
@@ -676,6 +807,7 @@ $(document).ready(function(){
         });
         $('.group_memoria').trigger('change');
         $('#modalMemoria').remove();
+        
       }  
     });
 
@@ -691,7 +823,7 @@ $(document).ready(function(){
     }
 
     // total user si
-    var loadTotalUser=function(){
+    var loadTotalUserSi=function(){
         $.ajax({type: "POST",
             url: "total_respuestas_user_si.php"
         }).done(function( info ){
@@ -700,7 +832,7 @@ $(document).ready(function(){
     }
     
     // total user no
-    var loadTotalUser=function(){
+    var loadTotalUserNo=function(){
         $.ajax({type: "POST",
             url: "total_respuestas_user_no.php"
         }).done(function( info ){
@@ -798,14 +930,7 @@ $(document).ready(function(){
 
   });
 
-    // total user
-    var loadTotalUser=function(){
-        $.ajax({type: "POST",
-            url: "total_respuestas_user.php"
-        }).done(function( info ){
-            $("#total_user").html( info );
-        });
-    }
+
 
 </script>
 <!--*******************************FIN JS MODAL ENCUESTA REMANENTE**************************************-->
@@ -898,14 +1023,7 @@ $(document).ready(function(){
 
   });
         
-    // total user
-    var loadTotalUser=function(){
-        $.ajax({type: "POST",
-            url: "total_respuestas_user.php"
-        }).done(function( info ){
-            $("#total_user").html( info );
-        });
-    }
+
 </script>
 <!--*******************************FIN JS MODAL ENCUESTA CUOTA**************************************-->
 
@@ -996,15 +1114,117 @@ $(document).ready(function(){
     });
 
   });
-        
-    // total user
-    var loadTotalUser=function(){
-        $.ajax({type: "POST",
-            url: "total_respuestas_user.php"
-        }).done(function( info ){
-            $("#total_user").html( info );
+</script>
+  <!--*******************************FIN JS MODAL ENCUESTA ASIGNACION**************************************-->
+
+<!--*******************************JS MODAL ENCUESTA AUDITORIA**************************************-->
+<script type="text/javascript">
+$(document).ready(function(){
+    //carga en elemento encuesta el script en php
+    //$('#encuestaMemoria').load('pregunta.php');
+    //$('#encuesta2').load('pregunta.php');
+      //escucha el elemto 'si'
+      $('#si_auditoria').on( 'change', function() {
+        //si el elemento 'si' esta checkeado (truwe)
+        if( $(this).is(':checked') ) {
+        // Hacer que se escondan los checkbox
+            $('#no_auditoria').hide();
+        } else {
+            // Hacer aparecer los checkbox
+            $('#no_auditoria').show();
+            $('#si_auditoria').show();
+            //limpia los elementos group1
+            $('.group_auditoria').trigger('change');
+        }
         });
-    }
+
+      $('#no_auditoria').on( 'change', function() {
+        if( $(this).is(':checked') ) {
+        // Hacer que se escondan los checkbox
+            $('#si_auditoria').hide();
+        } else {
+            // Hacer aparecer los checkbox
+            $('#si_auditoria').show();
+            $('#no_auditoria').show();
+            //limpia los elementos group1
+        $('.group_auditoria').trigger('change');
+        }
+        });
+
+      
+    $('#btnResponderAuditoria').click(function(){
+        //al precionar boton responder 
+      var id_encuesta = $('#id_encuesta_dato_auditoria').text();
+
+      var id_encuesta = $.trim(id_encuesta);
+
+      var id_encuesta = parseInt(id_encuesta);
+        //declaro variable arreglo de respuesta (respuesta)
+      var respuesta = [];
+        //declaro variable y almaceno texto de encuesta (pregunta)
+      var id_pregunta = $('#id_pregunta_dato_auditoria').text();
+      //limpio el string sacando los espacios en blanco
+      var id_pregunta = $.trim(id_pregunta);
+
+      var id_pregunta = parseInt(id_pregunta);
+
+      var id_usuario = $('#id_usuario_dato').text();
+      
+      var id_usuario = $.trim(id_usuario);
+
+      var id_usuario = parseInt(id_usuario);
+      //busca en los elementos group1
+      $('.group_auditoria').each(function(){
+        //si hay uno checkeado
+        if ($(this).is(":checked")) {
+            //guarda su valor en variable respuesta
+            respuesta.push($(this).val());
+        }
+      });
+      respuesta = respuesta.toString();
+      if (respuesta == "") {
+        alertify.error("Debe responder la encuesta");
+      }else{
+        $.ajax({
+            type:"POST",
+            data:{respuesta:respuesta, id_pregunta:id_pregunta, id_encuesta:id_encuesta, id_usuario:id_usuario},
+            url:"php/insertarEncuesta.php",
+            success:function(r){
+            if(r==1){
+               $('#frmEncuestaAuditoria')[0].reset();
+               alertify.success("Respuesta Enviada");              
+                }else{
+                    alertify.error("Respuesta No Enviada");
+                }           
+            }
+        });
+        $('.group_auditoria').trigger('change');
+        $('#modalAuditoria').remove();
+        
+      }  
+    });
+
+  });
+
+</script>
+<!--*******************************FIN JS MODAL ENCUESTA AUDITORIA**************************************-->
+
+
+
+<!--*******************************ENVIO CORREO**************************************-->
+<script>
+  $(document).ready(function(){
+
+    $('#btnFinalizarEncuesta').click(function(){
+      $.ajax({type: "POST",
+            url: "envio_correo.php"
+        }).done(function( info ){
+            $("#btnFinalizarEncuesta").html( info );
+        });
+    });
+
+  });
 </script>
 
-<!--*******************************FIN JS MODAL ENCUESTA ASIGNACION**************************************-->
+<!--*******************************FIN ENVIO CORREO**************************************-->
+ 

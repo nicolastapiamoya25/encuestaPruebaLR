@@ -3,7 +3,7 @@
     require_once "dependencias.php";
 	
     $error = '';
-    
+
 if(!empty($_POST['active'])){
         header('location:index.php');
 
@@ -27,15 +27,14 @@ if(!empty($_POST['active'])){
                 $_SESSION['active'] = true;
                 $_SESSION['idUser'] = $data['id_usuario'];
                 $_SESSION['username'] = $data['usuario'];
-
+                $_SESSION['correo'] = $data['email'];
                 header('location:index.php');
             }else{
                 $error = 'El usuario o contraseña son incorrectos';
             }
         }
 	}
-}
-	
+}	
 ?>
 <html>
 	<head>

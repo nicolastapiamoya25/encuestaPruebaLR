@@ -14,3 +14,6 @@
 <script src="librerias/materialbootstrap/popper.js"></script>
 <script src="librerias/materialbootstrap/bootstrap-material-design.js"></script>
 
+
+<!--chart js-->
+<script src="librerias/Chart.js"></script>
