@@ -1,13 +1,13 @@
 <?php
     require_once "php/conexion.php";
-    require_once "dependencias.php";
 	
     $error = '';
 
-if(!empty($_POST['active'])){
-        header('location:index.php');
+// if(!empty($_POST['active'])){
+//     session_start();
+//         header('Location: index.php');
 
-    }else{
+//     }else{
         if(!empty($_POST))
 	{
         if(empty($_POST["usuario"]) || empty($_POST['password'])){
@@ -18,26 +18,29 @@ if(!empty($_POST['active'])){
             $usuario = $_POST['usuario'];
             $password = $_POST['password'];
             
-            $sql = "SELECT id_usuario, usuario FROM usuario WHERE usuario = '$usuario' AND contrasena = '$password'";
+            $sql = "SELECT id_usuario, usuario, email FROM usuario WHERE usuario = '$usuario' AND contrasena = '$password'";
             $result=mysqli_query($conexion,$sql);
             
             if(!empty($result) and mysqli_num_rows($result)) {
                 $data = mysqli_fetch_array($result);
-                session_start();
                 $_SESSION['active'] = true;
                 $_SESSION['idUser'] = $data['id_usuario'];
                 $_SESSION['username'] = $data['usuario'];
                 $_SESSION['correo'] = $data['email'];
-                header('location:index.php');
+                // session_start();
+                header('Location: index.php');
             }else{
                 $error = 'El usuario o contraseña son incorrectos';
             }
         }
 	}
-}	
+// }	
 ?>
 <html>
 	<head>
+    <?php
+    require_once "dependencias.php";
+    ?>
 		<title>Login</title>
 	</head>
 	
