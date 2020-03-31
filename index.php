@@ -697,8 +697,6 @@
         $.ajaxSetup({"cache":false});
         //setInterval("loadOldMessages()",100);
         $('#id_usuario_dato').hide();
-        
-        
 
         $('#total_user').load('total_respuestas_user.php');
         $('#total_user_si').load('total_respuestas_user_si.php');
@@ -712,7 +710,7 @@
         $('#id_pregunta_dato_memoria').hide();
         $('#id_valida_memoria').hide();
         $('#sp_memoria').hide();
-    
+        
         $('#memoria').click(function(){
         var id_valida_memoria = $('#id_valida_memoria').text();
         var id_valida_memoria = $.trim(id_valida_memoria);
@@ -723,7 +721,7 @@
           $('#collapseOne').hide();
         }
         });
-      
+ 
         /***********remanente********/
         $('#id_encuesta_dato_remanente').hide();
         $('#id_pregunta_dato_remanente').hide();
@@ -746,6 +744,7 @@
         $('#id_pregunta_dato_cuota').hide();
         $('#id_valida_cuota').hide();
         $('#sp_cuota').hide();
+        
 
         $('#cuota_social').click(function(){
         var id_valida_cuota = $('#id_valida_cuota').text();
