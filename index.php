@@ -736,8 +736,20 @@
         if(id_valida_remanente==1){
           alertify.error("Usted ya respondió esta encuesta");
           $('#collapseTwo').hide();
+          reload();
         }
         });
+
+        
+
+        function reload(){
+    var container = document.getElementById("remanente");
+    var content = container.innerHTML;
+    container.innerHTML= content; 
+    
+   //this line is to watch the result in console , you can remove it later	
+    console.log("Refreshed"); 
+}
         
         /***********cuota social********/
         $('#id_encuesta_dato_cuota').hide();
@@ -917,8 +929,9 @@ $(document).ready(function(){
         });
         $('.group_memoria').trigger('change');
         $('#modalMemoria').remove();
-        
-      }  
+        reload();
+      } 
+      reload(); 
     });
 
   });
