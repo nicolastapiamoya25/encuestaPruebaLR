@@ -10,9 +10,9 @@
                     while ($ver=mysqli_fetch_row($result)):
                     ?>
                         <div id=datos-chat>
-                            <span style="color: #1c622c4;"><?php echo $ver[1]; ?>: </spam>
+                            <span style="color: #1c622c4;"><?php echo $ver[3]; ?>: </spam>
                             <span style="color: #848484;"><?php echo $ver[2]; ?> </spam>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span style="color: right;"><?php echo formatearFecha($ver[3]); ?> </spam>
+                            <span style="color: right;"><?php echo formatearFecha($ver[1]); ?> </spam>
                         </div>
                     <?php endwhile; ?>
 
