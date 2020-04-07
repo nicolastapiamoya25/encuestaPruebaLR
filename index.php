@@ -8,23 +8,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-
     <title>Lautaro Rosas Video</title>
-	
   </head>
     <body>
         <div class="container">
          <div class="row">    
-            <div class="col">
-            <div class="col-md-auto">
-		          <h3>Bienvenido <?php echo $_SESSION['username']; ?><div id="id_usuario_dato"><?php echo $_SESSION['idUser']; ?></div></h3>
+            <div class="col-6 col-md-4">
+                <img src="lr.jpg" class="img-fluid" alt="Responsive image">
             </div>
-		          <img src="lr.jpg" class="img-fluid" alt="Responsive image">
-            </div> 
-          </div>   
-          <div class="row justify-content-md-center">
-            <div class="col-md-auto">
-		          <h1>Junta General de Socios 2020</h1>
+            <div class="col-6 col-md-4">
+            
+            </div>
+                <div class="col-6 col-md-4">
+                  <h5>Bienvenido <?php echo $_SESSION['username']; ?><div id="id_usuario_dato"><?php echo $_SESSION['idUser']; ?></div></h5>
+                </div>
+                
+          </div> 
+
+          <div class="card-header text-white bg-info">  
+            <div class="row justify-content-md-center">
+              <div class="col">
+                <h2>Junta General de Socios 2020</h2>
+              </div>
             </div>
           </div>
 
@@ -35,7 +40,7 @@
                 <div class="card">
                   <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
-                      <button id="memoria" class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"> 
+                      <button id="memoria" class="btn btn-raised btn-success " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"> 
                       <?php 
                           require_once "php/conexion.php";
                           $conexion=conexion();
@@ -52,6 +57,7 @@
                       mysqli_close($conexion);
                       ?>
                       </button>
+                      
                     </h2>
                   </div>
 
@@ -75,7 +81,7 @@
 
                       <div class="row">
                         <div class="col">
-                          <div class="embed-responsive embed-responsive-16by9">
+                          <div class="embed-responsive embed-responsive-21by9">
                           <iframe src="https://www.youtube.com/embed/kCqCVrmV0Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </div>
                         </div>
@@ -90,8 +96,8 @@
                             <div class="card-body">
                             <h5 class="card-title">Encuesta de presentación memoria anual</h5>
                               <p class="card-text">Preciona el botón para responder la encuesta.</p>   
-                              <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalMemoria">
-                                <span class="fa fa-plus-circle"></span> Encuesta Memoria
+                              <span class="btn btn-raised btn-success btn-lg btn-block" data-toggle="modal" data-target="#modalMemoria">
+                                <span class="fa fa-plus-circle"></span>Responder Encuesta
                               </span>
                             </div>
                           </div>                         
@@ -106,7 +112,7 @@
                 <div class="card">
                   <div class="card-header" id="headingTwo">
                     <h2 class="mb-0">
-                      <button id="remanente" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <button id="remanente" class="btn btn-raised btn-success collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                       <?php 
                           require_once "php/conexion.php";
                           $conexion=conexion();
@@ -145,7 +151,7 @@
                       
                       <div class="row">
                         <div class="col">
-                          <div class="embed-responsive embed-responsive-16by9">
+                          <div class="embed-responsive embed-responsive-21by9">
                           <iframe src="https://www.youtube.com/embed/bcwg_IhX3Ws" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </div>
                         </div>
@@ -159,8 +165,8 @@
                             <div class="card-body">
                               <h5 class="card-title">Encuesta de distribucion de remanente</h5>
                               <p class="card-text">Preciona el botón para responder la encuesta.</p>                                
-                                <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalRemanente">
-                                  <span class="fa fa-plus-circle"></span> Encuesta Remanente
+                                <span class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalRemanente">
+                                  <span class="fa fa-plus-circle"></span> Responder Encuesta
                                 </span>                               
                             </div>
 
@@ -176,7 +182,7 @@
                 <div class="card">
                   <div class="card-header" id="headingTree">
                     <h2 class="mb-0">
-                      <button id="cuota_social" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTree" aria-expanded="false" aria-controls="collapseTree">
+                      <button id="cuota_social" class="btn btn-raised btn-success collapsed" type="button" data-toggle="collapse" data-target="#collapseTree" aria-expanded="false" aria-controls="collapseTree">
                       <?php 
                           require_once "php/conexion.php";
                           $conexion=conexion();
@@ -215,7 +221,7 @@
                       
                       <div class="row">
                         <div class="col">
-                          <div class="embed-responsive embed-responsive-16by9">
+                          <div class="embed-responsive embed-responsive-21by9">
                           <iframe src="https://www.youtube.com/embed/HZa7ctnK7oc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </div>
                         </div>
@@ -230,8 +236,8 @@
                             <div class="card-body">
                             <h5 class="card-title">Encuesta de fijar cuota social</h5>
                               <p class="card-text">Preciona el botón para responder la encuesta.</p>   
-                              <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalCuotaSocial">
-                                <span class="fa fa-plus-circle"></span> Encuesta Cuota Social
+                              <span class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalCuotaSocial">
+                                <span class="fa fa-plus-circle"></span> Responder Encuesta
                               </span>
                             </div>
                           </div>                         
@@ -248,7 +254,7 @@
              <div class="card">
                <div class="card-header" id="headingford">
                  <h2 class="mb-0">
-                   <button id="asignacion_consejero" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseford" aria-expanded="false" aria-controls="collapseford">
+                   <button id="asignacion_consejero" class="btn btn-raised btn-success collapsed" type="button" data-toggle="collapse" data-target="#collapseford" aria-expanded="false" aria-controls="collapseford">
                    <?php 
                           require_once "php/conexion.php";
                           $conexion=conexion();
@@ -286,7 +292,7 @@
                  <div class="card-body">
                    <div class="row">
                      <div class="col">
-                       <div class="embed-responsive embed-responsive-16by9">
+                       <div class="embed-responsive embed-responsive-21by9">
                        <iframe src="https://www.youtube.com/embed/izX8e0ha0gs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                        </div>
                      </div>
@@ -301,8 +307,8 @@
                          <div class="card-body">
                          <h5 class="card-title">Encuesta de Asignación de Consejeros</h5>
                            <p class="card-text">Preciona el botón para responder la encuesta.</p>   
-                           <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalAsignacion">
-                             <span class="fa fa-plus-circle"></span> Encuesta Asignación de Consejeros
+                           <span class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalAsignacion">
+                             <span class="fa fa-plus-circle"></span> Responder Encuesta
                            </span>
                          </div>
                        </div>                         
@@ -312,11 +318,11 @@
                </div>
              </div>           
                   <!--****************************************FIN CARD ASIGNACION********************************************-->
- <!--****************************************CARD AUDITORIA EXTERNA********************************************-->
- <div class="card">
-               <div class="card-header" id="headingford">
+                 <!--****************************************CARD AUDITORIA EXTERNA********************************************-->
+              <div class="card">
+               <div class="card-header" id="headingfive">
                  <h2 class="mb-0">
-                   <button id="auditoria_externa" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                   <button id="auditoria_externa" class="btn btn-raised btn-success collapsed" type="button" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
                    <?php 
                           require_once "php/conexion.php";
                           $conexion=conexion();
@@ -332,15 +338,31 @@
                       <?php endwhile; 
                       mysqli_close($conexion);
                       ?>
+                      
                    </button>
                  </h2>
                </div>
-               <div id="collapsefive" class="collapse" aria-labelledby="headingford" data-parent="#accordionExample">
+               <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordionExample">
+               <div id="sp_auditoria"> <?php 
+                          if (isset($_SESSION["idUser"])) {
+                          require_once "php/conexion.php";
+                          $conexion=conexion();
+                          $usuario=strval($_SESSION["idUser"]);
+                          $sql="call sp_validar('5','$usuario')";
+                          $result=mysqli_query($conexion,$sql);
+
+                          while ($ver=mysqli_fetch_row($result)):
+                      ?>
+                                          <div id="id_valida_auditoria"><?php echo $ver[0]; ?></div>
+                      <?php endwhile; 
+                      mysqli_close($conexion);
+                    }
+                      ?></div>
                  <div class="card-body">
                    
                    <div class="row">
                      <div class="col">
-                       <div class="embed-responsive embed-responsive-16by9">
+                       <div class="embed-responsive embed-responsive-21by9">
                        <iframe src="https://www.youtube.com/embed/YZi5vam33ow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                        </div>
                      </div>
@@ -355,8 +377,8 @@
                          <div class="card-body">
                          <h5 class="card-title">Encuesta de Auditoria Externa</h5>
                            <p class="card-text">Preciona el botón para responder la encuesta.</p>   
-                           <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalAsignacion">
-                             <span class="fa fa-plus-circle"></span> Encuesta Auditoria Externa
+                           <span class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalAuditoria">
+                             <span class="fa fa-plus-circle"></span> Responder Encuesta
                            </span>
                          </div>
                        </div>                         
@@ -369,23 +391,43 @@
                
               </div>
 
-              <div class="row">
+              <div class="row" id="finalizarEncuesta">
                 <div class="col">
                   <div class="card text-center">
-                          <div class="card-header">
-                          Finaliza la Encuesta
-                          </div>
+
                           <div class="card-body">
                           <h5 class="card-title">Finaliza la Encuesta</h5>
                             <p class="card-text">Preciona el botón para finalizar la encuesta.</p>   
-                            <span class="btn btn-raised btn-warning btn-lg" id="btnFinalizarEncuesta">
+                            <span class="btn btn-raised btn-primary btn-lg btn-block" id="btnFinalizarEncuesta" data-toggle="modal" data-target="#exampleModal">
                               <span class="fa fa-plus-circle"></span> Finalizar Encuesta
                             </span>
                           </div>
                         </div>     
                   </div>
               </div>
-              
+
+              <!-- Modal Finalizar-->
+              <div class="modal fade text-center" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Advertencia!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Debe completar TODAS las encuestas
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- FIN Modal -->
+
+
               <div class="row">
                      <div class="col">
                        <ul class="list-group">
@@ -464,7 +506,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-raised btn-primary" id="btnResponderMemoria">Responder</button>
+          <button type="button" class="btn btn-raised btn-primary" id="btnResponderMemoria" data-dismiss="modal">Responder</button>
         </div>
       </div>
     </div>
@@ -472,7 +514,7 @@
   <!--************************************************* FIN MODAL ENCUESTA MEMORIA ***********************************************-->
 
       <!--************************************************* MODAL ENCUESTA REMANENTE ***********************************************-->
-      <div class="modal fade" id="modalRemanente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalRemanente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -517,7 +559,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-raised btn-primary" id="btnResponderRemanente">Responder</button>
+          <button type="button" class="btn btn-raised btn-primary" id="btnResponderRemanente" data-dismiss="modal">Responder</button>
         </div>
       </div>
     </div>
@@ -570,7 +612,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-raised btn-primary" id="btnResponderCuota">Responder</button>
+          <button type="button" class="btn btn-raised btn-primary" id="btnResponderCuota" data-dismiss="modal">Responder</button>
         </div>
       </div>
     </div>
@@ -623,7 +665,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-raised btn-primary" id="btnResponderAsignacion">Responder</button>
+          <button type="button" class="btn btn-raised btn-primary" id="btnResponderAsignacion" data-dismiss="modal">Responder</button>
         </div>
       </div>
     </div>
@@ -640,7 +682,7 @@
           <?php 
             $conexion=conexion();
 
-            $sql="select id_pregunta, pregunta from pregunta where encuesta_id_encuesta=3";
+            $sql="select id_pregunta, pregunta from pregunta where encuesta_id_encuesta=5";
             $result=mysqli_query($conexion,$sql);
 
             while ($ver=mysqli_fetch_row($result)):
@@ -677,7 +719,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-raised btn-primary" id="btnResponderAuditoria">Responder</button>
+          <button type="button" class="btn btn-raised btn-primary" id="btnResponderAuditoria" data-dismiss="modal">Responder</button>
         </div>
       </div>
     </div>
@@ -697,6 +739,15 @@
         $.ajaxSetup({"cache":false});
         //setInterval("loadOldMessages()",100);
         $('#id_usuario_dato').hide();
+
+        var respuestas_total = $('#total_user').text();
+        var respuestas_total = $.trim(respuestas_total);
+        var respuestas_total = parseInt(respuestas_total);
+        //if(respuestas_total>4){
+         // $('#finalizarEncuesta').show();      
+        //}else{
+        //  $('#finalizarEncuesta').hide();
+       // }
 
         $('#total_user').load('total_respuestas_user.php');
         $('#total_user_si').load('total_respuestas_user_si.php');
@@ -736,20 +787,8 @@
         if(id_valida_remanente==1){
           alertify.error("Usted ya respondió esta encuesta");
           $('#collapseTwo').hide();
-          reload();
         }
-        });
-
-        
-
-        function reload(){
-    var container = document.getElementById("remanente");
-    var content = container.innerHTML;
-    container.innerHTML= content; 
-    
-   //this line is to watch the result in console , you can remove it later	
-    console.log("Refreshed"); 
-}
+        });      
         
         /***********cuota social********/
         $('#id_encuesta_dato_cuota').hide();
@@ -769,7 +808,6 @@
         }
         });
       
-
         /***********asignacion********/
         $('#id_encuesta_dato_asignacion').hide();
         $('#id_pregunta_dato_asignacion').hide();
@@ -790,6 +828,19 @@
         /***********aditoria externa********/
         $('#id_encuesta_dato_auditoria').hide();
         $('#id_pregunta_dato_auditoria').hide();
+        $('#id_valida_auditoria').hide();
+        $('#sp_auditoria').hide();
+
+        $('#auditoria_externa').click(function(){
+        var id_valida_auditoria = $('#id_valida_auditoria').text();
+        var id_valida_auditoria = $.trim(id_valida_auditoria);
+        var id_valida_auditoria = parseInt(id_valida_auditoria);
+        console.log(id_valida_auditoria);
+        if(id_valida_auditoria==1){
+          alertify.error("Usted ya respondió esta encuesta");
+          $('#collapsefive').hide();
+        }
+        });
     });
 </script>
 
@@ -921,7 +972,8 @@ $(document).ready(function(){
             success:function(r){
             if(r==1){
                $('#frmEncuestaMemoria')[0].reset();
-               alertify.success("Respuesta Enviada");              
+               alertify.success("Respuesta Enviada");
+               $('#collapseOne').hide();             
                 }else{
                     alertify.error("Respuesta No Enviada");
                 }           
@@ -929,9 +981,9 @@ $(document).ready(function(){
         });
         $('.group_memoria').trigger('change');
         $('#modalMemoria').remove();
-        reload();
+        
       } 
-      reload(); 
+       
     });
 
   });
@@ -1040,7 +1092,8 @@ $(document).ready(function(){
             success:function(r){
             if(r==1){
                $('#frmEncuestaRemanente')[0].reset();
-               alertify.success("Respuesta Enviada");       
+               alertify.success("Respuesta Enviada");
+               $('#collapseTwo').hide();        
                 }else{
                     alertify.error("Respuesta No Enviada");
                 }           
@@ -1133,7 +1186,8 @@ $(document).ready(function(){
             success:function(r){
             if(r==1){
                $('#frmEncuestaCuota')[0].reset();
-               alertify.success("Respuesta Enviada");       
+               alertify.success("Respuesta Enviada");
+               $('#collapseTree').hide();        
                 }else{
                     alertify.error("Respuesta No Enviada");
                 }           
@@ -1225,7 +1279,8 @@ $(document).ready(function(){
             success:function(r){
             if(r==1){
                $('#frmEncuestaAsignacion')[0].reset();
-               alertify.success("Respuesta Enviada");       
+               alertify.success("Respuesta Enviada"); 
+               $('#collapseford').hide();         
                 }else{
                     alertify.error("Respuesta No Enviada");
                 }           
@@ -1315,7 +1370,8 @@ $(document).ready(function(){
             success:function(r){
             if(r==1){
                $('#frmEncuestaAuditoria')[0].reset();
-               alertify.success("Respuesta Enviada");              
+               alertify.success("Respuesta Enviada");
+               $('#collapsefive').hide();               
                 }else{
                     alertify.error("Respuesta No Enviada");
                 }           
@@ -1338,13 +1394,14 @@ $(document).ready(function(){
 <script>
   $(document).ready(function(){
 
-    $('#btnFinalizarEncuesta').click(function(){
-      $.ajax({type: "POST",
-            url: "envio_correo.php"
-        }).done(function( info ){
-            $("#btnFinalizarEncuesta").html( info );
-        });
-    });
+    //$('#btnFinalizarEncuesta').click(function(){
+      //$.ajax({type: "POST",
+            //url: "envio_correo.php"
+        //}).done(function( info ){
+            //$("#btnFinalizarEncuesta").html( info );
+       // });
+      // alertify.error("Debe responder todas las encuestas");
+   // });
 
   });
 </script>
