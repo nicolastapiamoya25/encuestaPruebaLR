@@ -11,7 +11,7 @@ session_start();
   <!-- Bootstrap CSS -->
   <?php require_once "dependencias.php";
   ?>
-  <title>Lautaro Rosas Video</title>
+  <title>Lautaro Rosas - Asamblea General de Socios 2020</title>
 
 </head>
 
@@ -52,9 +52,9 @@ session_start();
             </a>
             <div class="navbar-nav">
             <h5 class="my-sm-0">Bienvenido <?php 
-              // echo $_SESSION['username'];
-              // echo $_SESSION['idUser']; 
-              echo 'Usuario 1'                   
+              echo $_SESSION['username'];
+              echo $_SESSION['idUser']; 
+              // echo 'Usuario 1'         
               ?>
           </h5>
           
@@ -361,7 +361,7 @@ session_start();
             <!--****************************************FIN CARD ASIGNACION********************************************-->
             <!--****************************************CARD AUDITORIA EXTERNA********************************************-->
             <div class="card">
-              <div class="card-header" id="headingford">
+              <div class="card-header" id="headingfive">
                 <h2 class="mb-0">
                   <button id="auditoria_externa" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
                     <?php
@@ -383,9 +383,23 @@ session_start();
                   </button>
                 </h2>
               </div>
-              <div id="collapsefive" class="collapse" aria-labelledby="headingford" data-parent="#accordionExample">
+              <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordionExample">
                 <div class="card-body">
+                <div id="sp_auditoria"> <?php
+                                          if (isset($_SESSION["idUser"])) {
+                                            require_once "php/conexion.php";
+                                            $conexion = conexion();
+                                            $usuario = strval($_SESSION["idUser"]);
+                                            $sql = "call sp_validar('5','$usuario')";
+                                            $result = mysqli_query($conexion, $sql);
 
+                                            while ($ver = mysqli_fetch_row($result)) :
+                                          ?>
+                      <div id="id_valida_auditoria"><?php echo $ver[0]; ?></div>
+                  <?php endwhile;
+                                            mysqli_close($conexion);
+                                          }
+                  ?></div>
                   <div class="row">
                     <div class="col">
                       <div class="embed-responsive embed-responsive-16by9">
@@ -403,7 +417,7 @@ session_start();
                         <div class="card-body">
                           <h5 class="card-title">Encuesta de Auditoria Externa</h5>
                           <p class="card-text">Preciona el botón para responder la encuesta.</p>
-                          <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalAsignacion">
+                          <span class="btn btn-raised btn-success btn-lg" data-toggle="modal" data-target="#modalAuditoria">
                             <span class="fa fa-plus-circle"></span> Encuesta Auditoria Externa
                           </span>
                         </div>
@@ -514,6 +528,8 @@ session_start();
                         </div>
                       </div>
 
+                      <input type="hidden" name="id_usuario_dato" id="id_usuario_dato" value="<?=$_SESSION['idUser']?>">
+
                     </form>
                   </div>
                   <div class="modal-footer">
@@ -566,6 +582,8 @@ session_start();
                           <input type="checkbox" class="form-control form-control-sm group_remanente" value="no" name="no_remanente" id="no_remanente">
                         </div>
                       </div>
+
+                      <input type="hidden" name="id_usuario_dato" id="id_usuario_dato" value="<?=$_SESSION['idUser']?>">
 
                     </form>
                   </div>
@@ -620,6 +638,8 @@ session_start();
                         </div>
                       </div>
 
+                      <input type="hidden" name="id_usuario_dato" id="id_usuario_dato" value="<?=$_SESSION['idUser']?>">
+
                     </form>
                   </div>
                   <div class="modal-footer">
@@ -673,6 +693,8 @@ session_start();
                         </div>
                       </div>
 
+                      <input type="hidden" name="id_usuario_dato" id="id_usuario_dato" value="<?=$_SESSION['idUser']?>">
+
                     </form>
                   </div>
                   <div class="modal-footer">
@@ -694,7 +716,7 @@ session_start();
                       <?php
                       $conexion = conexion();
 
-                      $sql = "select id_pregunta, pregunta from pregunta where encuesta_id_encuesta=3";
+                      $sql = "select id_pregunta, pregunta from pregunta where encuesta_id_encuesta=5";
                       $result = mysqli_query($conexion, $sql);
 
                       while ($ver = mysqli_fetch_row($result)) :
@@ -726,6 +748,8 @@ session_start();
                           <input type="checkbox" class="form-control form-control-sm group_auditoria" value="no" name="no_auditoria" id="no_auditoria">
                         </div>
                       </div>
+
+                      <input type="hidden" name="id_usuario_dato" id="id_usuario_dato" value="<?=$_SESSION['idUser']?>">
 
                     </form>
                   </div>
@@ -776,7 +800,7 @@ session_start();
       var id_valida_memoria = parseInt(id_valida_memoria);
       console.log(id_valida_memoria);
       if (id_valida_memoria == 1) {
-        alertify.error("Usted ya respondió esta encuesta");
+        alertify.warning("<b>Mensaje del Servidor:</b><br/>Usted ya respondió esta encuesta");
         $('#collapseOne').hide();
       }
     });
@@ -793,7 +817,7 @@ session_start();
       var id_valida_remanente = parseInt(id_valida_remanente);
       console.log(id_valida_remanente);
       if (id_valida_remanente == 1) {
-        alertify.error("Usted ya respondió esta encuesta");
+        alertify.warning("<b>Mensaje del Servidor:</b><br/>Usted ya respondió esta encuesta");
         $('#collapseTwo').hide();
       }
     });
@@ -810,7 +834,7 @@ session_start();
       var id_valida_cuota = parseInt(id_valida_cuota);
       console.log(id_valida_cuota);
       if (id_valida_cuota == 1) {
-        alertify.error("Usted ya respondió esta encuesta");
+        alertify.warning("<b>Mensaje del Servidor:</b><br/>Usted ya respondió esta encuesta");
         $('#collapseTree').hide();
       }
     });
@@ -828,7 +852,7 @@ session_start();
       var id_valida_asignacion = parseInt(id_valida_asignacion);
       console.log(id_valida_asignacion);
       if (id_valida_asignacion == 1) {
-        alertify.error("Usted ya respondió esta encuesta");
+        alertify.warning("<b>Mensaje del Servidor:</b><br/>Usted ya respondió esta encuesta");
         $('#collapseford').hide();
       }
     });
@@ -836,6 +860,19 @@ session_start();
     /***********aditoria externa********/
     $('#id_encuesta_dato_auditoria').hide();
     $('#id_pregunta_dato_auditoria').hide();
+    $('#id_valida_auditoria').hide();
+    $('#sp_auditoria').hide();
+
+    $('#auditoria_externa').click(function() {
+      var id_valida_auditoria = $('#id_valida_auditoria').text();
+      var id_valida_auditoria = $.trim(id_valida_auditoria);
+      var id_valida_auditoria = parseInt(id_valida_auditoria);
+      console.log(id_valida_auditoria);
+      if (id_valida_auditoria == 1) {
+        alertify.warning("<b>Mensaje del Servidor:</b><br/>Usted ya respondió esta encuesta");
+        $('#collapsefive').hide();
+      }
+    });
   });
 </script>
 
@@ -943,7 +980,7 @@ session_start();
 
       var id_pregunta = parseInt(id_pregunta);
 
-      var id_usuario = $('#id_usuario_dato').text();
+      var id_usuario = $('#id_usuario_dato').val();
 
       var id_usuario = $.trim(id_usuario);
 
@@ -980,6 +1017,8 @@ session_start();
         });
         $('.group_memoria').trigger('change');
         $('#modalMemoria').remove();
+          // 
+          $('#collapseOne').hide();
 
       }
     });
@@ -1069,7 +1108,7 @@ session_start();
 
       var id_pregunta = parseInt(id_pregunta);
 
-      var id_usuario = $('#id_usuario_dato').text();
+      var id_usuario = $('#id_usuario_dato').val();
 
       var id_usuario = $.trim(id_usuario);
 
@@ -1164,7 +1203,7 @@ session_start();
 
       var id_pregunta = parseInt(id_pregunta);
 
-      var id_usuario = $('#id_usuario_dato').text();
+      var id_usuario = $('#id_usuario_dato').val();
 
       var id_usuario = $.trim(id_usuario);
 
@@ -1259,7 +1298,7 @@ session_start();
 
       var id_pregunta = parseInt(id_pregunta);
 
-      var id_usuario = $('#id_usuario_dato').text();
+      var id_usuario = $('#id_usuario_dato').val();
 
       var id_usuario = $.trim(id_usuario);
 
@@ -1354,7 +1393,7 @@ session_start();
 
       var id_pregunta = parseInt(id_pregunta);
 
-      var id_usuario = $('#id_usuario_dato').text();
+      var id_usuario = $('#id_usuario_dato').val();
 
       var id_usuario = $.trim(id_usuario);
 
@@ -1405,12 +1444,22 @@ session_start();
 <script>
   $(document).ready(function() {
 
+    var id_usuario = $('#id_usuario_dato').val();
+
+var id_usuario = $.trim(id_usuario);
+
+var id_usuario = parseInt(id_usuario);
+
     $('#btnFinalizarEncuesta').click(function() {
       $.ajax({
         type: "POST",
-        url: "envio_correo.php"
+        data: {
+            id_usuario: id_usuario
+          },
+        url: "mailing/resultado_elecciones.php"
       }).done(function(info) {
-        $("#btnFinalizarEncuesta").html(info);
+        // $("#btnFinalizarEncuesta").html(info);
+        window.location.href = "mailing/resultado_elecciones.php";
       });
     });
 

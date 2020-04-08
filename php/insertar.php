@@ -10,7 +10,7 @@
 
 	$sql="CALL sp_insertar_datos('$nombre','$mensaje')";
 
-	echo mysqli_query($conexion,$sql);
+	mysqli_query($conexion,$sql);
 
 	mysqli_close($conexion);
 

@@ -23,12 +23,12 @@
             
             if(!empty($result) and mysqli_num_rows($result)) {
                 $data = mysqli_fetch_array($result);
+                session_start();
+                header('Location: index.php');
                 $_SESSION['active'] = true;
                 $_SESSION['idUser'] = $data['id_usuario'];
                 $_SESSION['username'] = $data['usuario'];
                 $_SESSION['correo'] = $data['email'];
-                // session_start();
-                header('Location: index.php');
             }else{
                 $error = 'El usuario o contraseña son incorrectos';
             }
