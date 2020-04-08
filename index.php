@@ -83,6 +83,7 @@
                         <div class="col">
                           <div class="embed-responsive embed-responsive-21by9">
                           <iframe src="https://www.youtube.com/embed/kCqCVrmV0Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            
                           </div>
                         </div>
                       </div>
@@ -96,7 +97,7 @@
                             <div class="card-body">
                             <h5 class="card-title">Encuesta de presentación memoria anual</h5>
                               <p class="card-text">Preciona el botón para responder la encuesta.</p>   
-                              <span class="btn btn-raised btn-success btn-lg btn-block" data-toggle="modal" data-target="#modalMemoria">
+                              <span class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalMemoria">
                                 <span class="fa fa-plus-circle"></span>Responder Encuesta
                               </span>
                             </div>
@@ -363,7 +364,7 @@
                    <div class="row">
                      <div class="col">
                        <div class="embed-responsive embed-responsive-21by9">
-                       <iframe src="https://www.youtube.com/embed/YZi5vam33ow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                       <iframe src="pdf/ing.pdf" allowfullscreen></iframe>
                        </div>
                      </div>
                    </div>
@@ -734,20 +735,12 @@
     </div>
     </body>
 </html>
-<script>
+<script  type="text/javascript">
     $(document).ready(function(){
         $.ajaxSetup({"cache":false});
         //setInterval("loadOldMessages()",100);
         $('#id_usuario_dato').hide();
-
-        var respuestas_total = $('#total_user').text();
-        var respuestas_total = $.trim(respuestas_total);
-        var respuestas_total = parseInt(respuestas_total);
-        //if(respuestas_total>4){
-         // $('#finalizarEncuesta').show();      
-        //}else{
-        //  $('#finalizarEncuesta').hide();
-       // }
+        $('#finalizarEncuesta').hide();
 
         $('#total_user').load('total_respuestas_user.php');
         $('#total_user_si').load('total_respuestas_user_si.php');
@@ -796,7 +789,6 @@
         $('#id_valida_cuota').hide();
         $('#sp_cuota').hide();
         
-
         $('#cuota_social').click(function(){
         var id_valida_cuota = $('#id_valida_cuota').text();
         var id_valida_cuota = $.trim(id_valida_cuota);
@@ -1391,9 +1383,9 @@ $(document).ready(function(){
 
 
 <!--*******************************ENVIO CORREO**************************************-->
-<script>
+<script  type="text/javascript">
   $(document).ready(function(){
-
+    $('#total_user').
     //$('#btnFinalizarEncuesta').click(function(){
       //$.ajax({type: "POST",
             //url: "envio_correo.php"
