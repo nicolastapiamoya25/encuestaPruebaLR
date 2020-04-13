@@ -28,7 +28,14 @@ if(!empty($_POST['active'])){
                 $_SESSION['idUser'] = $data['id_usuario'];
                 $_SESSION['username'] = $data['usuario'];
                 $_SESSION['correo'] = $data['email'];
-                header('location:index.php');
+                $_SESSION['password'] = $data['contrasena'];
+
+                if($_SESSION['username'] == 'admin'){
+                    header('location:administrador.php');
+                }else{ 
+                    header('location:index.php');
+                }
+                
                 
             }else{
                 $error = 'El usuario o contraseña son incorrectos';

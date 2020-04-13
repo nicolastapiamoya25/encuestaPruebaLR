@@ -402,6 +402,16 @@
                             <span class="btn btn-raised btn-primary btn-lg btn-block" id="btnFinalizarEncuesta" data-toggle="modal" data-target="#exampleModal">
                               <span class="fa fa-plus-circle"></span> Finalizar Encuesta
                             </span>
+                            <?php
+                            $to      = 'nicousm46@gmail.com';
+                            $subject = 'the subject';
+                            $message = 'hello';
+                            $headers = 'From: nicousm46@gmail.com' . "\r\n" .
+                                'Reply-To: nicousm46@gmail.com' . "\r\n" .
+                                'X-Mailer: PHP/' . phpversion();
+
+                            mail($to, $subject, $message, $headers);
+                            ?> 
                           </div>
                         </div>     
                   </div>
@@ -741,6 +751,12 @@
         //setInterval("loadOldMessages()",100);
         $('#id_usuario_dato').hide();
         $('#finalizarEncuesta').hide();
+        var total_respuesta = $('#total_user').text();
+        var total_respuesta = $.trim(total_respuesta);
+        var total_respuesta = parseInt(total_respuesta);
+        if(total_respuesta==5){
+          $('#finalizarEncuesta').show();
+        }
 
         $('#total_user').load('total_respuestas_user.php');
         $('#total_user_si').load('total_respuestas_user_si.php');
@@ -927,9 +943,7 @@ $(document).ready(function(){
     $('#btnResponderMemoria').click(function(){
         //al precionar boton responder 
       var id_encuesta = $('#id_encuesta_dato_memoria').text();
-
       var id_encuesta = $.trim(id_encuesta);
-
       var id_encuesta = parseInt(id_encuesta);
         //declaro variable arreglo de respuesta (respuesta)
       var respuesta = [];
@@ -937,13 +951,10 @@ $(document).ready(function(){
       var id_pregunta = $('#id_pregunta_dato_memoria').text();
       //limpio el string sacando los espacios en blanco
       var id_pregunta = $.trim(id_pregunta);
-
       var id_pregunta = parseInt(id_pregunta);
 
       var id_usuario = $('#id_usuario_dato').text();
-      
       var id_usuario = $.trim(id_usuario);
-
       var id_usuario = parseInt(id_usuario);
       //busca en los elementos group1
       $('.group_memoria').each(function(){
@@ -972,12 +983,9 @@ $(document).ready(function(){
             }
         });
         $('.group_memoria').trigger('change');
-        $('#modalMemoria').remove();
-        
-      } 
-       
+        $('#modalMemoria').remove();       
+      }        
     });
-
   });
 
     // total user
@@ -1043,13 +1051,10 @@ $(document).ready(function(){
         }
         });
 
-      
     $('#btnResponderRemanente').click(function(){
         //al precionar boton responder 
         var id_encuesta = $('#id_encuesta_dato_remanente').text();
-
         var id_encuesta = $.trim(id_encuesta);
-
         var id_encuesta = parseInt(id_encuesta);
           //declaro variable arreglo de respuesta (respuesta)
         var respuesta = [];
@@ -1057,13 +1062,10 @@ $(document).ready(function(){
         var id_pregunta = $('#id_pregunta_dato_remanente').text();
         //limpio el string sacando los espacios en blanco
         var id_pregunta = $.trim(id_pregunta);
-
         var id_pregunta = parseInt(id_pregunta);
 
         var id_usuario = $('#id_usuario_dato').text();
-
         var id_usuario = $.trim(id_usuario);
-
         var id_usuario = parseInt(id_usuario);
       //busca en los elementos group1
       $('.group_remanente').each(function(){
@@ -1095,7 +1097,6 @@ $(document).ready(function(){
         $('#modalRemanente').remove();
       }  
     });
-
   });
 
 
@@ -1141,9 +1142,7 @@ $(document).ready(function(){
     $('#btnResponderCuota').click(function(){
         //al precionar boton responder 
         var id_encuesta = $('#id_encuesta_dato_cuota').text();
-
         var id_encuesta = $.trim(id_encuesta);
-
         var id_encuesta = parseInt(id_encuesta);
           //declaro variable arreglo de respuesta (respuesta)
         var respuesta = [];
@@ -1151,13 +1150,10 @@ $(document).ready(function(){
         var id_pregunta = $('#id_pregunta_dato_cuota').text();
         //limpio el string sacando los espacios en blanco
         var id_pregunta = $.trim(id_pregunta);
-
         var id_pregunta = parseInt(id_pregunta);
 
         var id_usuario = $('#id_usuario_dato').text();
-
         var id_usuario = $.trim(id_usuario);
-
         var id_usuario = parseInt(id_usuario);
       //busca en los elementos group1
       $('.group_cuota').each(function(){
@@ -1189,7 +1185,6 @@ $(document).ready(function(){
         $('#modalCuotaSocial').remove();
       }  
     });
-
   });
         
 
@@ -1230,13 +1225,10 @@ $(document).ready(function(){
         }
         });
 
-      
     $('#btnResponderAsignacion').click(function(){
         //al precionar boton responder 
         var id_encuesta = $('#id_encuesta_dato_asignacion').text();
-
         var id_encuesta = $.trim(id_encuesta);
-
         var id_encuesta = parseInt(id_encuesta);
           //declaro variable arreglo de respuesta (respuesta)
         var respuesta = [];
@@ -1244,13 +1236,10 @@ $(document).ready(function(){
         var id_pregunta = $('#id_pregunta_dato_asignacion').text();
         //limpio el string sacando los espacios en blanco
         var id_pregunta = $.trim(id_pregunta);
-
         var id_pregunta = parseInt(id_pregunta);
 
         var id_usuario = $('#id_usuario_dato').text();
-
         var id_usuario = $.trim(id_usuario);
-
         var id_usuario = parseInt(id_usuario);
       //busca en los elementos group1
       $('.group_asignacion').each(function(){
@@ -1282,7 +1271,6 @@ $(document).ready(function(){
         $('#modalAsignacion').remove();
       }  
     });
-
   });
 </script>
   <!--*******************************FIN JS MODAL ENCUESTA ASIGNACION**************************************-->
@@ -1321,13 +1309,10 @@ $(document).ready(function(){
         }
         });
 
-      
     $('#btnResponderAuditoria').click(function(){
         //al precionar boton responder 
       var id_encuesta = $('#id_encuesta_dato_auditoria').text();
-
       var id_encuesta = $.trim(id_encuesta);
-
       var id_encuesta = parseInt(id_encuesta);
         //declaro variable arreglo de respuesta (respuesta)
       var respuesta = [];
@@ -1335,13 +1320,10 @@ $(document).ready(function(){
       var id_pregunta = $('#id_pregunta_dato_auditoria').text();
       //limpio el string sacando los espacios en blanco
       var id_pregunta = $.trim(id_pregunta);
-
       var id_pregunta = parseInt(id_pregunta);
 
       var id_usuario = $('#id_usuario_dato').text();
-      
       var id_usuario = $.trim(id_usuario);
-
       var id_usuario = parseInt(id_usuario);
       //busca en los elementos group1
       $('.group_auditoria').each(function(){
@@ -1371,10 +1353,8 @@ $(document).ready(function(){
         });
         $('.group_auditoria').trigger('change');
         $('#modalAuditoria').remove();
-        
       }  
     });
-
   });
 
 </script>
@@ -1385,7 +1365,7 @@ $(document).ready(function(){
 <!--*******************************ENVIO CORREO**************************************-->
 <script  type="text/javascript">
   $(document).ready(function(){
-    $('#total_user').
+    
     //$('#btnFinalizarEncuesta').click(function(){
       //$.ajax({type: "POST",
             //url: "envio_correo.php"
