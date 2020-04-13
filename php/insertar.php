@@ -1,5 +1,5 @@
 <?php 
-
+	
 	require_once "conexion.php";
 
 	$conexion=conexion();
@@ -10,7 +10,7 @@
 
 	$sql="CALL sp_insertar_datos('$nombre','$mensaje')";
 
-	mysqli_query($conexion,$sql);
+	echo mysqli_query($conexion,$sql);
 
 	mysqli_close($conexion);
 

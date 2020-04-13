@@ -11,7 +11,7 @@ session_start();
                     while ($ver=mysqli_fetch_row($result)):
                     ?>
                         <div id=datos-encuesta>
-                            <span style="color: #1c62c4;"><?php echo $ver[0]; ?></spam>
+                            <span style="color: #1c622c4;"><?php echo $ver[0]; ?></spam>
                         </div>
                     <?php endwhile; 
                     mysqli_close($conexion);

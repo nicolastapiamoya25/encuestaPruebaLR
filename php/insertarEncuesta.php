@@ -8,7 +8,7 @@ if (isset($_POST["respuesta"])) {
 	$usuario = $_POST["id_usuario"];
 	$sql="CALL sp_insertar_respuesta('".$_POST["respuesta"]."','$pregunta','$encuesta','$usuario')";
 
-	mysqli_query($conexion,$sql);
+	echo mysqli_query($conexion,$sql);
 	mysqli_close($conexion);
 }
  ?>
