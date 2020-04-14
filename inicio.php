@@ -51,23 +51,24 @@ if(!empty($_POST['active'])){
 <div class="container">
     <div class="row">
         <div class="col">
+        </div>
+        <div class="col-6">
             <div class="card">
                 <div class="card-header text-center">
-                    Lautaro Rosas 2020
+                <img src="lr.jpg" class="img-fluid" alt="Responsive image">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title text-center">Login</h5>
                     <form method="POST"> 
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Usuario</label>
+                            <label>Usuario</label>
                             <input id="usuario" name="usuario" type="text" class="form-control">
                         </div>
-
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Password</label>
+                        <label>Password</label>
                             <input class="form-control" id="password" name="password" type="password">
                         </div>            
-                        <button class="btn btn-primary" name="login" type="submit" >Ingresar</button>
+                        <button class="btn btn-raised btn-primary btn-lg btn-block" name="login" type="submit">Ingresar</button>
                         <div style = "font-size:16px; color:#cc0000;"><?php echo isset($error) ? utf8_decode($error) : '' ; ?></div>   
                     </form>
                 </div>
@@ -76,7 +77,8 @@ if(!empty($_POST['active'])){
                 </div>
             </div>
         </div>
-    
+        <div class="col">
+        </div>
     </div>
 </div>		 
 	</body>

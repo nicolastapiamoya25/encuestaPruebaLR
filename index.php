@@ -1,5 +1,8 @@
 <?php require_once "dependencias.php"; 
-      session_start();    
+      session_start();
+      if(!isset($_SESSION['username'])) {
+        header("Location:inicio.php");
+      }   
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,6 +24,7 @@
             </div>
                 <div class="col-6 col-md-4">
                   <h5>Bienvenido <?php echo $_SESSION['username']; ?><div id="id_usuario_dato"><?php echo $_SESSION['idUser']; ?></div></h5>
+                  <a href="cerrar_session.php">Cerrar Sesion</a>
                 </div>
                 
           </div> 

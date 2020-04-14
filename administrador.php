@@ -1,6 +1,10 @@
 <?php 
-require_once "dependencias.php"
+require_once "dependencias.php";
 
+session_start();
+if(!isset($_SESSION['username'])) {
+    header("Location:inicio.php");
+  }  
 ?>
 <html lang="en">
   <head>
@@ -18,7 +22,7 @@ require_once "dependencias.php"
 
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sign out</a>
+          <a class="nav-link" href="cerrar_session.php">Cerrar Sesion</a>
         </li>
       </ul>
     </nav>
