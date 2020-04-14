@@ -6,35 +6,40 @@
 
 if(!empty($_POST['active'])){
         header('location:index.php');
-
     }else{
         if(!empty($_POST))
-	{
-        if(empty($_POST["usuario"]) || empty($_POST['password'])){
-            $error = 'Ingese usuario y contraseña';
-        }else{
-            $conexion=conexion();
-
-            $usuario = $_POST['usuario'];
-            $password = $_POST['password'];
-            
-            $sql = "SELECT id_usuario, usuario FROM usuario WHERE usuario = '$usuario' AND contrasena = '$password'";
-            $result=mysqli_query($conexion,$sql);
-            
-            if(!empty($result) and mysqli_num_rows($result)) {
-                $data = mysqli_fetch_array($result);
-                session_start();
-                $_SESSION['active'] = true;
-                $_SESSION['idUser'] = $data['id_usuario'];
-                $_SESSION['username'] = $data['usuario'];
-                $_SESSION['correo'] = $data['email'];
-                header('location:index.php');
-                
+	    {
+            if(empty($_POST["usuario"]) || empty($_POST['password'])){
+                $error = 'Ingese usuario y contraseña';
             }else{
-                $error = 'El usuario o contraseña son incorrectos';
+                $conexion=conexion();
+
+                $usuario = $_POST['usuario'];
+                $password = $_POST['password'];
+                
+                $sql = "SELECT id_usuario, usuario FROM usuario WHERE usuario = '$usuario' AND contrasena = '$password'";
+                $result=mysqli_query($conexion,$sql);
+                
+                if(!empty($result) and mysqli_num_rows($result)) {
+                    $data = mysqli_fetch_array($result);
+                    session_start();
+                    $_SESSION['active'] = true;
+                    $_SESSION['idUser'] = $data['id_usuario'];
+                    $_SESSION['username'] = $data['usuario'];
+                    $_SESSION['correo'] = $data['email'];
+                    $_SESSION['password'] = $data['contrasena'];
+                    if($_SESSION['username'] == admin){
+                        header('location:administrador.php');
+                    }else{
+                        header('location:index.php');
+                    }
+                    
+                    
+                }else{
+                    $error = 'El usuario o contraseña son incorrectos';
+                }
             }
-        }
-	}
+	    }
 }	
 ?>
 <html>

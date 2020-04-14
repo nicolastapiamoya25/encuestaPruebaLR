@@ -7,9 +7,7 @@ session_start();
 
     $sql="CALL sp_total_respuestas_usuario_no('$usuario')";
     $result=mysqli_query($conexion,$sql);
-
  ?>
-
                     <?php
                     while ($ver=mysqli_fetch_row($result)):
                     ?>
@@ -18,7 +16,5 @@ session_start();
                         </div>
                     <?php endwhile; ?>
                        <?php mysqli_close($conexion);
-
-
 }
      ?>

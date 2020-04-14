@@ -1,32 +1,11 @@
-<h2>Test Mail</h2>
 <?php
-
-if (!isset($_POST["submit"]))
-  {
-  ?>
-  <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
-  From: <input type="text" name="from"><br>
-  Subject: <input type="text" name="subject"><br>
-  Message: <textarea rows="10" cols="40" name="message"></textarea><br>
-  <input type="submit" name="submit" value="Click To send mail">
-  </form>
-  <?php
-  }
-
-else
-
-  {
-
-  if (isset($_POST["from"]))
-    {
-    $from = $_POST["from"]; // sender
-    $subject = $_POST["subject"];
-    $message = $_POST["message"];
-
-    $message = wordwrap($message, 70);
-
-    mail("javigonvar@gmail.com",$subject,$message,"From: $from\n");
-    echo "Thank you for sending an email";
-    }
-  }
-?>
+$to_email = "nicosum46@gmail.com";
+$subject = "Simple Email Test via PHP";
+$body = "Hi,nn This is test email send by PHP Script";
+$headers = "From: sender\'s email";
+ 
+if (mail($to_email, $subject, $body, $headers)) {
+    echo "Email successfully sent to $to_email...";
+} else {
+    echo "Email sending failed...";
+}

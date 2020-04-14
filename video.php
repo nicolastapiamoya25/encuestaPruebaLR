@@ -69,6 +69,18 @@
                             </div>
                     </form>
                   </div>
+
+                  <?php
+                                $telefono = '1-909-466-4344';
+                                if (preg_match('/^((1-)?\d{3})-\d{3}-\d{4}/', $telefono)){
+                                    echo "El teléfono $telefono es válido";
+                                } else {
+                                    echo "El teléfono $telefono NO es válido";
+                                }
+
+                  ?>
+
+
                 </div>  
                         </div>
                     </div>                                   

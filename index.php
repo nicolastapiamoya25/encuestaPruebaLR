@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <title>Lautaro Rosas Video</title>
+    <title>Lautaro Rosas</title>
   </head>
     <body>
         <div class="container">
@@ -97,7 +97,7 @@
                             <div class="card-body">
                             <h5 class="card-title">Encuesta de presentación memoria anual</h5>
                               <p class="card-text">Preciona el botón para responder la encuesta.</p>   
-                              <span class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalMemoria">
+                              <span id="btnResponderEncuestaPrincipalMemoria" class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalMemoria">
                                 <span class="fa fa-plus-circle"></span>Responder Encuesta
                               </span>
                             </div>
@@ -166,7 +166,7 @@
                             <div class="card-body">
                               <h5 class="card-title">Encuesta de distribucion de remanente</h5>
                               <p class="card-text">Preciona el botón para responder la encuesta.</p>                                
-                                <span class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalRemanente">
+                                <span id="btnResponderEncuestaPrincipalRemanente" class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalRemanente">
                                   <span class="fa fa-plus-circle"></span> Responder Encuesta
                                 </span>                               
                             </div>
@@ -237,7 +237,7 @@
                             <div class="card-body">
                             <h5 class="card-title">Encuesta de fijar cuota social</h5>
                               <p class="card-text">Preciona el botón para responder la encuesta.</p>   
-                              <span class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalCuotaSocial">
+                              <span id="btnResponderEncuestaPrincipalCuota" class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalCuotaSocial">
                                 <span class="fa fa-plus-circle"></span> Responder Encuesta
                               </span>
                             </div>
@@ -308,7 +308,7 @@
                          <div class="card-body">
                          <h5 class="card-title">Encuesta de Asignación de Consejeros</h5>
                            <p class="card-text">Preciona el botón para responder la encuesta.</p>   
-                           <span class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalAsignacion">
+                           <span id="btnResponderEncuestaPrincipalAsignacion" class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalAsignacion">
                              <span class="fa fa-plus-circle"></span> Responder Encuesta
                            </span>
                          </div>
@@ -378,7 +378,7 @@
                          <div class="card-body">
                          <h5 class="card-title">Encuesta de Auditoria Externa</h5>
                            <p class="card-text">Preciona el botón para responder la encuesta.</p>   
-                           <span class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalAuditoria">
+                           <span id="btnResponderEncuestaPrincipalAuditoria" class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalAuditoria">
                              <span class="fa fa-plus-circle"></span> Responder Encuesta
                            </span>
                          </div>
@@ -399,35 +399,13 @@
                           <div class="card-body">
                           <h5 class="card-title">Finaliza la Encuesta</h5>
                             <p class="card-text">Preciona el botón para finalizar la encuesta.</p>   
-                            <span class="btn btn-raised btn-primary btn-lg btn-block" id="btnFinalizarEncuesta" data-toggle="modal" data-target="#exampleModal">
+                            <span class="btn btn-raised btn-primary btn-lg btn-block" id="btnFinalizarEncuesta">
                               <span class="fa fa-plus-circle"></span> Finalizar Encuesta
                             </span>
                           </div>
                         </div>     
                   </div>
               </div>
-
-              <!-- Modal Finalizar-->
-              <div class="modal fade text-center" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Advertencia!</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      Debe completar TODAS las encuestas
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- FIN Modal -->
-
 
               <div class="row">
                      <div class="col">
@@ -727,7 +705,28 @@
   </div>
   <!--************************************************* FIN MODAL ENCUESTA AUDITORIA EXTERNA ***********************************************-->
            
-           
+  <!--************************************************* MODAL ENCUESTA AVISO ***********************************************-->
+  <div class="modal fade" id="modalAviso" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Importante!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Para responder la encuesta debe seleccionar cada item correspondiente a una encuesta, una vez visto debe dar click en el boton responder y seleccionar su respuesta
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--************************************************* FIN MODAL AVISO ***********************************************-->
+              
             </div>
         </div>
     </div>
@@ -737,19 +736,24 @@
 </html>
 <script  type="text/javascript">
     $(document).ready(function(){
+
+        $('#modalAviso').modal('toggle');
         $.ajaxSetup({"cache":false});
         //setInterval("loadOldMessages()",100);
         $('#id_usuario_dato').hide();
-        $('#finalizarEncuesta').hide();
+        //$('#finalizarEncuesta').hide();
 
         $('#total_user').load('total_respuestas_user.php');
         $('#total_user_si').load('total_respuestas_user_si.php');
         $('#total_user_no').load('total_respuestas_user_no.php');
-        
+
+        /*intervalo por segudo si el usuario tiene las 5 preguntas contestadas o no*/
+        setInterval("validacionFinalizarEncuesta()",1000);
+
         /***********memoria********/
-        setInterval("loadTotalUser()",100);
-        setInterval("loadTotalUserSi()",100);
-        setInterval("loadTotalUserNo()",100);  
+        setInterval("loadTotalUser()",1000);
+        setInterval("loadTotalUserSi()",1000);
+        setInterval("loadTotalUserNo()",1000);  
         $('#id_encuesta_dato_memoria').hide();
         $('#id_pregunta_dato_memoria').hide();
         $('#id_valida_memoria').hide();
@@ -759,11 +763,18 @@
         var id_valida_memoria = $('#id_valida_memoria').text();
         var id_valida_memoria = $.trim(id_valida_memoria);
         var id_valida_memoria = parseInt(id_valida_memoria);
-        console.log(id_valida_memoria);
+        //console.log(id_valida_memoria);
         if(id_valida_memoria==1){
           alertify.error("Usted ya respondió esta encuesta");
           $('#collapseOne').hide();
         }
+        });
+
+        $('#btnResponderEncuestaPrincipalMemoria').click(function(){
+            $('#si_memoria').prop('checked', false);
+            $('#no_memoria').prop('checked', false);
+            $('#si_memoria').show();
+            $('#no_memoria').show();
         });
  
         /***********remanente********/
@@ -776,12 +787,19 @@
         var id_valida_remanente = $('#id_valida_remanente').text();
         var id_valida_remanente = $.trim(id_valida_remanente);
         var id_valida_remanente = parseInt(id_valida_remanente);
-        console.log(id_valida_remanente);
+        //console.log(id_valida_remanente);
         if(id_valida_remanente==1){
           alertify.error("Usted ya respondió esta encuesta");
           $('#collapseTwo').hide();
         }
-        });      
+        });
+        
+        $('#btnResponderEncuestaPrincipalRemanente').click(function(){
+            $('#si_remanente').prop('checked', false);
+            $('#no_remanente').prop('checked', false);
+            $('#si_remanente').show();
+            $('#no_remanente').show();
+        });
         
         /***********cuota social********/
         $('#id_encuesta_dato_cuota').hide();
@@ -793,11 +811,18 @@
         var id_valida_cuota = $('#id_valida_cuota').text();
         var id_valida_cuota = $.trim(id_valida_cuota);
         var id_valida_cuota = parseInt(id_valida_cuota);
-        console.log(id_valida_cuota);
+        //console.log(id_valida_cuota);
         if(id_valida_cuota==1){
           alertify.error("Usted ya respondió esta encuesta");
           $('#collapseTree').hide();
         }
+        });
+
+        $('#btnResponderEncuestaPrincipalCuota').click(function(){
+            $('#si_cuota').prop('checked', false);
+            $('#no_cuota').prop('checked', false);
+            $('#si_cuota').show();
+            $('#no_cuota').show();
         });
       
         /***********asignacion********/
@@ -810,11 +835,18 @@
         var id_valida_asignacion = $('#id_valida_asignacion').text();
         var id_valida_asignacion = $.trim(id_valida_asignacion);
         var id_valida_asignacion = parseInt(id_valida_asignacion);
-        console.log(id_valida_asignacion);
+        //console.log(id_valida_asignacion);
         if(id_valida_asignacion==1){
           alertify.error("Usted ya respondió esta encuesta");
           $('#collapseford').hide();
         }
+        });
+
+        $('#btnResponderEncuestaPrincipalAsignacion').click(function(){
+            $('#si_asignacion').prop('checked', false);
+            $('#no_asignacion').prop('checked', false);
+            $('#si_asignacion').show();
+            $('#no_asignacion').show();
         });
 
         /***********aditoria externa********/
@@ -827,13 +859,61 @@
         var id_valida_auditoria = $('#id_valida_auditoria').text();
         var id_valida_auditoria = $.trim(id_valida_auditoria);
         var id_valida_auditoria = parseInt(id_valida_auditoria);
-        console.log(id_valida_auditoria);
+        //console.log(id_valida_auditoria);
         if(id_valida_auditoria==1){
           alertify.error("Usted ya respondió esta encuesta");
           $('#collapsefive').hide();
         }
         });
+
+        $('#btnResponderEncuestaPrincipalAuditoria').click(function(){
+            $('#si_auditoria').prop('checked', false);
+            $('#no_auditoria').prop('checked', false);
+            $('#si_auditoria').show();
+            $('#no_auditoria').show();
+        });
     });
+
+    var validacionFinalizarEncuesta=function(){
+        var total_valida = $('#total_user').text();
+        var total_valida = $.trim(total_valida);
+        var total_valida = parseInt(total_valida);
+        //console.log(total_valida);
+        if(total_valida>4){
+          $('#finalizarEncuesta').show();
+        }else{
+          $('#finalizarEncuesta').hide();
+        }
+    }
+
+    // total user
+    var loadTotalUser=function(){
+        $.ajax({type: "POST",
+            url: "total_respuestas_user.php"
+        }).done(function( info ){
+            $("#total_user").html( info );
+        });
+    }
+
+    // total user si
+    var loadTotalUserSi=function(){
+        $.ajax({type: "POST",
+            url: "total_respuestas_user_si.php"
+        }).done(function( info ){
+            $("#total_user_si").html( info );
+        });
+    }
+    
+    // total user no
+    var loadTotalUserNo=function(){
+        $.ajax({type: "POST",
+            url: "total_respuestas_user_no.php"
+        }).done(function( info ){
+            $("#total_user_no").html( info );
+        });
+    }
+
+
 </script>
 
 <script type="text/javascript">
@@ -923,13 +1003,10 @@ $(document).ready(function(){
         }
         });
 
-      
     $('#btnResponderMemoria').click(function(){
         //al precionar boton responder 
       var id_encuesta = $('#id_encuesta_dato_memoria').text();
-
       var id_encuesta = $.trim(id_encuesta);
-
       var id_encuesta = parseInt(id_encuesta);
         //declaro variable arreglo de respuesta (respuesta)
       var respuesta = [];
@@ -937,13 +1014,10 @@ $(document).ready(function(){
       var id_pregunta = $('#id_pregunta_dato_memoria').text();
       //limpio el string sacando los espacios en blanco
       var id_pregunta = $.trim(id_pregunta);
-
       var id_pregunta = parseInt(id_pregunta);
 
       var id_usuario = $('#id_usuario_dato').text();
-      
       var id_usuario = $.trim(id_usuario);
-
       var id_usuario = parseInt(id_usuario);
       //busca en los elementos group1
       $('.group_memoria').each(function(){
@@ -957,55 +1031,30 @@ $(document).ready(function(){
       if (respuesta == "") {
         alertify.error("Debe responder la encuesta");
       }else{
-        $.ajax({
-            type:"POST",
-            data:{respuesta:respuesta, id_pregunta:id_pregunta, id_encuesta:id_encuesta, id_usuario:id_usuario},
-            url:"php/insertarEncuesta.php",
-            success:function(r){
-            if(r==1){
-               $('#frmEncuestaMemoria')[0].reset();
-               alertify.success("Respuesta Enviada");
-               $('#collapseOne').hide();             
-                }else{
-                    alertify.error("Respuesta No Enviada");
-                }           
-            }
-        });
+        alertify.confirm('!Alerta¡', '¿Usted está seguro de su Respuesta?', 
+          function(){ 
+            $.ajax({
+                type:"POST",
+                data:{respuesta:respuesta, id_pregunta:id_pregunta, id_encuesta:id_encuesta, id_usuario:id_usuario},
+                url:"php/insertarEncuesta.php",
+                success:function(r){
+                if(r==1){
+                  $('#frmEncuestaMemoria')[0].reset();
+                  alertify.success("Respuesta Enviada");
+                  $('#collapseOne').hide();             
+                    }else{
+                        alertify.error("Respuesta No Enviada");
+                    }           
+                }
+            });
+          },function(){ 
+                  alertify.error('Cancelo');
+                });
         $('.group_memoria').trigger('change');
         $('#modalMemoria').remove();
-        
       } 
-       
     });
-
   });
-
-    // total user
-        var loadTotalUser=function(){
-        $.ajax({type: "POST",
-            url: "total_respuestas_user.php"
-        }).done(function( info ){
-            $("#total_user").html( info );
-        });
-    }
-
-    // total user si
-    var loadTotalUserSi=function(){
-        $.ajax({type: "POST",
-            url: "total_respuestas_user_si.php"
-        }).done(function( info ){
-            $("#total_user_si").html( info );
-        });
-    }
-    
-    // total user no
-    var loadTotalUserNo=function(){
-        $.ajax({type: "POST",
-            url: "total_respuestas_user_no.php"
-        }).done(function( info ){
-            $("#total_user_no").html( info );
-        });
-    }
 </script>
 <!--*******************************FIN JS MODAL ENCUESTA MEMORIA**************************************-->
 
@@ -1043,13 +1092,10 @@ $(document).ready(function(){
         }
         });
 
-      
     $('#btnResponderRemanente').click(function(){
         //al precionar boton responder 
         var id_encuesta = $('#id_encuesta_dato_remanente').text();
-
         var id_encuesta = $.trim(id_encuesta);
-
         var id_encuesta = parseInt(id_encuesta);
           //declaro variable arreglo de respuesta (respuesta)
         var respuesta = [];
@@ -1057,13 +1103,10 @@ $(document).ready(function(){
         var id_pregunta = $('#id_pregunta_dato_remanente').text();
         //limpio el string sacando los espacios en blanco
         var id_pregunta = $.trim(id_pregunta);
-
         var id_pregunta = parseInt(id_pregunta);
 
         var id_usuario = $('#id_usuario_dato').text();
-
         var id_usuario = $.trim(id_usuario);
-
         var id_usuario = parseInt(id_usuario);
       //busca en los elementos group1
       $('.group_remanente').each(function(){
@@ -1077,29 +1120,30 @@ $(document).ready(function(){
       if (respuesta == "") {
         alertify.error("Debe responder la encuesta");
       }else{
-        $.ajax({
-            type:"POST",
-            data:{respuesta:respuesta, id_pregunta:id_pregunta, id_encuesta:id_encuesta, id_usuario:id_usuario},
-            url:"php/insertarEncuesta.php",
-            success:function(r){
-            if(r==1){
-               $('#frmEncuestaRemanente')[0].reset();
-               alertify.success("Respuesta Enviada");
-               $('#collapseTwo').hide();        
-                }else{
-                    alertify.error("Respuesta No Enviada");
-                }           
-            }
-        });
+        alertify.confirm('!Alerta¡', '¿Usted está seguro de su Respuesta?', 
+          function(){ 
+            $.ajax({
+                type:"POST",
+                data:{respuesta:respuesta, id_pregunta:id_pregunta, id_encuesta:id_encuesta, id_usuario:id_usuario},
+                url:"php/insertarEncuesta.php",
+                success:function(r){
+                if(r==1){
+                  $('#frmEncuestaRemanente')[0].reset();
+                  alertify.success("Respuesta Enviada");
+                  $('#collapseTwo').hide();        
+                    }else{
+                        alertify.error("Respuesta No Enviada");
+                    }           
+                }
+            });
+          },function(){ 
+                  alertify.error('Cancelo');
+                });
         $('.group_remanente').trigger('change');
         $('#modalRemanente').remove();
       }  
     });
-
   });
-
-
-
 </script>
 <!--*******************************FIN JS MODAL ENCUESTA REMANENTE**************************************-->
 
@@ -1136,14 +1180,11 @@ $(document).ready(function(){
         $('.group_cuota').trigger('change');
         }
         });
-
       
     $('#btnResponderCuota').click(function(){
         //al precionar boton responder 
         var id_encuesta = $('#id_encuesta_dato_cuota').text();
-
         var id_encuesta = $.trim(id_encuesta);
-
         var id_encuesta = parseInt(id_encuesta);
           //declaro variable arreglo de respuesta (respuesta)
         var respuesta = [];
@@ -1151,13 +1192,10 @@ $(document).ready(function(){
         var id_pregunta = $('#id_pregunta_dato_cuota').text();
         //limpio el string sacando los espacios en blanco
         var id_pregunta = $.trim(id_pregunta);
-
         var id_pregunta = parseInt(id_pregunta);
 
         var id_usuario = $('#id_usuario_dato').text();
-
         var id_usuario = $.trim(id_usuario);
-
         var id_usuario = parseInt(id_usuario);
       //busca en los elementos group1
       $('.group_cuota').each(function(){
@@ -1171,28 +1209,30 @@ $(document).ready(function(){
       if (respuesta == "") {
         alertify.error("Debe responder la encuesta");
       }else{
-        $.ajax({
-            type:"POST",
-            data:{respuesta:respuesta, id_pregunta:id_pregunta, id_encuesta:id_encuesta, id_usuario:id_usuario},
-            url:"php/insertarEncuesta.php",
-            success:function(r){
-            if(r==1){
-               $('#frmEncuestaCuota')[0].reset();
-               alertify.success("Respuesta Enviada");
-               $('#collapseTree').hide();        
-                }else{
-                    alertify.error("Respuesta No Enviada");
-                }           
-            }
-        });
+        alertify.confirm('!Alerta¡', '¿Usted está seguro de su Respuesta?', 
+          function(){
+            $.ajax({
+                type:"POST",
+                data:{respuesta:respuesta, id_pregunta:id_pregunta, id_encuesta:id_encuesta, id_usuario:id_usuario},
+                url:"php/insertarEncuesta.php",
+                success:function(r){
+                if(r==1){
+                  $('#frmEncuestaCuota')[0].reset();
+                  alertify.success("Respuesta Enviada");
+                  $('#collapseTree').hide();        
+                    }else{
+                        alertify.error("Respuesta No Enviada");
+                    }           
+                }
+            });
+          },function(){ 
+                  alertify.error('Cancelo');
+                });
         $('.group_cuota').trigger('change');
         $('#modalCuotaSocial').remove();
       }  
     });
-
   });
-        
-
 </script>
 <!--*******************************FIN JS MODAL ENCUESTA CUOTA**************************************-->
 
@@ -1229,14 +1269,11 @@ $(document).ready(function(){
         $('.group_asignacion').trigger('change');
         }
         });
-
       
     $('#btnResponderAsignacion').click(function(){
         //al precionar boton responder 
         var id_encuesta = $('#id_encuesta_dato_asignacion').text();
-
         var id_encuesta = $.trim(id_encuesta);
-
         var id_encuesta = parseInt(id_encuesta);
           //declaro variable arreglo de respuesta (respuesta)
         var respuesta = [];
@@ -1244,13 +1281,10 @@ $(document).ready(function(){
         var id_pregunta = $('#id_pregunta_dato_asignacion').text();
         //limpio el string sacando los espacios en blanco
         var id_pregunta = $.trim(id_pregunta);
-
         var id_pregunta = parseInt(id_pregunta);
 
         var id_usuario = $('#id_usuario_dato').text();
-
         var id_usuario = $.trim(id_usuario);
-
         var id_usuario = parseInt(id_usuario);
       //busca en los elementos group1
       $('.group_asignacion').each(function(){
@@ -1264,25 +1298,29 @@ $(document).ready(function(){
       if (respuesta == "") {
         alertify.error("Debe responder la encuesta");
       }else{
-        $.ajax({
-            type:"POST",
-            data:{respuesta:respuesta, id_pregunta:id_pregunta, id_encuesta:id_encuesta, id_usuario:id_usuario},
-            url:"php/insertarEncuesta.php",
-            success:function(r){
-            if(r==1){
-               $('#frmEncuestaAsignacion')[0].reset();
-               alertify.success("Respuesta Enviada"); 
-               $('#collapseford').hide();         
-                }else{
-                    alertify.error("Respuesta No Enviada");
-                }           
-            }
-        });
+        alertify.confirm('!Alerta¡', '¿Usted está seguro de su Respuesta?', 
+          function(){
+              $.ajax({
+                  type:"POST",
+                  data:{respuesta:respuesta, id_pregunta:id_pregunta, id_encuesta:id_encuesta, id_usuario:id_usuario},
+                  url:"php/insertarEncuesta.php",
+                  success:function(r){
+                  if(r==1){
+                    $('#frmEncuestaAsignacion')[0].reset();
+                    alertify.success("Respuesta Enviada"); 
+                    $('#collapseford').hide();         
+                      }else{
+                          alertify.error("Respuesta No Enviada");
+                      }           
+                  }
+              });
+            },function(){ 
+                  alertify.error('Cancelo');
+                });
         $('.group_asignacion').trigger('change');
         $('#modalAsignacion').remove();
       }  
     });
-
   });
 </script>
   <!--*******************************FIN JS MODAL ENCUESTA ASIGNACION**************************************-->
@@ -1320,14 +1358,11 @@ $(document).ready(function(){
         $('.group_auditoria').trigger('change');
         }
         });
-
       
     $('#btnResponderAuditoria').click(function(){
         //al precionar boton responder 
       var id_encuesta = $('#id_encuesta_dato_auditoria').text();
-
       var id_encuesta = $.trim(id_encuesta);
-
       var id_encuesta = parseInt(id_encuesta);
         //declaro variable arreglo de respuesta (respuesta)
       var respuesta = [];
@@ -1335,13 +1370,10 @@ $(document).ready(function(){
       var id_pregunta = $('#id_pregunta_dato_auditoria').text();
       //limpio el string sacando los espacios en blanco
       var id_pregunta = $.trim(id_pregunta);
-
       var id_pregunta = parseInt(id_pregunta);
 
       var id_usuario = $('#id_usuario_dato').text();
-      
       var id_usuario = $.trim(id_usuario);
-
       var id_usuario = parseInt(id_usuario);
       //busca en los elementos group1
       $('.group_auditoria').each(function(){
@@ -1355,48 +1387,55 @@ $(document).ready(function(){
       if (respuesta == "") {
         alertify.error("Debe responder la encuesta");
       }else{
-        $.ajax({
-            type:"POST",
-            data:{respuesta:respuesta, id_pregunta:id_pregunta, id_encuesta:id_encuesta, id_usuario:id_usuario},
-            url:"php/insertarEncuesta.php",
-            success:function(r){
-            if(r==1){
-               $('#frmEncuestaAuditoria')[0].reset();
-               alertify.success("Respuesta Enviada");
-               $('#collapsefive').hide();               
-                }else{
-                    alertify.error("Respuesta No Enviada");
-                }           
-            }
-        });
+        alertify.confirm('!Alerta¡', '¿Usted está seguro de su Respuesta?', 
+          function(){
+              $.ajax({
+                  type:"POST",
+                  data:{respuesta:respuesta, id_pregunta:id_pregunta, id_encuesta:id_encuesta, id_usuario:id_usuario},
+                  url:"php/insertarEncuesta.php",
+                  success:function(r){
+                  if(r==1){
+                    $('#frmEncuestaAuditoria')[0].reset();
+                    alertify.success("Respuesta Enviada");
+                    $('#collapsefive').hide();               
+                      }else{
+                          alertify.error("Respuesta No Enviada");
+                      }           
+                  }
+              });
+            },function(){ 
+                  alertify.error('Cancelo');
+                });
         $('.group_auditoria').trigger('change');
         $('#modalAuditoria').remove();
-        
       }  
     });
-
   });
 
 </script>
 <!--*******************************FIN JS MODAL ENCUESTA AUDITORIA**************************************-->
 
-
-
 <!--*******************************ENVIO CORREO**************************************-->
-<script  type="text/javascript">
-  $(document).ready(function(){
-    $('#total_user').
-    //$('#btnFinalizarEncuesta').click(function(){
-      //$.ajax({type: "POST",
-            //url: "envio_correo.php"
-        //}).done(function( info ){
-            //$("#btnFinalizarEncuesta").html( info );
-       // });
-      // alertify.error("Debe responder todas las encuestas");
-   // });
+<script>
+  $(document).ready(function() {
 
+    var id_usuario = $('#id_usuario_dato').val();
+    var id_usuario = $.trim(id_usuario);
+    var id_usuario = parseInt(id_usuario);
+
+    $('#btnFinalizarEncuesta').click(function() {
+      $.ajax({
+        type: "POST",
+        data: {
+            id_usuario: id_usuario
+          },
+        url: "mailing/resultado_elecciones.php"
+      }).done(function(info) {
+        // $("#btnFinalizarEncuesta").html(info);
+        window.location.href = "mailing/resultado_elecciones.php";
+      });
+    });
   });
 </script>
-
 <!--*******************************FIN ENVIO CORREO**************************************-->
  
