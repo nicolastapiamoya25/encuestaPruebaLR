@@ -24,6 +24,10 @@ session_start();
   #datos-pregunta{
     color: white;
   }
+
+  #pregunta{
+    color: #0A3782;
+  }
   h1{
     font-family: "Open Sans", Arial, sans-serif;
     color: #0A3782;
@@ -500,7 +504,7 @@ session_start();
 
                       while ($ver = mysqli_fetch_row($result)) :
                       ?>
-                        <div id=datos-pregunta>
+                        <div id=pregunta>
                           <div id="id_pregunta_dato_memoria"><?php echo $ver[0]; ?></div><?php echo utf8_encode($ver[1]); ?>
                         </div>
                       <?php endwhile;
@@ -555,7 +559,7 @@ session_start();
 
                       while ($ver = mysqli_fetch_row($result)) :
                       ?>
-                        <div id=datos-pregunta>
+                        <div id=pregunta>
                           <div id="id_pregunta_dato_remanente"><?php echo $ver[0]; ?></div><?php echo utf8_encode($ver[1]); ?>
                         </div>
                       <?php endwhile;
@@ -610,7 +614,7 @@ session_start();
 
                       while ($ver = mysqli_fetch_row($result)) :
                       ?>
-                        <div id=datos-pregunta>
+                        <div id=pregunta>
                           <div id="id_pregunta_dato_cuota"><?php echo $ver[0]; ?></div><?php echo utf8_encode($ver[1]); ?>
                         </div>
                       <?php endwhile;
@@ -665,7 +669,7 @@ session_start();
 
                       while ($ver = mysqli_fetch_row($result)) :
                       ?>
-                        <div id=datos-pregunta>
+                        <div id=pregunta>
                           <div id="id_pregunta_dato_asignacion"><?php echo $ver[0]; ?></div><?php echo utf8_encode($ver[1]); ?>
                         </div>
                       <?php endwhile;
@@ -721,7 +725,7 @@ session_start();
 
                       while ($ver = mysqli_fetch_row($result)) :
                       ?>
-                        <div id=datos-pregunta>
+                        <div id=pregunta>
                           <div id="id_pregunta_dato_auditoria"><?php echo $ver[0]; ?></div><?php echo utf8_encode($ver[1]); ?>
                         </div>
                       <?php endwhile;
