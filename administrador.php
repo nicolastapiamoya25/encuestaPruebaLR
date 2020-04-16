@@ -262,7 +262,7 @@ var myChart = new Chart(ctx, {
                         $total_no_asignacion = $ver[1];
                     }
                     $strTotalSiAsignacion=(string)$total_si_asignacion;
-                    $strTotalNAsignaciono=(string)$total_no_asignacion;
+                    $strTotalNoAsignacion=(string)$total_no_asignacion;
     
 ?>
 <script>
@@ -273,7 +273,7 @@ var myChart = new Chart(ctx, {
         labels: ['SI', 'NO'],
         datasets: [{
             label: '# of Votes',
-            data: [<?php echo $strTotalSiAsignacion?>, <?php echo $strTotalNAsignaciono?>],
+            data: [<?php echo $strTotalSiAsignacion?>, <?php echo $strTotalNoAsignacion?>],
             backgroundColor: [
                 'rgba(51, 164, 49, 0.5)',
                 'rgba(54, 162, 235, 0.2)'

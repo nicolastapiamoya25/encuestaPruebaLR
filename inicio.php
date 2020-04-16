@@ -3,7 +3,7 @@
     require_once "dependencias.php";
 	
     $error = '';
-
+    
 if(!empty($_POST['active'])){
         header('location:index.php');
     }else{

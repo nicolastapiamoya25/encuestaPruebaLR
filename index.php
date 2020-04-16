@@ -26,13 +26,20 @@
                   <h5>Bienvenido <?php echo $_SESSION['username']; ?><div id="id_usuario_dato"><?php echo $_SESSION['idUser']; ?></div></h5>
                   <a href="cerrar_session.php">Cerrar Sesion</a>
                 </div>
-                
           </div> 
 
-          <div class="card-header text-white bg-info">  
+          <div class="card-header text-white bg-info text-center">  
             <div class="row justify-content-md-center">
               <div class="col">
                 <h2>Junta General de Socios 2020</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-header text-center">  
+            <div class="row justify-content-md-center">
+              <div class="col">
+                <h6>Para responder la encuesta debe seleccionar cada item correspondiente a una encuesta, una vez visto el contenido usted debe dar click en el botón responder y seleccionar su respuesta.</h6>
               </div>
             </div>
           </div>
@@ -92,7 +99,7 @@
                         </div>
                       </div>
 
-                       <div class="row">
+                       <div id="boton_encuesta_memoria" class="row">
                           <div class="col">
                           <div class="card text-center">
                             <div class="card-header">
@@ -100,7 +107,7 @@
                             </div>
                             <div class="card-body">
                             <h5 class="card-title">Encuesta de presentación memoria anual</h5>
-                              <p class="card-text">Preciona el botón para responder la encuesta.</p>   
+                              <p class="card-text">Precione el botón para responder la encuesta.</p>   
                               <span id="btnResponderEncuestaPrincipalMemoria" class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalMemoria">
                                 <span class="fa fa-plus-circle"></span>Responder Encuesta
                               </span>
@@ -161,7 +168,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="row">
+                      <div id="boton_encuesta_remanente" class="row">
                         <div class="col">
                           <div class="card text-center">
                             <div class="card-header">
@@ -169,7 +176,7 @@
                             </div>
                             <div class="card-body">
                               <h5 class="card-title">Encuesta de distribucion de remanente</h5>
-                              <p class="card-text">Preciona el botón para responder la encuesta.</p>                                
+                              <p class="card-text">Precione el botón para responder la encuesta.</p>                                
                                 <span id="btnResponderEncuestaPrincipalRemanente" class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalRemanente">
                                   <span class="fa fa-plus-circle"></span> Responder Encuesta
                                 </span>                               
@@ -232,7 +239,7 @@
                         </div>
                       </div>
 
-                      <div class="row">
+                      <div id="boton_encuesta_cuota" class="row">
                           <div class="col">
                           <div class="card text-center">
                             <div class="card-header">
@@ -240,7 +247,7 @@
                             </div>
                             <div class="card-body">
                             <h5 class="card-title">Encuesta de fijar cuota social</h5>
-                              <p class="card-text">Preciona el botón para responder la encuesta.</p>   
+                              <p class="card-text">Precione el botón para responder la encuesta.</p>   
                               <span id="btnResponderEncuestaPrincipalCuota" class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalCuotaSocial">
                                 <span class="fa fa-plus-circle"></span> Responder Encuesta
                               </span>
@@ -303,7 +310,7 @@
                      </div>
                    </div>
 
-                   <div class="row">
+                   <div id="boton_encuesta_asignacion" class="row">
                        <div class="col">
                        <div class="card text-center">
                          <div class="card-header">
@@ -311,7 +318,7 @@
                          </div>
                          <div class="card-body">
                          <h5 class="card-title">Encuesta de Asignación de Consejeros</h5>
-                           <p class="card-text">Preciona el botón para responder la encuesta.</p>   
+                           <p class="card-text">Precione el botón para responder la encuesta.</p>   
                            <span id="btnResponderEncuestaPrincipalAsignacion" class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalAsignacion">
                              <span class="fa fa-plus-circle"></span> Responder Encuesta
                            </span>
@@ -373,7 +380,7 @@
                      </div>
                    </div>
 
-                   <div class="row">
+                   <div id="boton_encuesta_auditoria" class="row">
                        <div class="col">
                        <div class="card text-center">
                          <div class="card-header">
@@ -381,7 +388,7 @@
                          </div>
                          <div class="card-body">
                          <h5 class="card-title">Encuesta de Auditoria Externa</h5>
-                           <p class="card-text">Preciona el botón para responder la encuesta.</p>   
+                           <p class="card-text">Precione el botón para responder la encuesta.</p>   
                            <span id="btnResponderEncuestaPrincipalAuditoria" class="btn btn-raised btn-primary btn-lg btn-block" data-toggle="modal" data-target="#modalAuditoria">
                              <span class="fa fa-plus-circle"></span> Responder Encuesta
                            </span>
@@ -402,7 +409,7 @@
 
                           <div class="card-body">
                           <h5 class="card-title">Finaliza la Encuesta</h5>
-                            <p class="card-text">Preciona el botón para finalizar la encuesta.</p>   
+                            <p class="card-text">Precione el botón para finalizar la encuesta.</p>   
                             <span class="btn btn-raised btn-primary btn-lg btn-block" id="btnFinalizarEncuesta">
                               <span class="fa fa-plus-circle"></span> Finalizar Encuesta
                             </span>
@@ -741,7 +748,7 @@
 <script  type="text/javascript">
     $(document).ready(function(){
 
-        $('#modalAviso').modal('toggle');
+        //$('#modalAviso').modal('toggle');
         $.ajaxSetup({"cache":false});
         //setInterval("loadOldMessages()",100);
         $('#id_usuario_dato').hide();
@@ -770,7 +777,7 @@
         //console.log(id_valida_memoria);
         if(id_valida_memoria==1){
           alertify.error("Usted ya respondió esta encuesta");
-          $('#collapseOne').hide();
+          $('#boton_encuesta_memoria').hide();
         }
         });
 
@@ -794,7 +801,7 @@
         //console.log(id_valida_remanente);
         if(id_valida_remanente==1){
           alertify.error("Usted ya respondió esta encuesta");
-          $('#collapseTwo').hide();
+          $('#boton_encuesta_remanente').hide();
         }
         });
         
@@ -818,7 +825,7 @@
         //console.log(id_valida_cuota);
         if(id_valida_cuota==1){
           alertify.error("Usted ya respondió esta encuesta");
-          $('#collapseTree').hide();
+          $('#boton_encuesta_cuota').hide();
         }
         });
 
@@ -842,7 +849,7 @@
         //console.log(id_valida_asignacion);
         if(id_valida_asignacion==1){
           alertify.error("Usted ya respondió esta encuesta");
-          $('#collapseford').hide();
+          $('#boton_encuesta_asignacion').hide();
         }
         });
 
@@ -866,7 +873,7 @@
         //console.log(id_valida_auditoria);
         if(id_valida_auditoria==1){
           alertify.error("Usted ya respondió esta encuesta");
-          $('#collapsefive').hide();
+          $('#boton_encuesta_auditoria').hide();
         }
         });
 
@@ -1045,7 +1052,7 @@ $(document).ready(function(){
                 if(r==1){
                   $('#frmEncuestaMemoria')[0].reset();
                   alertify.success("Respuesta Enviada");
-                  $('#collapseOne').hide();             
+                  $('#boton_encuesta_memoria').hide();             
                     }else{
                         alertify.error("Respuesta No Enviada");
                     }           
@@ -1134,7 +1141,7 @@ $(document).ready(function(){
                 if(r==1){
                   $('#frmEncuestaRemanente')[0].reset();
                   alertify.success("Respuesta Enviada");
-                  $('#collapseTwo').hide();        
+                  $('#boton_encuesta_remanente').hide();        
                     }else{
                         alertify.error("Respuesta No Enviada");
                     }           
@@ -1223,7 +1230,7 @@ $(document).ready(function(){
                 if(r==1){
                   $('#frmEncuestaCuota')[0].reset();
                   alertify.success("Respuesta Enviada");
-                  $('#collapseTree').hide();        
+                  $('#boton_encuesta_cuota').hide();        
                     }else{
                         alertify.error("Respuesta No Enviada");
                     }           
@@ -1312,7 +1319,7 @@ $(document).ready(function(){
                   if(r==1){
                     $('#frmEncuestaAsignacion')[0].reset();
                     alertify.success("Respuesta Enviada"); 
-                    $('#collapseford').hide();         
+                    $('#boton_encuesta_asignacion').hide();         
                       }else{
                           alertify.error("Respuesta No Enviada");
                       }           
@@ -1401,7 +1408,7 @@ $(document).ready(function(){
                   if(r==1){
                     $('#frmEncuestaAuditoria')[0].reset();
                     alertify.success("Respuesta Enviada");
-                    $('#collapsefive').hide();               
+                    $('#boton_encuesta_auditoria').hide();               
                       }else{
                           alertify.error("Respuesta No Enviada");
                       }           
