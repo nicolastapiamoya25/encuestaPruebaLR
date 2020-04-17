@@ -17,7 +17,7 @@ if(!empty($_POST['active'])){
                 $usuario = $_POST['usuario'];
                 $password = $_POST['password'];
                 
-                $sql = "SELECT id_usuario, usuario FROM usuario WHERE usuario = '$usuario' AND contrasena = '$password'";
+                $sql = "SELECT id_usuario, usuario, email FROM usuario WHERE usuario = '$usuario' AND contrasena = '$password'";
                 $result=mysqli_query($conexion,$sql);
                 
                 if(!empty($result) and mysqli_num_rows($result)) {

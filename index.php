@@ -24,7 +24,7 @@
             </div>
                 <div class="col-6 col-md-4">
                   <h5>Bienvenido <?php echo $_SESSION['username']; ?><div id="id_usuario_dato"><?php echo $_SESSION['idUser']; ?></div></h5>
-                  <a href="cerrar_session.php">Cerrar Sesion</a>
+                  <a class="btn btn-raised btn-success" href="cerrar_session.php">Cerrar Sesion</a>
                 </div>
           </div> 
 
@@ -42,7 +42,16 @@
                 <h6>Para responder la encuesta debe seleccionar cada item correspondiente a una encuesta, una vez visto el contenido usted debe dar click en el botón responder y seleccionar su respuesta.</h6>
               </div>
             </div>
-          </div>
+          </div></br>
+                    <div class="row">
+                    <div class="col"></div>
+                     <div class="col-6">
+                       <div class="embed-responsive embed-responsive-21by9">
+                       <iframe src="https://www.youtube.com/embed/izX8e0ha0gs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                       </div>
+                     </div>
+                     <div class="col"></div>
+                    </div>
 
           <div class="row">
             <div class="col">
@@ -93,7 +102,7 @@
                       <div class="row">
                         <div class="col">
                           <div class="embed-responsive embed-responsive-21by9">
-                          <iframe src="https://www.youtube.com/embed/kCqCVrmV0Rs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          <iframe src="https://onedrive.live.com/embed?cid=588E29B7B611C0C8&resid=588E29B7B611C0C8%21106&authkey=APocAYiXL64_D2E&em=2" width="402" height="327" frameborder="0" scrolling="no"></iframe>
                             
                           </div>
                         </div>
@@ -164,7 +173,7 @@
                       <div class="row">
                         <div class="col">
                           <div class="embed-responsive embed-responsive-21by9">
-                          <iframe src="https://www.youtube.com/embed/bcwg_IhX3Ws" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          <iframe src="https://onedrive.live.com/embed?cid=588E29B7B611C0C8&resid=588E29B7B611C0C8%21106&authkey=APocAYiXL64_D2E&em=2" width="402" height="327" frameborder="0" scrolling="no"></iframe>
                           </div>
                         </div>
                       </div>
@@ -234,7 +243,7 @@
                       <div class="row">
                         <div class="col">
                           <div class="embed-responsive embed-responsive-21by9">
-                          <iframe src="https://www.youtube.com/embed/HZa7ctnK7oc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          <iframe src="pdf/ing.pdf" allowfullscreen></iframe>
                           </div>
                         </div>
                       </div>
@@ -305,7 +314,7 @@
                    <div class="row">
                      <div class="col">
                        <div class="embed-responsive embed-responsive-21by9">
-                       <iframe src="https://www.youtube.com/embed/izX8e0ha0gs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                       <iframe src="pdf/ing.pdf" allowfullscreen></iframe>
                        </div>
                      </div>
                    </div>
@@ -721,13 +730,19 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Importante!</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Introducción</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          Para responder la encuesta debe seleccionar cada item correspondiente a una encuesta, una vez visto debe dar click en el boton responder y seleccionar su respuesta
+                    <div class="row">
+                     <div class="col">
+                       <div class="embed-responsive embed-responsive-21by9">
+                       <iframe src="https://www.youtube.com/embed/izX8e0ha0gs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                       </div>
+                     </div>
+                   </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -748,7 +763,7 @@
 <script  type="text/javascript">
     $(document).ready(function(){
 
-        //$('#modalAviso').modal('toggle');
+        $('#modalAviso').modal('toggle');
         $.ajaxSetup({"cache":false});
         //setInterval("loadOldMessages()",100);
         $('#id_usuario_dato').hide();
