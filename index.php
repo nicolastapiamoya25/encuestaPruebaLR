@@ -102,7 +102,7 @@
                       <div class="row">
                         <div class="col">
                           <div class="embed-responsive embed-responsive-21by9">
-                          <iframe src="https://onedrive.live.com/embed?cid=588E29B7B611C0C8&resid=588E29B7B611C0C8%21106&authkey=APocAYiXL64_D2E&em=2" width="402" height="327" frameborder="0" scrolling="no"></iframe>
+                          <!--<iframe src="https://onedrive.live.com/embed?cid=588E29B7B611C0C8&resid=588E29B7B611C0C8%21106&authkey=APocAYiXL64_D2E&em=2" width="402" height="327" frameborder="0" scrolling="no"></iframe>-->
                             
                           </div>
                         </div>
@@ -173,7 +173,7 @@
                       <div class="row">
                         <div class="col">
                           <div class="embed-responsive embed-responsive-21by9">
-                          <iframe src="https://onedrive.live.com/embed?cid=588E29B7B611C0C8&resid=588E29B7B611C0C8%21106&authkey=APocAYiXL64_D2E&em=2" width="402" height="327" frameborder="0" scrolling="no"></iframe>
+                          <!--<iframe src="https://onedrive.live.com/embed?cid=588E29B7B611C0C8&resid=588E29B7B611C0C8%21106&authkey=APocAYiXL64_D2E&em=2" width="402" height="327" frameborder="0" scrolling="no"></iframe>-->
                           </div>
                         </div>
                       </div>
@@ -777,9 +777,7 @@
         setInterval("validacionFinalizarEncuesta()",1000);
 
         /***********memoria********/
-        setInterval("loadTotalUser()",1000);
-        setInterval("loadTotalUserSi()",1000);
-        setInterval("loadTotalUserNo()",1000);  
+        
         $('#id_encuesta_dato_memoria').hide();
         $('#id_pregunta_dato_memoria').hide();
         $('#id_valida_memoria').hide();
@@ -1067,7 +1065,10 @@ $(document).ready(function(){
                 if(r==1){
                   $('#frmEncuestaMemoria')[0].reset();
                   alertify.success("Respuesta Enviada");
-                  $('#boton_encuesta_memoria').hide();             
+                  $('#boton_encuesta_memoria').hide();
+                  $('#total_user').load('total_respuestas_user.php');
+                  $('#total_user_si').load('total_respuestas_user_si.php');
+                  $('#total_user_no').load('total_respuestas_user_no.php');
                     }else{
                         alertify.error("Respuesta No Enviada");
                     }           
@@ -1156,7 +1157,10 @@ $(document).ready(function(){
                 if(r==1){
                   $('#frmEncuestaRemanente')[0].reset();
                   alertify.success("Respuesta Enviada");
-                  $('#boton_encuesta_remanente').hide();        
+                  $('#boton_encuesta_remanente').hide();
+                  $('#total_user').load('total_respuestas_user.php');
+                  $('#total_user_si').load('total_respuestas_user_si.php');
+                  $('#total_user_no').load('total_respuestas_user_no.php');          
                     }else{
                         alertify.error("Respuesta No Enviada");
                     }           
@@ -1245,7 +1249,10 @@ $(document).ready(function(){
                 if(r==1){
                   $('#frmEncuestaCuota')[0].reset();
                   alertify.success("Respuesta Enviada");
-                  $('#boton_encuesta_cuota').hide();        
+                  $('#boton_encuesta_cuota').hide();
+                  $('#total_user').load('total_respuestas_user.php');
+                  $('#total_user_si').load('total_respuestas_user_si.php');
+                  $('#total_user_no').load('total_respuestas_user_no.php');      
                     }else{
                         alertify.error("Respuesta No Enviada");
                     }           
@@ -1334,7 +1341,10 @@ $(document).ready(function(){
                   if(r==1){
                     $('#frmEncuestaAsignacion')[0].reset();
                     alertify.success("Respuesta Enviada"); 
-                    $('#boton_encuesta_asignacion').hide();         
+                    $('#boton_encuesta_asignacion').hide();
+                    $('#total_user').load('total_respuestas_user.php');
+                    $('#total_user_si').load('total_respuestas_user_si.php');
+                    $('#total_user_no').load('total_respuestas_user_no.php');          
                       }else{
                           alertify.error("Respuesta No Enviada");
                       }           
@@ -1423,7 +1433,10 @@ $(document).ready(function(){
                   if(r==1){
                     $('#frmEncuestaAuditoria')[0].reset();
                     alertify.success("Respuesta Enviada");
-                    $('#boton_encuesta_auditoria').hide();               
+                    $('#boton_encuesta_auditoria').hide();
+                    $('#total_user').load('total_respuestas_user.php');
+                    $('#total_user_si').load('total_respuestas_user_si.php');
+                    $('#total_user_no').load('total_respuestas_user_no.php');                  
                       }else{
                           alertify.error("Respuesta No Enviada");
                       }           

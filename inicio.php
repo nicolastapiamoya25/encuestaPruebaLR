@@ -28,7 +28,7 @@ if(!empty($_POST['active'])){
                     $_SESSION['username'] = $data['usuario'];
                     $_SESSION['correo'] = $data['email'];
                     $_SESSION['password'] = $data['contrasena'];
-                    if($_SESSION['username'] == admin){
+                    if($_SESSION['username'] == "admin"){
                         header('location:administrador.php');
                     }else{
                         header('location:index.php');
