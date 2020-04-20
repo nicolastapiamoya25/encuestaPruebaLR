@@ -54,6 +54,7 @@
                 </tr>
                 <?php 
                     endwhile;
+                    mysqli_close($conexion);
                 ?>
                 </tbody>
              </table>

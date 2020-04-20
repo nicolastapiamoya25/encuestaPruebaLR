@@ -8,9 +8,6 @@
     $estadoAU=$_POST['estadoAU'];
     $rutAU=$_POST['rutAU'];
 
-
-
-
     if($estadoAU==2){
         $sql="CALL sp_actualizar_asistente('$estadoAU','$id_asistencia','$rutAU')";
         echo mysqli_query($conexion,$sql);
@@ -19,7 +16,5 @@
         echo mysqli_query($conexion,$sql);
     }
 
-
-									
-	
+    mysqli_close($conexion);	
  ?>

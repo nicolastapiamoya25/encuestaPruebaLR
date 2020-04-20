@@ -223,3 +223,27 @@ $('#tabla_asistencia').load('tabla_asistencia.php');
     });
   }
 </script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    var varAsitencia = $('#id_asistencia').val();
+    var varAsitencia = $.trim(varAsitencia);
+    var varAsitencia = parseInt(varAsitencia);
+
+    $('#btnEnviarClave').click(function() {
+      $.ajax({
+        type:"POST",
+        data:{varAsitencia: varAsitencia},
+        url: "envio_correo.php",
+        success:function(r){
+            if(r==1){
+               alertify.success("Correo Enviado con exito");
+            }else{
+               alertify.error("No se pudo Enviar");
+            }
+           }
+      });
+    });
+  });
+</script>
