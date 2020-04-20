@@ -1,6 +1,6 @@
 <?php require_once "dependencias.php"; 
       session_start();
-      if(!isset($_SESSION['username'])) {
+      if(!isset($_SESSION['username']) || $_SESSION['username'] == "18817532") {
         header("Location:inicio.php");
       }   
 ?>
@@ -23,7 +23,7 @@
             
             </div>
                 <div class="col-6 col-md-4">
-                  <h5>Bienvenido <?php echo $_SESSION['username']; ?><div id="id_usuario_dato"><?php echo $_SESSION['idUser']; ?></div></h5>
+                  <h5>Bienvenido <?php echo $_SESSION['nombre']; ?><div id="id_usuario_dato"><?php echo $_SESSION['idUser']; ?></div></h5>
                   <a class="btn btn-raised btn-success" href="cerrar_session.php">Cerrar Sesion</a>
                 </div>
           </div> 
@@ -44,13 +44,13 @@
             </div>
           </div></br>
                     <div class="row">
-                    <div class="col"></div>
-                     <div class="col-6">
-                       <div class="embed-responsive embed-responsive-21by9">
-                       <iframe src="https://www.youtube.com/embed/izX8e0ha0gs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                       </div>
-                     </div>
-                     <div class="col"></div>
+                      <div class="col"></div>
+                      <div class="col-8">
+                        <div class="embed-responsive embed-responsive-21by9">
+                        <iframe src="https://www.youtube.com/embed/izX8e0ha0gs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                      </div>
+                      <div class="col"></div>
                     </div>
 
           <div class="row">
@@ -956,7 +956,7 @@
 </script>
 
 <!--*******************************JS CHAT**************************************-->
-<!-- <script type="text/javascript">
+ <!--<script type="text/javascript">
     $(document).ready(function(){
         $('#chatstore').load('chat.php');
     $('#enviar').click(function(){
@@ -990,7 +990,7 @@
             $("#chatstore").html( info );
         });
     }
-</script> -->
+</script>--> 
 <!--*******************************FIN JS CHAT**************************************-->
 
 <!--*******************************JS MODAL ENCUESTA MEMORIA**************************************-->

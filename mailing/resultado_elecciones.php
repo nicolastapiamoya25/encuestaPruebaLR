@@ -1,6 +1,9 @@
 <?php
-session_start();
 require_once "../php/conexion.php";
+session_start();
+if(!isset($_SESSION['username']) || $_SESSION['username'] == "18817532") {
+  header("Location:../inicio.php");
+}   
 // $id_usuario = $_POST['id_usuario'];
 $id_usuario = $_SESSION["idUser"];
 $conexion = conexion();
@@ -129,3 +132,18 @@ $result = mysqli_query($conexion, $query);
     
 </body>
 </html>
+
+<?php
+    $usuario = $_SESSION['nombre'];
+    $to_email = $_SESSION['correo'];
+    $subject = "Resultados de votacion en Asamblea General de Socios Lautaro 2020";
+    $body = "Estimado $usuario su resultado es: ...";
+    $headers = "Estimado $usuario";
+
+    if (mail($to_email, $subject, $body, $headers)){
+        echo "mail envidado $to_email";
+    }else{
+        echo "Error al enviar mail $to_email";
+    }
+?>
+?>

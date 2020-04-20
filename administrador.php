@@ -2,7 +2,7 @@
 require_once "dependencias.php";
 
 session_start();
-if(!isset($_SESSION['username']) || !$_SESSION['username'] == 'admin') {
+if($_SESSION['username'] !== '18817532') {
     header("Location:inicio.php");
   }  
 ?>
@@ -50,13 +50,19 @@ if(!isset($_SESSION['username']) || !$_SESSION['username'] == 'admin') {
                   Encuesta
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="asistencia.php">
+                  <span data-feather="file-text"></span>
+                  Asistencias
+                </a>
+              </li>
             </ul>
           </div>
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="row">
-            <div class="col">hola</div>
+            <div class="col">LR2020</div>
             </div>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Dashboard</h1>
@@ -77,17 +83,10 @@ if(!isset($_SESSION['username']) || !$_SESSION['username'] == 'admin') {
             <h4 class="h4">Encuesta Remanente</h4>
             <canvas class="my-4 w-100" id="myChart2" width="900" height="380"></canvas>
             </div>
-            <div class="col">
-            <h4 class="h4">Encuesta Cuota</h4>
-            <canvas class="my-4 w-100" id="myChart3" width="900" height="380"></canvas>
-            </div>
-            <div class="col">
-            <h4 class="h4">Encuesta Asignación</h4>
-            <canvas class="my-4 w-100" id="myChart4" width="900" height="380"></canvas>
-            </div>
+
           </div>
           
-          <h2>Section title</h2>
+          <h2>Ultimas encuestas Respondidas</h2>
           <div id="tabla_datos"></div>
             </main>
         </div>

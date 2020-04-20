@@ -9,15 +9,16 @@ if(!empty($_POST['active'])){
     }else{
         if(!empty($_POST))
 	    {
-            if(empty($_POST["usuario"]) || empty($_POST['password'])){
+            if(empty($_POST["rut"]) || empty($_POST["dv"]) || empty($_POST['password'])){
                 $error = 'Ingese usuario y contraseña';
             }else{
                 $conexion=conexion();
 
-                $usuario = $_POST['usuario'];
+                $rut = $_POST['rut'];
+                $dv = $_POST['dv']; 
                 $password = $_POST['password'];
                 
-                $sql = "SELECT id_usuario, usuario, email FROM usuario WHERE usuario = '$usuario' AND contrasena = '$password'";
+                $sql = "SELECT id_usuario, rut, dv, nombre_completo, clave_unica, email FROM usuario WHERE rut = '$rut' AND dv = '$dv' AND clave_unica = '$password'";
                 $result=mysqli_query($conexion,$sql);
                 
                 if(!empty($result) and mysqli_num_rows($result)) {
@@ -25,10 +26,12 @@ if(!empty($_POST['active'])){
                     session_start();
                     $_SESSION['active'] = true;
                     $_SESSION['idUser'] = $data['id_usuario'];
-                    $_SESSION['username'] = $data['usuario'];
+                    $_SESSION['username'] = $data['rut'];
+                    $_SESSION['dv'] = $data['dv'];
+                    $_SESSION['nombre'] = $data['nombre_completo'];
                     $_SESSION['correo'] = $data['email'];
-                    $_SESSION['password'] = $data['contrasena'];
-                    if($_SESSION['username'] == "admin"){
+                    $_SESSION['password'] = $data['clave_unica'];
+                    if($_SESSION['username'] == "18817532" && $_SESSION['password'] == "admin"){
                         header('location:administrador.php');
                     }else{
                         header('location:index.php');
@@ -61,12 +64,19 @@ if(!empty($_POST['active'])){
                     <h5 class="card-title text-center">Login</h5>
                     <form method="POST"> 
                         <div class="form-group row">
-                            <label>Usuario</label>
-                            <input id="usuario" name="usuario" type="text" class="form-control">
+                            <div class="form-group col-7">
+                            <label>Rut</label>
+                            <input id="rut" name="rut" type="text" class="form-control">
+                            </div>
+                            -
+                            <div class="form-group col-4">
+                            <label>DV</label>
+                            <input id="dv" name="dv" type="text" class="form-control">
+                            </div>
                         </div>
                         <div class="form-group row">
                         <label>Password</label>
-                            <input class="form-control" id="password" name="password" type="password">
+                            <input class="form-control" id="password" name="password" type="password" maxlength="60">
                         </div>            
                         <button class="btn btn-raised btn-primary btn-lg btn-block" name="login" type="submit">Ingresar</button>
                         <div style = "font-size:16px; color:#cc0000;"><?php echo isset($error) ? utf8_decode($error) : '' ; ?></div>   
